@@ -17,5 +17,6 @@ setup(
     install_requires=[
         'zeit.connector',
         'setuptools',
+        'pytz.timezone',
         ],
 )

@@ -1,0 +1,36 @@
+At first, we need a connector for our beloved crawler.
+
+>>> import zeit.connector.mock
+>>> connector = zeit.connector.mock.Connector()
+>>> connector
+<zeit.connector.mock.Connector object at 0x...>
+
+
+Then we define our worker to convert the date-last-modified
+string into ISO format.
+
+>>> import zeit.care.crawl
+>>> import zeit.care.worker
+>>> def worker(resource, connector):
+...     dlm = resource.properties.get((
+...         'date-last-modified',
+...         'http://namespaces.zeit.de/CMS/document'))
+...     if dlm is not None:
+...         dt = zeit.care.worker.isofy_date_last_modified(dlm)
+...         connector.changeProperties(resource.id, {(
+...            'date-last-modified',
+...            'http://namespaces.zeit.de/CMS/document'): dt})
+
+>>> crawler = zeit.care.crawl.Crawler(
+...     connector, worker)
+>>> crawler
+<zeit.care.crawl.Crawler object at 0x...>
+
+>>> crawler.run('http://xml.zeit.de/online/')
+>>> resource = connector[
+... 	'http://xml.zeit.de/online/2007/01/4schanzentournee-abgesang']
+
+>>> import pprint
+>>> pprint.pprint(resource.properties.get(('date-last-modified', 'http://namespaces.zeit.de/CMS/document')))
+'2007-01-02T13:59:00+00:00'
+
