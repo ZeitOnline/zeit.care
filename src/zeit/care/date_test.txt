@@ -18,8 +18,8 @@ string into ISO format.
 ...     if dlm is not None:
 ...         dt = zeit.care.worker.isofy_date_last_modified(dlm)
 ...         connector.changeProperties(resource.id, {(
-...            'date-last-modified',
-...            'http://namespaces.zeit.de/CMS/document'): dt})
+...             'date-last-modified',
+...             'http://namespaces.zeit.de/CMS/document'): dt})
 
 >>> crawler = zeit.care.crawl.Crawler(
 ...     connector, worker)
@@ -31,6 +31,38 @@ string into ISO format.
 ... 	'http://xml.zeit.de/online/2007/01/4schanzentournee-abgesang']
 
 >>> import pprint
->>> pprint.pprint(resource.properties.get(('date-last-modified', 'http://namespaces.zeit.de/CMS/document')))
+>>> pprint.pprint(resource.properties.get(
+...     ('date-last-modified', 'http://namespaces.zeit.de/CMS/document')))
 '2007-01-02T13:59:00+00:00'
+
+Test the date-function with incorrect data!
+>>> zeit.care.worker.isofy_date_last_modified('20090321T12:23Z') is None
+True
+
+Set a resource to a wrong date format!
+>>> resource = connector['http://xml.zeit.de/online/2007/01/index']
+>>> resource.properties[
+...     ('date-last-modified', 'http://namespaces.zeit.de/CMS/document')] = (
+...         '30.3.2009 - 12:00')
+>>> connector.add(resource)
+
+Did it work?
+>>> resource = connector['http://xml.zeit.de/online/2007/01/index']
+>>> pprint.pprint(resource.properties.get(
+...     ('date-last-modified', 'http://namespaces.zeit.de/CMS/document')))
+'30.3.2009 - 12:00'
+
+>>> crawler = zeit.care.crawl.Crawler(
+...     connector, zeit.care.worker.isofy_worker)
+>>> crawler
+<zeit.care.crawl.Crawler object at 0x...>
+
+>>> crawler.run('http://xml.zeit.de/online/2007/01')
+...
+
+Changed date must be iso-format!
+>>> resource = connector['http://xml.zeit.de/online/2007/01/index']
+>>> pprint.pprint(resource.properties.get(
+...     ('date-last-modified', 'http://namespaces.zeit.de/CMS/document')))
+'2009-03-30T10:00:00+00:00'
 
