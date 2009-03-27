@@ -10,4 +10,3 @@ class Crawler(object):
             container = stack.pop(0)
             self.worker(self.connector[container], self.connector)
             stack.extend(r[1] for r in self.connector.listCollection(container))
-        
