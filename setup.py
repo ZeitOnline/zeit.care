@@ -19,4 +19,8 @@ setup(
         'setuptools',
         'pytz',
         ],
+    entry_points = """
+        [console_scripts]  
+        isofication = zeit.care.worker:isofy_main
+        """
 )

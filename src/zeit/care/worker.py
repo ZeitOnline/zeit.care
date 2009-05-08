@@ -1,5 +1,16 @@
 import datetime
 import pytz
+import sys
+import zeit.care.crawl
+import zeit.connector.connector
+
+def isofy_main():
+    connector = zeit.connector.connector.Connector(roots=dict(
+        default=sys.argv[1]))
+    start_container = sys.argv[2]
+    crawler = zeit.care.crawl.Crawler(connector, isofy_worker)
+    crawler.run(start_container)
+
 
 def isofy_worker(resource, connector):
     dlm = resource.properties.get((
@@ -8,6 +19,7 @@ def isofy_worker(resource, connector):
     if dlm is not None:
         dt = isofy_date_last_modified(dlm)
         if dt is not None:
+            print resource.id 
             connector.changeProperties(resource.id, {(
                 'date-last-modified',
                 'http://namespaces.zeit.de/CMS/document'): dt})
