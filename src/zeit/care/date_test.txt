@@ -58,7 +58,7 @@ Did it work?
 <zeit.care.crawl.Crawler object at 0x...>
 
 >>> crawler.run('http://xml.zeit.de/online/2007/01')
-...
+http://xml.zeit.de/online/2007/01/index
 
 Changed date must be iso-format!
 >>> resource = connector['http://xml.zeit.de/online/2007/01/index']
