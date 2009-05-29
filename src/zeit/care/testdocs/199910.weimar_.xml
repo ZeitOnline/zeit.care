@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article>
+  <head>
+    <attribute name="author" ns="http://namespaces.zeit.de/CMS/document">Christoph Dieckmann</attribute>
+    <attribute name="copyrights" ns="http://namespaces.zeit.de/CMS/document">(c) DIE ZEIT 1999</attribute>
+    <attribute name="pagelabel" ns="http://namespaces.zeit.de/CMS/document">Feuilleton</attribute>
+    <attribute name="ressort" ns="http://namespaces.zeit.de/CMS/document">Feuilleton</attribute>
+    <attribute name="name" ns="http://namespaces.zeit.de/CMS/document">199910.weimar_</attribute>
+    <attribute name="volume" ns="http://namespaces.zeit.de/CMS/document">10</attribute>
+    <attribute name="year" ns="http://namespaces.zeit.de/CMS/document">1999</attribute>
+    <attribute name="title" ns="http://namespaces.zeit.de/CMS/document">Bruder Gysi, Schwester Klier</attribute>
+    <attribute name="status" ns="http://namespaces.zeit.de/CMS/workflow">imported</attribute>
+    <attribute name="ressort" ns="http://namespaces.zeit.de/CMS/print">Kultur</attribute>
+    <references count="8">
+      <reference href="http://xml.zeit.de/2004/01/Glauben_i__Dland" issue="01" publication="ZEIT" source="auto" type="intern" year="2004">
+        <title>Wie man in Deutschland glaubt</title>
+        <description>Was Pastoren zu sagen haben, berührt viele Christen nicht mehr. Gotteshäuser machen zu. Doch geglaubt wird nach wie vor – an was auch immer</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2006/04/Hasenh_9fttl_04" issue="04" publication="ZEIT" source="auto" type="intern" year="2006">
+        <title>Nein und Amen</title>
+        <description>In Tübingen war er einst ein Freund und Kollege von Joseph Ratzinger. Jetzt wurde dem unbotmäßigen Theologen Gotthold Hasenhüttl die Lehrerlaubnis entzogen</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2003/47/Kirchen" issue="47" publication="ZEIT" source="auto" type="intern" year="2003">
+        <title>Voll auf Sendung</title>
+        <description>Der neue EKD-Vorsitzende Huber und Kardinal Lehmann streiten gegen Glaubensferne und falsche Gewissheiten</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2006/16/Benedikt_XVI" issue="16" publication="ZEIT" source="auto" type="intern" year="2006">
+        <title>Papst der Zumutung</title>
+        <description>Ein Jahr Benedikt XVI.: Er will kein Moralprediger sein, aber einen Kulturkampf gegen die totale Diesseitigkeit führen. Was Joseph Ratzinger aus einem unmöglichen Amt macht – und warum sein Sekretär sich wie ein Schneepflug fühlt</description>
+      </reference>
+      <reference href="http://xml.zeit.de/archiv/1962/10/Zt19620309_003_0010_P" issue="10" publication="ZEIT" source="auto" type="intern" year="1962">
+        <title>Einheitsfront der Christen</title>
+        <description>Rücken Katholiken und Protestanten unter Ulbrichts Druck enger zusammen?</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2005/38/Lehmann_38" issue="38" publication="ZEIT" source="auto" type="intern" year="2005">
+        <title>»Lass die Heiligkeit weg«</title>
+        <description>Ein Gespräch mit dem Vorsitzenden der Deutschen Bischofskonferenz, Karl Kardinal Lehmann, über gute und schlechte Religion, eine vierzigjährige Duzfreundschaft mit Joseph Ratzinger und seine persönliche Wahlentscheidung</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2006/38/Papstbesuch" issue="38" publication="ZEIT" source="auto" type="intern" year="2006">
+        <title>Benedikt im Spielzeugland</title>
+        <description>Ein schlichtes Herz und ein komplizierter Kopf: Bei seinem Besuch in Bayern verteidigte der Papst auch seine Kindheit und Herkunft.</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2005/17/Papst_Portr_8at" issue="17" publication="ZEIT" source="auto" type="intern" year="2005">
+        <title>Lehrjahre eines deutschen Römers</title>
+        <description>Der Theologe Joseph Ratzinger ist ein Doktrinär und Zentralist, das aber auf hohem Niveau. Es wäre ein Wunder, wenn ausgerechnet er die katholische Kirche öffnen würde</description>
+      </reference>
+    </references>
+    <keywordset>
+      <keyword intaxo="yes" source="auto">Religion</keyword>
+      <keyword intaxo="yes" source="auto">sozialstaat</keyword>
+      <keyword intaxo="yes" source="auto">kirche</keyword>
+      <keyword intaxo="yes" source="auto">Gesellschaft_und_soziales_Leben</keyword>
+      <keyword intaxo="yes" source="auto">Gesellschaft</keyword>
+      <keyword intaxo="yes" source="auto">christentum</keyword>
+      <keyword intaxo="yes" source="auto">arbeit</keyword>
+      <keyword intaxo="no" source="auto">Zukunft</keyword>
+      <keyword intaxo="no" source="auto">Religiosität</keyword>
+      <keyword intaxo="yes" source="auto">Religion</keyword>
+      <keyword intaxo="yes" source="manual">kirche</keyword>
+    </keywordset>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="keywords">Religion;Sozialstaat;Kirche;Gesellschaft und soziales Leben;Gesellschaft;Christentum;Arbeit und Sozialstaat;Zukunft;Religiosität;Religion;kirche</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">1999-03-04T12:00:00Z</attribute>
+  </head>
+  <body>
+    <title>Bruder Gysi, Schwester Klier</title>
+    <subtitle>Thüringens Kirche ist in der Christdemokratie angekommen</subtitle>
+    <byline>Christoph Dieckmann</byline>
+    <p>Wer Gregor Gysi in der Kirche reden läßt, der kann
+gleich einen KZ-Kommandanten auf die Kanzel bitten. Wer Freya Klier
+zu predigen erlaubt, der sollte auch Margot Honecker einladen. Was
+verbindet diese Sätze? Beide sind von erheblicher Idiotie. Was
+unterscheidet sie? Der zweite blieb bis dato ungesagt in dem
+gewaltigen Kirchenkampf, der Thüringen derzeit
+erschüttert.</p>
+    <p>
+      In den wechselnden politischen Systemen war die
+evangelisch-lutherische Landeskirche Thüringens stets eine
+verständnisvolle Partnerin der jeweils herrschenden
+Verhältnisse. Als ausgangs der SED-Diktatur die
+oppositionellen Geister in die Gotteshäuser drängten, da
+sprach zu Eisenach der Bischof Werner Leich: "Die Kirche ist
+für alle da, aber nicht für alles." Leichs Ostberliner
+Amtsbruder Gottfried Forck und viele Gemeindepfarrer legten ihre
+christliche Weltverantwortung gottlob politischer aus. Sie
+öffneten ihre Kirchen, ohne die Zuläufer nach dem
+Taufschein zu fragen. Von dieser Toleranz profitierte auch die
+Regisseurin Freya Klier mit ihrer regimekritischen Revue
+      <em>Pässe, Parolen.</em>
+    </p>
+    Es kam die Wende. Die politischen Asylanten verließen den
+sakralen Schutzraum. Die Kirche blieb mit sich allein und verlor
+rapide an gesellschaftlicher Resonanz. Es kam ein Brief, Ende
+letzten Jahres. Absender: die Evangelische Akademie Thüringen.
+Fürs Weimarer Kulturstadtjahr plane man "Sonntagspredigten
+über Gott und die Welt". 52 Menschen aus dem öffentlichen
+Leben, ausgewählt von den Kirchgemeinden, sollten im
+Gottesdienst einen Bibeltext bedenken. Geladen seien Christen und
+Nichtchristen - sogar Gregor Gysi, sogar Freya Klier. Ob ich
+mitmachen wolle?
+    <p>Endlich, dachte ich froh. Sie trauen sich wieder was im Kernland
+der Reformation. Ich sagte zu. Die Reden-Reihe begann, mit
+großem Erfolg. Die Zahl der Gottesdienstbesucher stieg, es
+gab rege Diskussionen. Was leider gleichfalls in Schwung kam, waren
+Thüringens herrschende Verhältnisse. Am 15. 1. nannte die
+CDU-Ministerin Christine Lieberknecht die Kirche "politisch naiv
+und fahrlässig", falls Gregor Gysi auftreten dürfe. Am
+18. 1. warnte Staatskanzleichef Michael Krapp (CDU), daß
+"Gottesdienst auf diese Weise zum Politikerdienst" werde. Wo
+Predigt draufstünde, müsse auch Predigt drin sein. Am 19.
+1. erwiderten Bischof und Landeskirchenrat, es handele sich ja
+nicht um Predigten im theologischen Sinne, sondern um bibelbezogene
+Reden. Und die Auswahl der Redner obliege den Gemeinden; man
+vertraue deren Gabe, "die Geister zu scheiden".</p>
+    <p>Darauf strich sich am 23. 1. Kultusminister Althaus (CDU) von
+der Rednerliste. Am 24. 1. trat Freya Klier zurück, und zu.
+Gysi, enthüllte sie, sei einer der übelsten Demagogen
+Deutschlands. Spitzel! Skrupellos! Gerissenster unter den falschen
+Propheten! Verhöhnung Gottes! "Herr Gysi würde
+umstandslos drei Brocken Türkisch lernen, wenn sich dies
+propagandistisch ausschlachten ließe, warum also nicht drei
+Brocken Bibeltext?" Und so fort.</p>
+    <p>Am 27. 1. schrieb Landtagspräsident Pietzsch (CDU) an
+Bischof Hoffmann: "Ich bitte Sie als Bischof um geistliche
+Führung, wenn man es denn von einer Reihe Pastoren nicht mehr
+erwarten kann. Wenn Atheisten das Wort Gottes auslegen (schon ein
+Widerspruch in sich selbst), wird es zu Zerreißproben
+für die Gemeinden kommen." Dem Wort der Macht folgte das
+Machtwort. Am 2. 2. fiel der Landeskirchenrat um wie ein Mann. Er
+verbot sämtliche Gastreden, "weil durch diese Reihe unsere
+Gemeinden in eine Zerreißprobe geraten sind". Am 3. 2.
+textete Bischof Hoffmann einen Brief reißfesten Inhalts:
+"Sehr geehrter Herr Gysi! Die Zerreißprobe innerhalb und
+außerhalb unserer Kirche wird zu groß. Aus diesem
+Grunde muß ich Sie auf Empfehlung des Landeskirchenrats
+überhaupt ausladen. Eventuell gibt es ein neues Projekt zu
+anderer Zeit und nicht im Rahmen eines Gottesdienstes. Ich bitte
+Sie um Verständnis, daß ich Sie auch hierzu ausladen
+muß. Mit freundlichem Gruß, Ihr (...)".</p>
+    <p>Die Weimarer Kirchengemeinde verwahrte sich gegen ihre
+bischöfliche Entmündigung. Der Kreissynodalvorsitzende
+annoncierte seinen Rücktritt. Gysi, der Entsorgte, verwunderte
+sich per Brief an Bischof Hoffmann vom 9. 2., "daß Sie mich
+ausgeladen haben, obwohl Sie mich gar nicht eingeladen hatten.
+(...) Wenn auch aus anderen Gründen als Sie fürchte ich -
+obwohl nicht religiös - eine gottlose Gesellschaft nicht
+weniger als Sie."</p>
+    <p>Ach, es ist so schade. Die höhere Weisheit des
+Predigttext-Kalenders plante Großes mit Beelzebub Gysi. Er
+hätte über den Lohn der Nachfolge (Lukas 18, 28-30) reden
+müssen. Und Freya Klier über den Text ihrer Träume,
+Lukas 11, 14-23: "Wer nicht mit mir ist, der ist wider mich..."</p>
+    Jetzt wurde doch ein Kompromiß geschustert. Die Sonntagsreden
+werden vom Gottesdienst getrennt. Erst Kultus, ohne Predigt. Dann
+Pause, zwecks Entlüftung des Raums vom Heiligen Geist. Dann
+Bibelrede des Gastes. Gregor Gysi bleibt ausgeladen. Freya Klier
+bleibt zurückgetreten. Ich wollte mich eigentlich auch
+verabschieden aus diesem Kaspertheater des Kleinglaubens und der
+Sekten-Sicherheit. Was ich empfinde, hat ein anderer Absager per
+Lutherzitat Bischof Hoffmann mitgeteilt: "Aus einem verzagten
+Arsch", schrieb Thüringens Verfassungsschutzpräsident,
+komme "kein fröhlicher Pfurz". Stimmt das, orthographisch?
+    <p>
+      Nach innerer Zerreißprobe bleibe ich nun doch, aus
+halbierter Solidarität mit Gysi
+      <em>und</em>
+      Klier. Weder mag
+ich Bruder Gysis wegen draußen vor der Kirche stehen noch
+mich daraus vertreiben lassen von Schwester Klier. Wenn du nicht
+reden willst, Freya, dann schweige, aber kreische nicht wie eine
+Opferkarrieristin der SED-Diktatur. Dies ist nicht deine oder meine
+Demokratie, sondern unser aller. Und das Wort Gottes gehört
+keinem von uns.
+    </p>
+    <p />
+  </body>
+  <teaser>
+    <title>Bruder Gysi, Schwester Klier</title>
+    <text>Thüringens Kirche ist in der Christdemokratie angekommen</text>
+  </teaser>
+</article>
+

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article>
+  <head>
+    <!-- Original QPS -->
+    <!-- Additional QPS -->
+    <attribute name="ressort" ns="http://namespaces.zeit.de/CMS/print">Wirtschaft</attribute>
+    <!-- CMS/document -->
+    <attribute name="page-from" ns="http://namespaces.zeit.de/CMS/document">29</attribute>
+    <attribute name="text-length" ns="http://namespaces.zeit.de/CMS/document">10994</attribute>
+    <attribute name="pagelabel" ns="http://namespaces.zeit.de/CMS/document">Wirtschaft</attribute>
+    <attribute name="prio" ns="http://namespaces.zeit.de/CMS/document">500</attribute>
+    <!-- CMS/workflow -->
+    <attribute name="author" ns="http://namespaces.zeit.de/CMS/document">Fritz Vorholz</attribute>
+    <attribute name="banner" ns="http://namespaces.zeit.de/CMS/document">yes</attribute>
+    <attribute name="comments" ns="http://namespaces.zeit.de/CMS/document">1</attribute>
+    <attribute name="copyrights" ns="http://namespaces.zeit.de/CMS/document">DIE ZEIT 16.02.2006 Nr.8</attribute>
+    <attribute name="keywords" ns="http://namespaces.zeit.de/CMS/document">klimaschutz</attribute>
+    <attribute name="mostread" ns="http://namespaces.zeit.de/CMS/document">yes</attribute>
+    <attribute name="page" ns="http://namespaces.zeit.de/CMS/document">29</attribute>
+    <attribute name="paragraphsperpage" ns="http://namespaces.zeit.de/CMS/document">7</attribute>
+    <attribute name="ressort" ns="http://namespaces.zeit.de/CMS/document">Wirtschaft</attribute>
+    <attribute name="volume" ns="http://namespaces.zeit.de/CMS/document">08</attribute>
+    <attribute name="year" ns="http://namespaces.zeit.de/CMS/document">2006</attribute>
+    <attribute name="status" ns="http://namespaces.zeit.de/CMS/workflow">OK</attribute>
+    <attribute name="topic" ns="http://namespaces.zeit.de/CMS/document">Deutschland</attribute>
+    <attribute name="title" ns="http://namespaces.zeit.de/CMS/document">Die erste Prüfung  des Ministers</attribute>
+    <attribute name="last-modified-by" ns="http://namespaces.zeit.de/CMS/workflow">kpm</attribute>
+    <attribute name="revision" ns="http://namespaces.zeit.de/CMS/document">2</attribute>
+    <references count="15">
+      <reference href="http://xml.zeit.de/2005/10/Argument" issue="10" publication="ZEIT" source="auto" type="intern" year="2005">
+        <title>Ein Monster wird geboren</title>
+        <description>Weil die Regierung beim Emissionshandel niemanden enttäuschen wollte, schuf sie ein verkorkstes System</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2003/37/Stromstreit" issue="37" publication="ZEIT" source="auto" type="intern" year="2003">
+        <title>Sturmwarnung</title>
+        <description>Wirtschaftsminister gegen Umweltminister: Wolfgang Clement hat die Windräder als Standortschädlinge identifiziert. Jürgen Trittin will sie weiter massiv fördern</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2001/01/200101_argument.xml" issue="01" publication="ZEIT" source="auto" type="intern" year="2001">
+        <title>Reformer ohne Plan</title>
+        <description>Die rot-grüne Energiepolitik ist bisher Stückwerk geblieben - ihr fehlt die langfristige Perspektive</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2001/07/200107_argument.xml" issue="07" publication="ZEIT" source="auto" type="intern" year="2001">
+        <title>Sechs gegen Rot-Grün</title>
+        <description>Die großen Energiekonzerne torpedieren die Klimapolitik der Regierung - mit falschen Argumenten</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2007/21/Umwelt" issue="21" publication="ZEIT" source="auto" type="intern" year="2007">
+        <title>Angriff aus der Provinz</title>
+        <description>Die Bundesländer torpedieren den Handel mit Emissionsrechten und schaden wider besseres Wissen dem Klima.</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2004/14/Umweltstreit" issue="14" publication="ZEIT" source="auto" type="intern" year="2004">
+        <title>Vergiftetes Klima</title>
+        <description>Der rot-grüne Zoff um Emissionshandel und Ökosteuer ist nur das Vorspiel – die Umweltpolitik steht grundsätzlich zur Diskussion</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2004/05/Alternative_Energien" issue="05" publication="ZEIT" source="auto" type="intern" year="2004">
+        <title>Der letzte Grüne</title>
+        <description>Umweltminister Trittin legt sich mit den Stromkonzernen an – und mit Kollegen in der eigenen Partei</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2007/15/Klimaschutz" issue="15" publication="ZEIT" source="auto" type="intern" year="2007">
+        <title>Atomlügner oder Klimasünder?</title>
+        <description>Dem Umweltminister Sigmar Gabriel droht Ungemach: Umweltschutz und Nuklearausstieg lassen sich nur schwer vereinbaren.</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2004/52/Trittin-Interview" issue="52" publication="ZEIT" source="auto" type="intern" year="2004">
+        <title>»Fleißkärtchen mag ich nicht«</title>
+        <description>Umweltminister Jürgen Trittin über Hyperaktivismus in der Klimapolitik, die Ökosteuer und Chinas Rolle beim Kampf gegen die Erderwärmung. Ein ZEIT-Gespräch</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2004/12/Energie" issue="12" publication="ZEIT" source="auto" type="intern" year="2004">
+        <title>Geballte Ladung</title>
+        <description>Mangelhafter Terror-Schutz der Kernkraftwerke, Streit um die Kohlesubventionen und den Export der Hanauer Atomfabrik: Die Zukunft von Rot-Grün entscheidet sich auch mit ihrer Energiepolitik</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2003/35/Energiepolitik" issue="35" publication="ZEIT" source="auto" type="intern" year="2003">
+        <title>Her mit der Kohle, weg mit der Kohle</title>
+        <description>Als in Amerika die Lichter ausgingen, traf sich der Kanzler mit Deutschlands Strombossen. Ihr Thema: Die Zukunft der Energiewirtschaft. Wer stellt die Weichen – Clement oder Trittin?</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2005/23/Energiepolitik" issue="23" publication="ZEIT online" source="auto" type="intern" year="2005">
+        <title>Schwarz-gelber Mix</title>
+        <description>Auch Angela Merkel könnte nicht auf Sonnen- und Windenergie verzichten</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2006/24/Argument_xml" issue="24" publication="ZEIT" source="auto" type="intern" year="2006">
+        <title>Der Schmutz, das Geld, der Plan</title>
+        <description>Der Irrsinn des Emissionsrechtehandels oder: Wie Berlin den Klimaschutz unnötig verteuert</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2005/48/Interv__Gabriel" issue="48" publication="ZEIT" source="auto" type="intern" year="2005">
+        <title>»Ich bin ein Minister für Innovation«</title>
+        <description>Umweltminister Sigmar Gabriel über strengen Klimaschutz, atomare Endlagerung und den Hang der Grünen zur Bürokratie</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2004/07/Argument_07" issue="07" publication="ZEIT" source="auto" type="intern" year="2004">
+        <title>Kultivierte Zwietracht</title>
+        <description>Emissionshandel soll den Klimaschutz verbessern – die Wirtschaft wehrt sich</description>
+      </reference>
+    </references>
+    <keywordset>
+      <keyword intaxo="yes" source="auto">Energiepolitik</keyword>
+      <keyword intaxo="yes" source="auto">Energie und Rohstoff</keyword>
+      <keyword intaxo="yes" source="auto">Umweltpolitik</keyword>
+      <keyword intaxo="yes" source="auto">Umwelt</keyword>
+      <keyword intaxo="no" source="auto">Emissionshandel</keyword>
+      <keyword intaxo="yes" source="auto">Natur und Technik</keyword>
+      <keyword intaxo="yes" source="auto">Natur</keyword>
+      <keyword intaxo="yes" source="auto">Klimaschutz</keyword>
+      <keyword intaxo="no" source="auto">Klimapolitik</keyword>
+      <keyword intaxo="yes" source="auto">Windenergie</keyword>
+      <keyword intaxo="yes" source="auto">Alternative Energie</keyword>
+    </keywordset>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">2006-02-16T12:00:00Z</attribute>
+  </head>
+  <body>
+    <supertitle>Klimaschutz</supertitle>
+    <title>Die erste Prüfung  des Ministers</title>
+    <subtitle>Sigmar Gabriel kann den Emissionshandel mit dem Klimagift CO2 verbessern – wenn er sich mit der mächtigen Energielobby anlegt</subtitle>
+    <byline>Von Fritz Vorholz</byline>
+    <initial font-size="10.3425" qstyle="@&gt;  Initial 4-zeilig">
+      Schlagfertigkeit, Muskelkraft und politischer Instinkt sind Talente, mit denen Umweltminister Sigmar Gabriel gesegnet ist. Auf die Frage, welcher Minister im schwarz-roten Kabinett er eigentlich gern geworden wäre, antwortet der bis zum Wahltag als Ökologe kaum aufgefallene neue Chef des Umweltressorts ohne Zögern: »Bundesumweltminister.« Beim Weltklimagipfel in Montreal schlug er den Puck des Kyoto-Meters, einer von Umweltschützern modifizierten Haut-den-Lukas-Anlage, auf Anhieb bis zum Anschlag. Und die Köpfe und Herzen der Öko-Gemeinde eroberte der auf diese Weise zum »Klimaretter« avancierte Sozialdemokrat auch bei anderer Gelegenheit im Nu – unter anderem dadurch, dass er sämtliche Attacken auf den von der rot-grünen Vorgängerregierung beschlossenen Atomausstieg prompt parierte. Gabriel sei halt ein »pfiffiger Kerl«, sagt Gerhard Timm, Geschäftsführer des BUND.
+      <image align="left" expires="2006-02-23" src="http://xml.zeit.de/bilder/2006/08/wirtschaft/qualm_210x450.jpg" width="210">
+        <copyright>Foto: dpa</copyright>
+        BILD
+      </image>
+    </initial>
+    <intertitle>Der rote Gabriel könnte vollbringen, was dem grünen Trittin misslang</intertitle>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext ohne Einzug">Keine 100 Tage nach seinem Amtsantritt neigt sich die Schonzeit für den Minister dem Ende zu. Auf Geheiß der EU hat Gabriel bis Mitte des Jahres eine Herausforderung zu meistern, die vor zwei Jahren bereits seinem Vorgänger Jürgen Trittin zu schaffen machte: Er muss das ambitionierteste Geschütz der hiesigen Klimapolitik, den Emissionshandel, neu justieren. Entweder legt sich Gabriel dabei mit einer der mächtigsten Lobbys im Lande an, mit den Konzernen der Stromwirtschaft – oder sein Ansehen wird in der Gunst der grünen Gemeinde rapide sinken. Die jedenfalls will den Minister in Zukunft nur noch an einem messen: an der Qualität seines »ersten Werkstückes«, wie die Klimaschutzexpertin des WWF, Regine Günther, verspricht.</p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext sehr eng">In dieser Woche will Gabriel den Fraktionsspitzen von SPD und Union offenbaren, wohin die Reise gehen soll. Umweltschützer hoffen, dass der rote Gabriel vollbringt, was dem grünen Trittin misslang: den von der EU verordneten Emissionshandel zu einem schlagkräftigen Instrument der Klimapolitik aufzurüsten.</p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext sehr eng">Bisher ist er das nur auf dem Papier. »Unser Flaggschiff heißt Emissionshandel«, behauptet Gabriel zwar gern. Tatsächlich weiß der Minister genau, dass der seit Anfang 2005 »real existierende Emissionshandel« zwischen den Betreibern von 1849 Kraftwerken und Fabriken nur »bedingt den theoretischen Idealvorstellungen« entspricht, wie es in einem Erfahrungsbericht aus seinem Haus heißt.</p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext sehr eng">Das Hauptmanko des hoch komplizierten, nur Insidern verständlichen Systems: Weil im Grunde jeder Investor so viele Rechte zum Ausstoß von klimaschädlichem Kohlendioxid (CO2) bekommt, wie er für eine neue Anlage benötigt, fehlen fast sämtliche Anreize zum Bau emissionsarmer Kraftwerke. Regelrecht »kastriert« habe Rot-Grün das eigentlich revolutionäre Instrument des Klimaschutzes, urteilte der WWF, nachdem sich Trittin und sein Widersacher Wolfgang Clement im Frühjahr 2004 auf die Regeln zum Emissionshandel verständigt hatten.</p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext sehr eng">Tatsächlich hat das Paragrafenkonvolut nichts mehr mit den Lehrbuchweisheiten gemein. Laut Theorie minimiert der Emissionshandel die Kosten des Klimaschutzes so elegant wie kein anderes Instrument: indem er klimaschädliches Kohlendioxid zu einer Ware macht, die verkauft und erworben werden kann und dadurch Eingang in betriebswirtschaftliche Kalküle findet. Voraussetzung ist nur, dass jeder Luftverschmutzer verpflichtet wird, ausschließlich dann CO2 in die Luft zu blasen, wenn er über eine Lizenz dafür verfügt. Die kann er entweder selbst nutzen oder gewinnbringend veräußern – an jemanden, den es teurer käme, seine Emissionen selbst zu mindern. Unterm Strich verbindet der Lizenzhandel auf diese Weise ökonomische Effizienz mit ökologischer Treffsicherheit. Aber eben nur, wenn die Rahmenbedingungen stimmen.</p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext sehr eng">Für die, insbesondere für das Procedere bei der Erstausgabe der Emissionsrechte, ist der Staat zuständig. Doch in Gestalt der rot-grünen Regierung ließ der sich vor zwei Jahren reihenweise zu faulen Kompromissen hinreißen. Den Streit zwischen dem in der Angelegenheit federführenden Trittin und dem der Kohlelobby geneigten Wirtschaftsminister Clement (SPD) beendete damals Bundeskanzler Gerhard Schröder mit einem Machtwort. Der Sache dienlich war das nicht.</p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext sehr eng">Fehler Nummer eins: Rot-Grün stattete die Emittenten zu großzügig mit Emissionsrechten aus. 495 Millionen Tonnen CO2 dürfen sämtliche am Emissionshandel teilnehmenden Unternehmen im Durchschnitt der Jahre 2005 bis 2007 in die Atmosphäre pusten; das ist deutlich mehr, als die Wirtschaft der Bundesregierung vorher bereits freiwillig zugesagt hatte.</p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext sehr eng">Fehler Nummer zwei: Um allen Interessen gerecht zu werden, vor allem denen der Kohlelobby, ersann Rot-Grün eine Fülle von Sonderkriterien, wonach die Zertifikate kostenlos an einzelne Firmen verteilt wurden: eine Lex Vattenfall und eine Lex RWE, eine Übertragungsregel, eine Kompensationsregel, eine Optionsregel et cetera. 58 Regelkombinationen sind laut Zuteilungsgesetz erlaubt. Die eigentlich beabsichtigten Preissignale wurden nahezu unkenntlich.</p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext sehr eng">Fehler Nummer drei: Rot-Grün schuf mit den vielen Sondertöpfen einen gigantischen Umverteilungsmechanismus innerhalb der Wirtschaft. Weil die Emissionsmenge für die am Handel teilnehmenden Unternehmen gedeckelt ist, wird zwangsläufig jeder Vorteil für einen Emittenten zum Nachteil für einen anderen. Obwohl die Wirtschaft insgesamt ihren CO2-Ausstoß nicht einmal um drei Prozent zu reduzieren hat, verlangt der Emissionshandel auf diese Weise den nicht begünstigten Emittenten Minderungen von bis zu acht Prozent ab. Auch innerhalb der Wirtschaft ist deswegen der Unmut groß. Besonders massiv klagt der Karlsruher Stromkonzern EnBW über Nachteile.</p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext sehr eng">Nicht nur deshalb muss sich Gabriel mit der rot-grünen Hinterlassenschaft auseinander setzen. Die EU zwingt ihn dazu. Tatsächlich verlieren die verkorksten Regeln für das von Brüssel verordnete Emissionshandelsregime bereits am 31. Dezember 2007 wieder ihre Gültigkeit. Dann endet die Probephase des EU-weiten Emissionshandels, und die Karten werden neu gemischt – für den Ernstfall. Der erstreckt sich auf die fünf Jahre zwischen 2008 und 2012, auf jene Zeitspanne, auf die sich die Klimaschutz-Verpflichtungen des Kyoto-Protokolls beziehen. Europa will seine Hausaufgaben vornehmlich mit Hilfe des Emissionshandels bewältigen. Wie genau, bleibt den Mitgliedsstaaten überlassen. Bis zum 30. Juni müssen sie das geforderte Regelwerk – den neuen NAP, den Nationalen Allokationsplan – der EU-Kommission präsentieren.</p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext sehr eng">Für Gabriel, der den Klimaschutz wie sein Amtsvorgänger Trittin als größte aller Herausforderungen betrachtet, läge darin eine Chance – wären nicht fast sämtliche Verbesserungsmöglichkeiten des alten NAP politisch vermint. Dessen größtes Manko liegt in der so genannten Neuanlagen-Regelung. Danach bekommt jeder Investor so viele Emissionszertifikate zugeteilt, wie das von ihm errichtete Kraftwerk benötigt. Klimaschädliche Kohlekraftwerke werden mit Lizenzen von bis zu 750 Gramm pro Kilowattstunde ausgestattet, emissionsarme Gaskraftwerke erhalten nur 365 Gramm. Diese Differenzierung eliminiert sämtliche Anreize für den Bau klimaschonender Stromfabriken. De facto, sagt Felix Christian Matthes vom Öko-Institut, werde dadurch der Emissionshandel »abgeschafft«.</p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext sehr eng">Matthes gehört zu den Beratern Gabriels in Sachen Emissionshandel – er rät, künftig neuen Kraftwerken nur noch einheitlich viele Emissionsrechte zuzuteilen, gleichgültig, ob es sich um Gas- oder Kohlekraftwerke handelt. Nur solche Einheitszuteilungen – Neudeutsch: Benchmarks – könnten gewährleisten, dass CO2 tatsächlich als Kostenposition Eingang in die Investitionskalküle findet. Der Erkenntnis kann sich auch mancher Stromproduzent nicht verschließen. Aus klimapolitischer Sicht sei ein »brennstoffunabhängiger Benchmark zu befürworten«, heißt es in Papieren der EnBW. Gleichwohl erwartet kaum jemand, dass Gabriel an dieser Stellschraube drehen wird.</p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext sehr eng">Tatsächlich fürchtet Gabriel den Vorwurf, er treibe die hiesigen Stromerzeuger dazu, in Zukunft vermehrt Erdgas zu verfeuern – jene flüchtige Energie, deren Nachschub aus Russland viele für nicht sicher halten. Nach dem russisch-ukrainischen Gasstreit vom Jahreswechsel ist die Furcht vor möglichen Versorgungsengpässen massiv gestiegen. Hinzu kommt der Widerstand der Kohlelobby, die bereits angekündigt hat, zwölf neue Kohlekraftwerke bauen zu wollen. Andere Verteilungsregeln beim Emissionshandel könnten diese Projekte gefährden und Gabriel obendrein eine Debatte als Investitionsverhinderer bescheren. Die Alternative ist für den Minister allerdings nicht verlockender. Werden die Kohleprojekte realisiert, kommen auf Gabriel als Klimaschützer harte Zeiten zu – es sei denn, die Laufzeit der emissionsfreien Atommeiler würde am Ende doch verlängert. Dieser Ausweg wäre für Gabriel allerdings politisch nur zu verkraften, wenn er den Schwarzen Peter dafür komplett der Union zu schieben könnte.</p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext sehr eng">»Durchwursteln« heiße deshalb Gabriels Devise beim Emissionshandel, vermutet Jürgen Maier, Geschäftsführer des Forums Umwelt und Entwicklung. Maier traf den Minister jüngst im fernen Dubai. Dort habe der ihn wissen lassen, er, Gabriel, könne keine »Schlachten gewinnen, die Trittin verloren hat«.</p>
+    <intertitle>Für die hohen Strompreise könnte künftig die Regierung mithaften</intertitle>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext ohne Einzug">Eine vielleicht doch. Womöglich wird Gabriel demnächst wenigstens zehn Prozent der Emissionsrechte nicht verteilen, sondern versteigern. Sogar der Koalitionsvertrag legt ihm das nahe. In ihm hat sich Schwarz-Rot darauf festgelegt, im zweiten Allokationsplan die »Mitnahmeeffekte« zu vermeiden, die der erste den Stromkonzernen ermöglichte. Tatsächlich glaubten Schröder, Clement und Trittin vor zwei Jahren, weil sie die Lizenzen kostenlos zugeteilt hatten, könne der Emissionshandel die Strompreise nicht in die Höhe treiben. Von wegen. Der Handel mit den Zertifikaten kam in Schwung, die Lizenzen waren plötzlich mehr als 20 Euro pro Tonne wert. Das schlugen die marktbeherrschenden Konzerne auf ihre Strompreise auf. Dies sorgte zwar für Empörung, entspricht aber betriebswirtschaftlicher Logik. Denn jeder Erzeuger kann entscheiden, die geschenkten Emissionsrechte selbst zu nutzen oder gewinnbringend zu verkaufen. Kein Wunder, dass der bei eigener Nutzung der Zertifikate entgangene Verkaufspreis sich in den Stromkosten niederschlägt. RWE &amp; Co beschert diese »Einpreisung« Zusatzgewinne in Milliardenhöhe – und der Regierung den Protest der Verbraucher.</p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext sehr eng">Schwarz-Rot steht nun unter Druck, gegen die »Abzocke« der Stromkonzerne vorzugehen. Möglich wäre das, würden wenigstens zehn Prozent der Lizenzen versteigert; mehr erlaubt die EU nicht. Dies entspräche beim gegenwärtigen CO2-Preis Nettoeinnahmen von mehr als 600 Millionen Euro, über die sich nicht nur Finanzminister Peer Steinbrück freuen würde. Einen Nachteil hätte auch das: Für hohe Strompreise würde künftig die Regierung mithaften.</p>
+  </body>
+  <teaser>
+    <title>Die erste Prüfung  des Ministers</title>
+    <text>Sigmar Gabriel kann den Emissionshandel mit dem Klimagift CO2 verbessern – wenn er sich mit der mächtigen Energielobby anlegt</text>
+  </teaser>
+  <indexteaser>
+    <title>Klimaschutz</title>
+    <text>Umweltminister gegen Energielobby - wer gewinnt?</text>
+    <text_length>48</text_length>
+    <title_length>11</title_length>
+  </indexteaser>
+</article>
+

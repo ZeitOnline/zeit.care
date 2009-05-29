@@ -1,0 +1,102 @@
+At first, we need a connector for our beloved crawler.
+
+>>> import zeit.connector.mock
+>>> connector = zeit.connector.mock.Connector()
+>>> connector
+<zeit.connector.mock.Connector object at 0x...>
+
+Lookup for resource
+
+>>> resource = connector[
+...     'http://xml.zeit.de/online/2007/01/4schanzentournee-abgesang']
+>>> type(resource)
+<class 'zeit.connector.resource.Resource'>
+
+Get XML Data
+
+>>> xml = resource.data.read()
+>>> print xml
+<?xml ...
+...
+</article>
+...
+
+Import the converter
+
+>>> from zeit.care.divisor import Converter
+>>> Converter
+<class 'zeit.care.divisor.Converter'>
+
+Konvertiere das XML nach neuem format mit divisions
+
+>>> new_xml = Converter(xml).convert()
+>>> print new_xml
+<?xml ...
+
+Check conversion
+
+>>> from lxml import etree
+>>> import StringIO, os
+>>> tree = etree.parse(StringIO.StringIO(new_xml))
+>>> for d in tree.xpath('//body/division'):
+...     print len(d.xpath('p'))
+6
+0
+
+Create test collection
+
+>>> from zeit.connector.resource import Resource
+>>> coll_path = 'http://xml.zeit.de/testdocs/'
+>>> col = Resource(coll_path,
+...                    'testdocs',
+...                    'collection',
+...                    StringIO.StringIO(''))
+>>> connector.add(col)  
+>>> connector[coll_path].type
+'collection'
+
+
+Get Testdocs
+
+>>> testdir = os.path.dirname(__file__)+'/testdocs/'
+>>> testdocs = [(f,testdir+f) for f in os.listdir(testdir) if os.path.isfile(testdir+f)]
+>>> len(testdocs) > 0
+True
+
+Create test articles 
+
+>>> for (filename, filepath) in testdocs:
+...     res = Resource('http://xml.zeit.de/testdocs/'+filename,
+...                filename,
+...                'article',
+...                open(filepath),
+...                contentType = 'text/xml')
+...     connector.add(res)
+
+check the new ressources
+
+>>> for (filename, filepath) in testdocs:
+...     'http://xml.zeit.de/testdocs/'+filename in connector
+True
+True
+True
+...
+
+Convert all test resources
+
+>>> from zeit.care.divisor import division_worker
+>>> for (filename, filepath) in testdocs:
+...     division_worker(connector['http://xml.zeit.de/testdocs/'+filename], connector)
+
+>>> for (filename, filepath) in testdocs:
+...     resource = connector['http://xml.zeit.de/testdocs/'+filename]
+...     if resource.type == 'article':
+...         new_xml = resource.data.read()
+...         tree = etree.parse(StringIO.StringIO(new_xml))
+...         if tree.getroot().tag == 'article':
+...             len(tree.xpath('//body/division')) > 0
+True
+True
+True
+True
+...

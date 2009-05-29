@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article>
+  <head>
+    <attribute name="copyrights" ns="http://namespaces.zeit.de/CMS/document">(c) DIE ZEIT 1999</attribute>
+    <attribute name="pagelabel" ns="http://namespaces.zeit.de/CMS/document">Wissen</attribute>
+    <attribute name="ressort" ns="http://namespaces.zeit.de/CMS/document">Wissen</attribute>
+    <attribute name="name" ns="http://namespaces.zeit.de/CMS/document">199910.pegasus</attribute>
+    <attribute name="volume" ns="http://namespaces.zeit.de/CMS/document">10</attribute>
+    <attribute name="year" ns="http://namespaces.zeit.de/CMS/document">1999</attribute>
+    <attribute name="status" ns="http://namespaces.zeit.de/CMS/workflow">imported</attribute>
+    <attribute name="ressort" ns="http://namespaces.zeit.de/CMS/print">Computer &amp; Medien</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="author" />
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="date-first-release">1999-03-10T07:54Z</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">1999-03-04T12:00:00Z</attribute>
+  </head>
+  <body>
+    <title />
+    <subtitle />
+    <byline />
+    <p />
+  </body>
+  <teaser>
+    <title />
+    <text />
+  </teaser>
+</article>
+

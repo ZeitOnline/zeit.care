@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article>
+  <head>
+    <keywordset />
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="page">62</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="year">2008</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/workflow" name="status">imported</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="importsource">vhb;zeit_31032008-1236_110.xml</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="volume">06</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="copyrights">DIE ZEIT Nr.06 vom 31.01.2008, S.62</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="ressort">Literatur</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="author">Maja Vidmar</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="title">Die Elster</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">2008-01-31T12:00:00Z</attribute>
+  </head>
+  <body>
+    <supertitle>Gedicht</supertitle>
+    <title>Die Elster</title>
+    <byline>Von Maja Vidmar</byline>
+    <p>Maja Vidmar</p>
+    <p>Wenn auf dem Bürgersteig etwas glänzt oder im Gras, schießt es mir durch den
+Sinn, als wäre hier, was ich schon durch die ganze Zeit vielleicht suche. Und
+nun wird alles anders. Sobald ich mit dem Fuß die Scherbe oder Konserve umdrehe,
+erlischt der Glanz, doch die Hoffnung leuchtet noch eine Weile nach.</p>
+    <p>Maja Vidmar: Gegenwart</p>
+    <p>Aus dem Slowenischen von Fabjan Hafner - Edition Korrespondenzen, Reto Ziegler,
+Wien 2007 - 125 S., 18,50 Euro</p>
+  </body>
+  <teaser>
+    <title>Die Elster</title>
+  </teaser>
+  <indexteaser>
+    <title>Die Elster</title>
+  </indexteaser>
+</article>
+

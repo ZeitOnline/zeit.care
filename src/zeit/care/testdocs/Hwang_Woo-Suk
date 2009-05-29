@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article>
+  <head>
+    <!-- Original QPS -->
+    <!-- Additional QPS -->
+    <attribute name="ressort" ns="http://namespaces.zeit.de/CMS/print">Wissen</attribute>
+    <!-- CMS/document -->
+    <attribute name="page-from" ns="http://namespaces.zeit.de/CMS/document">39</attribute>
+    <attribute name="text-length" ns="http://namespaces.zeit.de/CMS/document">3907</attribute>
+    <attribute name="pagelabel" ns="http://namespaces.zeit.de/CMS/document">Wissen</attribute>
+    <attribute name="prio" ns="http://namespaces.zeit.de/CMS/document">500</attribute>
+    <!-- CMS/workflow -->
+    <attribute name="author" ns="http://namespaces.zeit.de/CMS/document">Astrid Viciano</attribute>
+    <attribute name="banner" ns="http://namespaces.zeit.de/CMS/document">yes</attribute>
+    <attribute name="comments" ns="http://namespaces.zeit.de/CMS/document">1</attribute>
+    <attribute name="copyrights" ns="http://namespaces.zeit.de/CMS/document">DIE ZEIT 16.02.2006 Nr.8</attribute>
+    <attribute name="mostread" ns="http://namespaces.zeit.de/CMS/document">yes</attribute>
+    <attribute name="page" ns="http://namespaces.zeit.de/CMS/document">39</attribute>
+    <attribute name="paragraphsperpage" ns="http://namespaces.zeit.de/CMS/document">6</attribute>
+    <attribute name="ressort" ns="http://namespaces.zeit.de/CMS/document">Wissen</attribute>
+    <attribute name="volume" ns="http://namespaces.zeit.de/CMS/document">08</attribute>
+    <attribute name="year" ns="http://namespaces.zeit.de/CMS/document">2006</attribute>
+    <attribute name="status" ns="http://namespaces.zeit.de/CMS/workflow">OK</attribute>
+    <attribute name="topic" ns="http://namespaces.zeit.de/CMS/document">Wissenschaft</attribute>
+    <attribute name="title" ns="http://namespaces.zeit.de/CMS/document">Amerikanisches Klonopfer</attribute>
+    <attribute name="last-modified-by" ns="http://namespaces.zeit.de/CMS/workflow">sadigh</attribute>
+    <references count="11">
+      <reference href="http://xml.zeit.de/2005/52/M-F_8alschung" issue="52" publication="ZEIT" source="auto" type="intern" year="2005">
+        <title>Held oder Halunke</title>
+        <description>Der südkoreanische Klonpionier Hwang Woo-Suk soll gefälscht haben. In der Biomedizin geht es um viel Geld – und darum, der Erste zu sein. Der gnadenlose Wettlauf droht, das ganze Forschungsfeld in Misskredit zu bringen</description>
+      </reference>
+      <reference href="http://xml.zeit.de/online/2006/03/schatten" issue="03" publication="ZEIT online" source="auto" type="intern" year="2006">
+        <title>Der Schatten des Dr. Hwang</title>
+        <description>Jetzt wird es schmutzig: Nachdem die gefeierten Studien des koreanischen Stammzellforschers Hwang als Lüge entlarvt sind, offenbart sich ein verborgenes Netz von Intrigen - deren Fäden vermutlich ein amerikanischer Mediziner zog</description>
+      </reference>
+      <reference href="http://xml.zeit.de/online/2005/51/hwang_faelschung" issue="51" publication="ZEIT online" source="auto" type="intern" year="2005">
+        <title>Aus der Traum</title>
+        <description>Der Koreaner Hwang Woo-Suk scheint wesentliche Teile seiner bahnbrechenden Stammzellarbeiten manipuliert zu haben. Ein Forschungsfeld droht im Morast von Fälschung, Intrige und Ethik-Verstößen zu versinken</description>
+      </reference>
+      <reference href="http://xml.zeit.de/online/2006/02/science_unikommission_hwang" issue="02" publication="ZEIT online" source="auto" type="intern" year="2006">
+        <title>Science zieht gefeierte Studien zurück</title>
+        <description>Nachdem ein Kommissionsbericht die komplette Stammzellforschung des Koreaners Hwang endgültig als Lüge entlarvt hat, räumt das renommierte Wissenschaftsblatt endlich auf</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2005/49/P-Hwang" issue="49" publication="ZEIT" source="auto" type="intern" year="2005">
+        <title>Der König ist entthront</title>
+        <description>Der Südkoreaner war ein Star. Jetzt werden Hwang Woo-Suk die unethischen Praktiken seines Labors zum Verhängnis</description>
+      </reference>
+      <reference href="http://xml.zeit.de/online/2006/06/hwang_korruption" issue="06" publication="ZEIT online" source="auto" type="intern" year="2006">
+        <title>Korrupte Stammzellforschung</title>
+        <description>Betrug ohne Ende, aber mit Folgen: Klonforscher Hwang veruntreute offenbar Millionen, und ein fanatischer Anhänger des Koreaners nimmt sich das Leben</description>
+      </reference>
+      <reference href="http://xml.zeit.de/online/2005/52/hwang_finale" issue="52" publication="ZEIT online" source="auto" type="intern" year="2005">
+        <title>Finale eines Forschungsdramas</title>
+        <description>Stück für Stück demontiert Klonkönig Hwang Woo-Suk seine wissenschaftliche Existenz: Nun will er seine Professur niederlegen</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2005/47/Glosse_47" issue="47" publication="ZEIT" source="auto" type="intern" year="2005">
+        <title>Putschversuch im Klonreich</title>
+        <description>Ein Amerikaner gegen Seoul</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2006/01/Glosse_01_klein" issue="01" publication="ZEIT" source="auto" type="intern" year="2006">
+        <title>Der Lügenbaron</title>
+        <description>Hwang Woo-Suk hat gefälscht</description>
+      </reference>
+      <reference href="http://xml.zeit.de/2006/02/M-Hwang" issue="02" publication="ZEIT" source="auto" type="intern" year="2006">
+        <title>Koreanische Träume</title>
+        <description>Die verwegenen Fälschungen des Stammzellforschers Hwang Woo-Suk sind auch eine Folge politischer Verantwortungslosigkeit Von Herbert Gottweis und Robert Triendl</description>
+      </reference>
+      <reference href="http://xml.zeit.de/online/2006/01/hwang_total" issue="01" publication="ZEIT online" source="auto" type="intern" year="2006">
+        <title>Nur falsche Linien</title>
+        <description>Kein Ende im Klonskandal: Die Universität von Seoul hat nicht einen Funken Wahrheit in der umstrittenen Arbeit des Koreaners Hwang gefunden</description>
+      </reference>
+    </references>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">2006-02-16T12:00:00Z</attribute>
+  </head>
+  <body>
+    <supertitle>Stammzellskandal</supertitle>
+    <title font-size="36" qstyle="@&gt;  Überschrift 36·">Amerikanisches Klonopfer</title>
+    <subtitle>Der US-Mediziner Gerald Schatten hat maßgeblich am beispiellosen Forschungsbetrug des Koreaners Hwang mitgewirkt - doch seine Universität in Pittsburgh spricht ihn frei von Schuld</subtitle>
+    <byline>Von Astrid Viciano</byline>
+    <initial font-size="10.29" qstyle="@&gt;  Initial 3-zeilig">Im Januar zündeten noch rund tausend Koreaner Kerzen an, um ihren gefallenen Volkshelden zu unterstützen. Bei eisigen Temperaturen hielten die Menschen Nachtwache, weil sie sich mit dem »Stolz Koreas« solidarisieren wollten. Vergebens. Inzwischen dürften selbst Lichterketten dem Klonforscher Hwang Woo-Suk nicht mehr helfen.</initial>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext mit Einzug">
+      Innerhalb weniger Wochen beendeten gleich zwei Maßnahmen endgültig die Karriere des einstigen Nobelpreis-Anwärters: Am 12. Januar zog das Fachmagazin
+      <em>Science</em>
+      die beiden Publikationen des koreanischen Wissenschaftlers offiziell zurück. Und vor drei Tagen entschied der Direktor der Seoul National University, dass der ehemalige Superstar und sechs andere Professoren ihre Posten räumen müssen. Sie dürften zwar ihre Professorentitel behalten, jedoch an der Universität künftig weder unterrichten noch forschen. Sie alle waren Autoren mindestens einer der beiden Studien, die viele Experten als größten Forschungsskandal des Jahrhunderts bezeichnen.
+    </p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext mit Einzug">
+      Im Jahr 2004 hatten Hwang und seine Kollegen in
+      <em>Science</em>
+      behauptet, gleich 30 menschliche Klone geschaffen zu haben. Aus einem von ihnen hatten sie angeblich eine Stammzell-Linie gewonnen. Ein Jahr darauf folgte der nächste Durchbruch: Sie verkündeten, dass sie sogar maßgeschneiderte Stammzellen für Patienten aus Hautzellen gewonnen hätten. Schon bald, so hieß es, sollte es möglich sein, Ersatzgewebe für Kranke zu züchten. Alles erfunden, gefälscht, manipuliert – das ergab im Januar die Untersuchung einer Kommission der Seoul National University. Nur der Klonhund Snuppy, den Hwang im August 2005 im Fachjournal
+      <em>Nature</em>
+      präsentiert hatte, sei echt.
+    </p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext mit Einzug">
+      Vor wenigen Tagen gab nun die University of Pittsburgh ein Gutachten über jenen Mann heraus, der den Machenschaften des Koreaners die nötige Glaubwürdigkeit verlieh. Der angesehene Reproduktionsmediziner Gerald Schatten soll im Hintergrund die Fäden gezogen, durch seinen Einfluss die Publikation von Hwangs Arbeit in
+      <em>Science</em>
+      erst ermöglicht haben. Bei der jüngsten Studie des Koreaners wird Schatten sogar als Senior-Autor geführt.
+    </p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext mit Einzug">Der Abschlussbericht jedoch kommt fast einem Freispruch gleich – Schatten habe weder wissentlich gefälscht noch nachweislich von Hwangs Täuschungen gewusst. Allerdings hätte er misstrauisch werden sollen. »Wir glauben, dass Schatten nicht nur einem Kollegen helfen wollte, den er bewunderte«, schreibt die Untersuchungskommission; er habe sich vielmehr von dem Durchbruch des Koreaners auch selbst Ruhm und Ansehen erhofft.</p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext mit Einzug">
+      Als im November 2005 erste Ungereimtheiten bei der Eizellgewinnung aufgedeckt wurden, nutzte Schatten die Gelegenheit, sich von Hwangs Arbeit zu distanzieren. Er beendete abrupt jegliche Zusammenarbeit mit den Koreanern, wollte sogar seinen Namen aus der Autorenliste der
+      <em>Science-</em>
+      Publikation löschen lassen.
+    </p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext mit Einzug">Doch damit nicht genug. Stetig wird das Lügennetz größer, in dem sich Hwang und seine Kollegen verfangen haben. Hatte der Klonforscher im vergangenen Herbst noch behauptet, keine der Eizellspenderinnen sei für ihre Gabe entlohnt worden, zeigt sich nun, dass mindestens 66 der 119 Frauen Geld erhielten. Außerdem wurden statt der angegebenen 427 Eizellen 2221 Eizellen verbraucht. Und wenigstens 15 Spenderinnen erkrankten an einem ovariellen Überstimulationssyndrom – einer gefürchteten Folge der hormonellen Stimulation vor der Eizell-Entnahme, die von leichter Übelkeit bis zu schweren Nieren- und Leberschäden reichen kann.</p>
+    <p font-size="10.5" qstyle="@&gt;  Grundtext mit Einzug">
+      Hwang behauptet auch, ihm sei »entfallen«, was mit den 2,6 Millionen Dollar geschehen ist, die aus staatlichen und privaten Fördermitteln auf seine Privatkonten flossen. Zwei Koautoren der letzten
+      <em>Science-</em>
+      Studie gaben zu, dass sie im vergangenen Herbst insgesamt 50000 Dollar erhielten. Damit kann der einst gefeierte Superstar wohl endgültig seine Karriere begraben.
+    </p>
+  </body>
+  <teaser>
+    <title>Amerikanisches Klonopfer</title>
+    <text>Der US-Mediziner Gerald Schatten hat maßgeblich am beispiellosen Forschungsbetrug des Koreaners Hwang mitgewirkt - doch seine Universität in Pittsburgh spricht ihn frei von Schuld</text>
+  </teaser>
+  <indexteaser>
+    <title>Schuldlos à la USA</title>
+    <text>Der Helfer des Klonbetrügers Hwang bleibt ungeschoren</text>
+    <text_length>53</text_length>
+    <title_length>18</title_length>
+  </indexteaser>
+</article>
+

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article>
+  <head>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="new_comments">1</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/workflow" name="revision">43</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="jobname">Argument-Banken</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/print" name="ressort">Wirtschaft</attribute>
+    <references>
+      <reference type="intern" href="http://xml.zeit.de/themen/wirtschaft/maerkte/marktturbulenzen/index" year="2008" issue="">
+        <title>Börse</title>
+        <description>Die Turbulenzen der Finanzmärkte - ein Schwerpunkt</description>
+      </reference>
+    </references>
+    <image base-id="http://xml.zeit.de/bilder/2008/09/wirtschaft/finanzmaerkte/bayern-lb/" type="jpg" expires="2100-01-01" src="http://xml.zeit.de/bilder/2008/09/wirtschaft/finanzmaerkte/bayern-lb/bayern-lb-120x120.jpg" align="right">
+      <bu>Zentrale der BayernLB in München</bu>
+      <copyright>© Johannes Simon/Getty Images</copyright>
+      BILD
+    </image>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="artbox_info">/themen/wirtschaft/unternehmen/info-bayernlb</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="author">Mark Schieritz</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="banner">yes</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="comment-id">/cms/work/2008/09/Argument-Banken</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="comments">1</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="copyrights">DIE ZEIT, 21.02.2008 Nr. 09</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="date-last-modified">2008-02-26T11:09Z</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="keywords">Wirtschaft;wirtschaftspolitik;Finanzen;Geld_und_Boerse;bank</attribute>
+    <keywordset>
+      <keyword source="manual">Wirtschaft</keyword>
+      <keyword source="manual">wirtschaftspolitik</keyword>
+      <keyword source="manual">Finanzen</keyword>
+      <keyword source="manual">Geld_und_Boerse</keyword>
+      <keyword source="manual">bank</keyword>
+    </keywordset>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="leftcol_ressort">no</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="mostread">yes</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="page">30</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="paragraphsperpage">6</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="ressort">Wirtschaft</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="sub_ressort">Wirtschaftspolitik</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="text-length">6518</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="topic">Wirtschaft</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="volume">09</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="year">2008</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/workflow" name="DailyNL">no</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/workflow" name="status">OK</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="title">Der Staat tut dem Finanzmarkt gut</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/workflow" name="last-modified-by">endres</attribute>
+    <attribute ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">2008-02-21T12:00:00Z</attribute>
+  </head>
+  <body>
+    <supertitle>Finanzkrise</supertitle>
+    <title>Der Staat tut dem Finanzmarkt gut</title>
+    <subtitle>Viele öffentliche Banken haben versagt. Nach IKB, SachsenLB und WestLB könnte das nun auch der BayernLB ihre Selbstständigkeit kosten. Doch Bund und Länder dürfen sich deshalb nicht zurückziehen.</subtitle>
+    <byline>Von Mark Schieritz</byline>
+    <p>Ist der Beruf des Finanzministers schon unter normalen Umständen kaum vergnügungssteuerpflichtig, so rechtfertigt er in diesen Tagen beinahe eine Schmerzzulage. Peer Steinbrück gibt mehr als eine Milliarde Euro Steuergeld aus, um die marode IKB zu retten, die Landesbanken offenbaren neue Löcher in ihren Bilanzen, und die britische Regierung verstaatlicht die Hypothekenbank Northern Rock. Die öffentliche Empörung ist verständlich – schließlich muss der Steuerzahler einspringen, wo sich Bankmanager verzockt haben. Und dennoch verkennt das Problem, wer jetzt pauschal einen Rückzug der öffentlichen Hand aus dem Kreditsektor fordert. Der Staat muss eingreifen. Nicht nur in Notfällen.</p>
+    <p>Zugegeben, die IKB ist eine vergleichsweise kleine Bank und verfügt nicht über Spareinlagen, die bei einer Pleite gefährdet wären. Ein Konkurs muss damit nicht zwingend das gesamte deutsche Finanzsystem ins Wanken bringen. Aber niemand weiß, wie Firmen und Verbraucher tatsächlich reagieren, wenn plötzlich die Nachricht einer spektakulären Bankpleite in Deutschland die Runde macht. Allein das Risiko, dass sie in Panik verfallen und ihre Konten plündern, rechtfertigt die staatliche Rettungsaktion. Banken sind so etwas wie die Arterien einer modernen Ökonomie, sie gewährleisten die Versorgung mit Kredit. Eine generelle Vertrauenskrise im Finanzsektor ist der größte anzunehmende volkswirtschaftliche Unfall.</p>
+    <p>Die Schieflage der Danat-Bank im Jahr 1931 ist ein gutes Beispiel. Die Reichsbank versagte damals ihre Hilfe, vor den Geldhäusern bildeten sich Schlangen. Die Ereignisse haben sich in das institutionelle Gedächtnis der Bundesbank eingebrannt. Die Behörden werden den Zusammenbruch eines Geldhauses in Krisenzeiten deshalb nicht dulden. Das gilt – und das wird von den Vertretern der Privatbanken verschwiegen – nicht nur für staatliche Institute. Auch die Deutsche Bank oder die Commerzbank würden mit Steuergeldern gerettet werden. Eine vorübergehende Nationalisierung mag an sozialistische Irrwege vergangener Dekaden erinnern, sie kann aber im Kontext einer Hilfsaktion sinnvoll sein. Zum Beispiel wenn sich kein geeigneter Investor findet und eine reine Geldspritze vom Staat die Gefahr birgt, dass sich die Aktionäre daran bereichern, während die Sanierung nicht vorankommt.</p>
+    <p>Das ändert nichts daran: Wenn der Staat auf irgendeine Weise für Banken geradesteht, streichen Aktionäre und Manager in guten Zeiten Gewinne ein, während ein Teil der Verluste sozialisiert wird. Das ist aber der Preis, den ein Gemeinwesen für ein modernes Finanzsystem mit seinen gesamtwirtschaftlichen Vorteilen bezahlen muss. Zur Tauschwirtschaft will ja auch niemand mehr zurück.</p>
+    <p>Der Staat muss im Gegenzug die Finanzindustrie stärker regulieren als andere Branchen, um die schlimmsten Auswüchse zu verhindern. Deshalb zielen Vorschläge in die richtige Richtung, wonach die Banken dazu gezwungen werden sollen, mehr Eigenkapital zurückzulegen. Sie müssen dann für Risiken vorsorgen und können weniger Geld an ihre Anteilseigner ausschütten. Krisen völlig verhindern wird dies nicht.</p>
+    <p>Weil die öffentliche Hand im Notfall für alle Geldinstitute geradesteht, wäre es voreilig, die Zockerei der Landesbanken mit staatlicher Rückendeckung zu erklären. Dass diese Institute so weit und so blind ins Risiko gegangen sind, hat wenig damit zu tun, dass der Staat Anteile hält – sondern damit, dass die meisten Institute kein vernünftiges Geschäftsmodell mehr haben, seit die EU zu Recht ihre Privilegien zusammengestrichen hat. Die Spekulation am Kapitalmarkt war oft der einzige Weg, Geld zu verdienen.</p>
+    <p>Tatsächlich haben die mit Vertretern des Staates besetzten Aufsichtsgremien die Risiken nicht erkannt. Aber auch die Kontrollgremien privater Institute wie der Citigroup – darin die Wall-Street-Legende Robert Rubin – waren blind für die Gefahr. Und anders als Peer Steinbrück oder sein bayerischer Kollege Erwin Huber kann Rubin nicht abgewählt werden, wenn die Citigroup Steuergeld benötigt. Und die Manager sind weg. Der Chef der IKB musste gehen, ebenso wie die Vorstandsvorsitzenden der WestLB und jetzt der BayernLB.</p>
+    <p>Das bedeutet nicht, dass das gesamte Bankensystem unter staatliche Kontrolle gehört. Im Gegenteil: Der Staat braucht die IKB nicht. Er braucht auch keine elf Landesbanken. Wenn diese noch eine Existenzberechtigung haben, dann als Dienstleister für die Sparkassen, die zu klein sind, um ihren Kunden selbst den Zugang zum internationalen Markt zu bieten. Dazu reicht aber ein Institut. Gut, dass derzeit zwischen fast allen Landesbanken Fusionsgespräche geführt werden.</p>
+    <p>Falsch wäre es, die Krise zum Anlass zu nehmen, die öffentliche Hand aus dem Finanzsystem zu verbannen. Die Frage nach Staat oder Markt lässt sich nicht kategorisch beantworten, es kommt auf die Aufgabe an. Marktkräfte sollen bestimmen, welche unternehmerischen Ideen es verdienen, mit Kapital unterstützt zu werden. Das lenkt Mittel in produktive Sektoren. Doch am Markt geht nicht alles rational zu. Moden bestimmen das Geschäftsgebaren. Private Banken haben zuletzt auch eine ganze Menge Unsinn finanziert – eine gewaltige Blase im IT-Sektor etwa oder am Immobilienmarkt.</p>
+    <p>Gerade weil im Finanzsektor Weichen für die Volkswirtschaft gestellt werden, sind öffentliche Banken eine wichtige Ergänzung. Die Sparkassen sind dem Gemeinwohl verpflichtet. Sie können deshalb auch an abgelegenen Orten Finanzdienstleistungen bereitstellen und sich bevorzugt um kleine und mittelständische Unternehmen kümmern.</p>
+    <p>Viele dieser Geschäfte würden sich für private Banken nicht rechnen. Sie sind dennoch sinnvoll – wenn es sich etwa um gesellschaftlich erwünschte staatliche Daseinsfürsorge handelt oder wenn die gesamtwirtschaftlichen Nebenwirkungen eines Kredits positiv sind, also wenn etwa Arbeitsplätze geschaffen werden. Auch dass sich der Bund mit der KfW eine Bank hält, um politisch erwünschte Projekte zum Beispiel im Klimaschutz zu finanzieren zu können, ist richtig.</p>
+    <p>Dass die Privatbanken am liebsten den Finanzsektor unter sich aufteilen würden, liegt auf der Hand. Doch ihre Klagen über die vermeintlich ruinöse Konkurrenz entbehren angesichts der Milliardengewinne der vergangenen Jahre jeder Grundlage. Wenn der Staat das Richtige tut, funktioniert der Finanzmarkt mit ihm besser als ohne ihn.</p>
+  </body>
+  <indexteaser>
+    <text>Der Staat darf sich nicht zurückziehen</text>
+    <title>Finanzkrise</title>
+  </indexteaser>
+  <teaser>
+    <text>Viele öffentliche Banken haben versagt. Nach IKB, SachsenLB und WestLB könnte das nun auch der BayernLB ihre Selbstständigkeit kosten. Doch Bund und Länder dürfen sich deshalb nicht zurückziehen.</text>
+    <title>Der Staat tut dem Finanzmarkt gut</title>
+  </teaser>
+</article>
+
