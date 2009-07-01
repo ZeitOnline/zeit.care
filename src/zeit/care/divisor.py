@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
 import os
+import sys
 import StringIO
 from lxml import etree
+import zeit.care.crawl
+import zeit.connector.connector
+from zeit.connector.resource import Resource
+import zope.authentication.interfaces
 
 _DAV_PROP_NAME_ = ('file-name', 'http://namespaces.zeit.de/CMS/document')
 _PARAMS_PER_PAGE_ = 5
@@ -45,6 +50,8 @@ class Converter(object):
         # only articles
         if not tree.xpath('//article'):
             return self.xml
+        elif tree.xpath('//body/division'):
+            return self.xml
 
         paras_per_page = self._get_params_per_page(tree)                    
         div_list = []
@@ -79,13 +86,17 @@ class Converter(object):
 def division_worker(resource, connector):
     if resource.type == "article":
         new_xml = Converter(resource.data.read()).convert()
-        resource.data = StringIO.StringIO(new_xml)
-        connector[resource.id] = resource
+        new_resource = Resource(resource.id, 
+            resource.__name__, 
+            resource.type, 
+            StringIO.StringIO(new_xml), 
+            resource.properties, 
+            resource.contentType)
+        connector[resource.id] = new_resource
 
 
 def dev_main():
     import zeit.connector.mock
-    from zeit.connector.resource import Resource
 
     connector = zeit.connector.mock.Connector()
     coll_path = 'http://xml.zeit.de/testdocs/'
@@ -107,3 +118,16 @@ def dev_main():
         connector.add(res)
         division_worker(connector[res.id], connector)
         print connector[res.id].data.read()
+
+def main():
+
+    if len(sys.argv) < 3:
+        sys.exit('parameters missing')
+
+    webdav_uri = sys.argv[1]
+    start_container = sys.argv[2]
+    connector = zeit.connector.connector.Connector(roots=dict(
+        default=webdav_uri))
+
+    crawler = zeit.care.crawl.Crawler(connector, division_worker)
+    crawler.run(start_container)
