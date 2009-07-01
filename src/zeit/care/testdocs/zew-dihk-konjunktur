@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<article xmlns:py="http://codespeak.net/lxml/objectify/pytype">
+  <head>
+    <keywordset>
+      <keyword py:pytype="str" source="manual">konjunktur</keyword>
+      <keyword py:pytype="str" source="manual">Wirtschaft_und_Konjunktur</keyword>
+      <keyword py:pytype="str" source="manual">arbeitslosigkeit</keyword>
+    </keywordset>
+    <references>
+      <reference xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="intern" href="http://xml.zeit.de/themen/wirtschaft/finanzkrise/index" publication-date="" expires="" year="2009">
+        <supertitle py:pytype="str">Finanzkrise</supertitle>
+        <title py:pytype="str">Wirtschaftskrise - Das Vertrauen ist weg</title>
+        <text py:pytype="str">Die Weltwirtschaft taumelt. Helfen Konjunkturprogramme? Was sind die Ursachen für die Krise? Ein Schwerpunkt</text>
+        <description py:pytype="str">Die Weltwirtschaft taumelt. Helfen Konjunkturprogramme? Was sind die Ursachen für die Krise? Ein Schwerpunkt</description>
+        <byline xsi:nil="true"/>
+        <short>
+          <title py:pytype="str">Finanzkrise</title>
+          <text py:pytype="str">Das Vertrauen ist weg. Ein Schwerpunkt</text>
+        </short>
+        <homepage>
+          <title py:pytype="str">Das Vertrauen ist weg</title>
+          <text py:pytype="str">Von der Finanz- zur Wirtschaftskrise. Schwerpunkt</text>
+        </homepage>
+        <image alt="Das Vertrauen ist weg - Ein Schwerpunkt zur Finanzkrise" align="left" base-id="http://xml.zeit.de/bilder/2008/standards/wirtschaft/finanzmaerkte/boersenchaos/" type="jpg" publication-date="" expires="">
+          <bu>Das Vertrauen ist weg - Ein Schwerpunkt zur Finanzkrise</bu>
+          <copyright py:pytype="str">©  </copyright>
+        </image>
+      </reference>
+    </references>
+    <image xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" align="left" base-id="http://xml.zeit.de/bilder/2009/25/wirtschaft/konjunktur-zew/" type="jpg" publication-date="" expires="">
+      <bu>Die Stimmung in der deutschen Wirtschaft hellt sich auf</bu>
+      <copyright py:pytype="str">© Getty Images</copyright>
+    </image>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="DailyNL">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="artbox_thema">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="author">pfa</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="banner">yes</attribute>
+    <attribute ns="INTERNAL" name="cached-time">2009-06-16 15:29:31.200522+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="comments">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="copyrights">ZEIT ONLINE</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="corrected">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date-last-modified">2009-06-16T15:29:31.312801+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">2009-06-16T11:29:32.427441+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="date_last_published">2009-06-16T15:30:31.037499+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="edited">yes</attribute>
+    <attribute py:pytype="str" ns="http://apache.org/dav/props/" name="executable">F</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="has_recensions">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="images_added">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last-semantic-change">2009-06-16T15:26:42.949193+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last_modified_by">ldap.bartsch</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="mostread">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="paragraphsperpage">7</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="published">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="refined">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="ressort">Wirtschaft</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="status">OK</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="text-length">2309</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/meta" name="type">article</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="urgent">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="uuid">{urn:uuid:6f6db17d-6167-415e-b209-e6f3c9d4d115}</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="volume">25</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="was_automatically_syndicated_into"></attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="year">2009</attribute>
+  </head>
+  <body>
+    <supertitle py:pytype="str">Prognose</supertitle>
+    <title>Forscher erwarten deutliche Erholung der Konjunktur</title>
+    <subtitle>Die Stimmung von Analysten und Investoren hat sich erneut verbessert, meldet das Forschungsinstitut ZEW. Auch andere Experten sehen Grund für Optimismus
+</subtitle>
+    <p>Die Stimmung deutscher Finanzexperten hat sich im Juni deutlich aufgehellt: Die ZEW-Konjunkturerwartungen seien um 13,7 Punkte auf 44,8 Punkte gestiegen, teilte das Zentrum für Europäische Wirtschaftsforschung (ZEW) am Dienstag mit. Der Index stieg zum achten Mal in Folge. Das zeige, dass sich der Optimismus in der Wirtschaft verstärke, hieß es beim ZEW.</p>
+    <p>Für den Konjunkturindex befragt das Institut jeden Monat etwa 300 professionelle Anleger und Analysten. Seit November 2008 verbessert sich demnach die Laune in der deutschen Wirtschaft. "Die Einschätzungen der Experten deuten darauf hin, dass die Abwärtsdynamik in diesen Wochen zum Stillstand kommt, und sie sehen Erholungstendenzen zum Ende des Jahres", sagte ZEW-Präsident Wolfgang Franz.</p>
+    <p>Ähnlich optimistisch äußerte sich der Hauptgeschäftsführer des Deutschen Industrie- und Handelskammertags (DIHK), Martin Wansleben. Die deutsche Wirtschaft steuere auf eine Trendwende zu. Die Geschäftserwartungen der Mitgliedsunternehmen hellten sich erstmals seit zehn Jahren wieder auf. Vor allem in der Industrie verbesserten sich die Erwartungen an künftige Geschäfte. "Endlich besteht die Chance, dass sich die Wirtschaft aus der Schockstarre löst", teilte der Verband mit.</p>
+    <p>Der DIHK geht in diesem Jahr von einem Einbruch der Wirtschaftsleistung um sechs Prozent aus. Das werde auch den Arbeitsmarkt hart treffen. Unter dem Strich rechnet der Verband in diesem Jahr mit durchschnittlich 3,7 Millionen Arbeitslosen. Bis zum Jahresende soll die Zahl der Menschen ohne Arbeit auf vier Millionen anwachsen.</p>
+    <p>Von Wirtschaftsminister Karl-Theodor zu Guttenberg waren ebenfalls positive Worte zu hören. Er erwartet keinen weiteren drastischen Abschwung mehr in der deutschen Wirtschaft. "Eine gewisse Talsohle ist erreicht", sagte er am Dienstag auf einer Veranstaltung in Berlin. Das schließe aber nicht aus, dass es noch "den einen oder anderen Hügel" geben werde. Er bekräftigte die Prognose der Regierung, dass die Arbeitslosenzahl im nächsten Jahr in der Spitze auf 4,6 Millionen steigen wird – aber bei dieser Spitze werde es auch bleiben, sagte er.</p>
+  </body>
+  <teaser>
+    <title py:pytype="str">Forscher erwarten deutliche Erholung der Konjunktur</title>
+    <text py:pytype="str">Die Stimmung von Analysten und Investoren hat sich erneut verbessert, meldet das Forschungsinstitut ZEW. Auch andere Experten sehen Grund für Optimismus
+</text>
+  </teaser>
+  <indexteaser>
+    <title py:pytype="str">Prognose</title>
+    <text py:pytype="str">Forscher erwarten deutliche Erholung</text>
+  </indexteaser>
+</article>

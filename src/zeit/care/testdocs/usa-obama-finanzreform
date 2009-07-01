@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns:py="http://codespeak.net/lxml/objectify/pytype">
+  <head>
+    <keywordset>
+      <keyword py:pytype="str" source="manual">usa</keyword>
+      <keyword py:pytype="str" source="manual">obama-barack</keyword>
+      <keyword py:pytype="str" source="manual">finanzmarkt</keyword>
+      <keyword py:pytype="str" source="manual">finanzkrise</keyword>
+    </keywordset>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="DailyNL">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="artbox_thema">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="author">sp</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="banner">yes</attribute>
+    <attribute ns="INTERNAL" name="cached-time">2009-06-16 10:41:30.871799+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="comments">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="copyrights">ZEIT ONLINE, sp, dpa</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="corrected">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date-last-modified">2009-06-16T10:41:30.926840+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">2009-06-16T10:42:30.523459+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="date_last_published">2009-06-16T10:42:30.523459+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="edited">no</attribute>
+    <attribute py:pytype="str" ns="http://apache.org/dav/props/" name="executable">F</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="has_recensions">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="images_added">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last-semantic-change">2009-06-16T10:34:35.934793+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last_modified_by">ldap.papies</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="mostread">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="paragraphsperpage">7</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="published">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="refined">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="ressort">Wirtschaft</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="serie">News</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="status">OK</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="text-length">3021</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/meta" name="type">article</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="urgent">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="uuid">{urn:uuid:3a58c85d-1118-4de5-a0f0-667ec80e01bb}</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="volume">25</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="was_automatically_syndicated_into">http://xml.zeit.de/hp_channels/channel_news_auto</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="year">2009</attribute>
+  </head>
+  <body>
+    <supertitle py:pytype="str">Obamas Pläne</supertitle>
+    <title>Mehr Macht für die Notenbank</title>
+    <subtitle>Künftig sollen die mächtigsten Finanzmarkt-Akteure von der Fed überwacht werden. Am Mittwoch will Präsident Obama seine Pläne vorstellen. Kritik regt sich schon jetzt</subtitle>
+    <p>Es soll der große Wurf werden, die umfassendste Finanzreform, die Amerika seit 70 Jahren erlebt hat. Die Regierung will die Finanzaufsicht komplett umbauen, fast jeder Winkel der Bankenwelt wird davon berührt. Eine zentrale Idee ist, die Notenbank Federal Reserve zur Wächterin über die mächtigsten Finanzinstitutionen zu machen. Zugleich müssen diese strengere Regeln hinsichtlich ihrer Kapitalausstattung und Liquidität erfüllen.</p>
+    <p>Parallel zur Notenbank soll ein "Rat der Regulierungsbehörden" gegründet werden. Durch eine neue Aufsichtsbehörde will Washington zudem Durchschnittsbürger und Investoren stärker vor den Risiken der Finanzwelt schützen. Schließlich sollen Unternehmen, deren Zusammenbruch weite Teile der Wirtschaft mit in den Abgrund reißen könnte, im Krisenfall geordnet abwickeln werden können.</p>
+    <p>
+      "Der Rahmen unserer Finanzregulierung ist übersät mit Lücken, Schwächen und sich überschneidenden Zuständigkeiten und sie leidet unter einem veralteten Verständnis von Risiko", schrieben Finanzminister Timothy Geithner und Obamas Wirtschafts-Spitzenberater Larry Summers in der
+      <em>Washington Post</em>
+      . Weil immer mehr und immer schneller neue Finanzprodukte aufgelegt worden seien, habe die Aufsicht nicht mehr Schritt halten können. Das soll sich nun ändern.
+    </p>
+    <p>
+      Die Ausgabe von Kreditverbriefungen soll stärker kontrolliert werden, ebenso der Derivate-Markt. Hedge Fonds müssen sich registrieren lassen und rücken von einer bestimmten Größe an ins Visier der Behörden. Exotische Finanzinstrumente sollen transparenter werden. Und es soll Schluss sein mit hochriskanten, kreditfinanzierten Zockereien, die großen Schaden anrichten, wenn sie schief gehen.
+      <br />
+      <br />
+      Noch bevor die Pläne offiziell auf dem Tisch liegen, wird erste Kritik laut. Das
+      <em>Wall Street Journal</em>
+      bemängelt, es sei noch unklar, mit welchen Instrumenten die Fed ihre neue Macht gegen Finanzfirmen durchsetzen soll. Die Entwirrung der Aufsichtsbehörden geht dem Blatt nicht weit genug.
+    </p>
+    <p>Härter fällt das Urteil des früheren Chefvolkswirtes des Internationalen Währungsfonds, Simon Johnson, in Reaktion auf den Aufsatz von Geithner und Summers aus: "Die Auslassungen in diesem Dokument sind atemberaubend." Weder stehe dort etwas über die Entlohnungspraxis in der Branche, noch darüber, dass der totale Zusammenbruch einer Unternehmensführung in Großbanken zu exzessiver Risikobereitschaft führte. "Alles in allem gibt es hier keine Überraschungen", meint Johnson, derzeit Wirtschaftsprofessor an der MIT Sloan School of Management. "Stein für Stein bauen wir an dem Fundament der nächsten Finanzkrise", die noch heftiger ausfallen dürfte als die derzeitige. "Aber dann sind die Autoren vermutlich nicht mehr im Amt."</p>
+    <p>Auch im Kongress wird Obamas Reform nicht nur auf Freunde stoßen. Manchen Abgeordneten ist die Machtfülle der US-Notenbank schon jetzt zu groß.</p>
+  </body>
+  <teaser>
+    <title py:pytype="str">Mehr Macht für die Notenbank</title>
+    <text py:pytype="str">Künftig sollen die mächtigsten Finanzmarkt-Akteure von der Fed überwacht werden. Am Mittwoch will Präsident Obama seine Pläne vorstellen. Kritik regt sich schon jetzt</text>
+  </teaser>
+  <indexteaser>
+    <title py:pytype="str">Obamas Pläne</title>
+    <text py:pytype="str">Mehr Macht für die Notenbank</text>
+  </indexteaser>
+</article>
+

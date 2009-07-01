@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns:py="http://codespeak.net/lxml/objectify/pytype">
+  <head>
+    <image xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" align="left" title="Friedrich Klumpp" base-id="http://xml.zeit.de/bilder/2009/25/reisen/wanderkoch/" type="jpg" publication-date="" expires="">
+      <bu>Rauschbeeren sind Heidelbeeren ähnlich, schmecken aber nicht ganz so gut - dies und vieles mehr bringt "Wanderkoch" Friedrich Klumpp interessierten Wanderern bei</bu>
+      <copyright py:pytype="str" link="http://www.bcmpress.com">© Birgit-Cathrin Duval</copyright>
+    </image>
+    <references>
+      <reference xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="intern" href="http://xml.zeit.de/2007/50/Baiersbronn" publication-date="" expires="" year="2007" issue="50">
+        <supertitle py:pytype="str">Deutschland</supertitle>
+        <title py:pytype="str">7 Sterne für die Männer vom Sägewerk</title>
+        <text py:pytype="str">Wie ein Holzarbeiterort im Schwarzwald zu  Weltruhm kam. Ein Spaziergang durch die  Küchen von Baiersbronn</text>
+        <description py:pytype="str">Wie ein Holzarbeiterort im Schwarzwald zu  Weltruhm kam. Ein Spaziergang durch die  Küchen von Baiersbronn</description>
+        <byline py:pytype="str">Von Johannes Schweikle</byline>
+        <short>
+          <title py:pytype="str">Deutschland</title>
+          <text py:pytype="str">7 Sterne für die Männer vom Sägewerk</text>
+        </short>
+        <homepage>
+          <title xsi:nil="true" />
+          <text xsi:nil="true" />
+        </homepage>
+        <image base-id="http://xml.zeit.de/bilder/2007/50/leben/reisen/p-schwarzwald/" type="jpg" publication-date="" expires="">
+          <bu xsi:nil="true" />
+          <copyright py:pytype="str">©</copyright>
+        </image>
+      </reference>
+      <reference xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="intern" href="http://xml.zeit.de/2008/37/Siebeck-37" publication-date="2008-09-04T03:35:38+00:00" expires="" year="2008" issue="37">
+        <supertitle py:pytype="str">Siebeck</supertitle>
+        <title py:pytype="str">Behagliches Gesamtkunstwerk</title>
+        <text py:pytype="str">In Baiersbronn zeigt Claus-Peter Lumpp, wie Verfeinerung in der Kochkunst aussehen kann. Er kommt ganz ohne modische Mätzchen aus.</text>
+        <description py:pytype="str">In Baiersbronn zeigt Claus-Peter Lumpp, wie Verfeinerung in der Kochkunst aussehen kann. Er kommt ganz ohne modische Mätzchen aus.</description>
+        <byline py:pytype="str">Von Wolfram Siebeck</byline>
+        <short>
+          <title py:pytype="str">Siebeck</title>
+          <text py:pytype="str">Der Drei-Sterne-Koch Claus-Peter Lumpp</text>
+        </short>
+        <homepage>
+          <title xsi:nil="true" />
+          <text xsi:nil="true" />
+        </homepage>
+        <image align="left" base-id="http://xml.zeit.de/bilder/2008/37/leben/zeit-magazin-leben/p-siebeck/" type="jpg" publication-date="" expires="2008-10-03T10:36:55+00:00">
+          <bu>Weißer Heilbutt, wie ihn der Dreisternekoch Claus-Peter Lumpp 
+in Baiersbronn serviert: Mit Frühlings­morcheln und Sherryschaum</bu>
+          <copyright py:pytype="str" link="http://www.jankornstaedt.com">© Jan Kornstedt</copyright>
+        </image>
+      </reference>
+    </references>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="DailyNL">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="artbox_thema">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="author">Birgit-Cathrin Duval</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="banner">yes</attribute>
+    <attribute ns="INTERNAL" name="cached-time">2009-06-13 09:44:31.043853+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="comments">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="copyrights">ZEIT ONLINE</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="corrected">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date-last-modified">2009-06-13T09:44:31.462040+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">2009-06-13T09:45:30.784583+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="date_last_published">2009-06-13T09:45:30.784583+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="edited">yes</attribute>
+    <attribute py:pytype="str" ns="http://apache.org/dav/props/" name="executable">F</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="has_recensions">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="images_added">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last-semantic-change">2009-06-10T09:47:05.113896+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last_modified_by">ldap.schweizer</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="mostread">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="paragraphsperpage">7</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="published">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="refined">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="ressort">Reisen</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="status">OK</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="text-length">8438</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/meta" name="type">article</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="urgent">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="uuid">{urn:uuid:afab19e7-3e8f-417c-98d5-957d8ef4ad82}</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="volume">25</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="was_automatically_syndicated_into" />
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="year">2009</attribute>
+  </head>
+  <body>
+    <supertitle py:pytype="str">Schwarzwald</supertitle>
+    <byline py:pytype="str">Von Birgit-Cathrin Duval</byline>
+    <title>Ein Tischlein steht im Walde</title>
+    <subtitle>In Baiersbronn lässt sich vorzüglich speisen – und wandern. Wer beides kombinieren und dazu etwas über die Zutaten lernen möchte, kann sich Profikoch Friedrich Klumpp anschließen</subtitle>
+    <p>Friedrich Klumpp hat Lampenfieber. Denn heute meint es der Himmel nicht gut. Graue Wolken hängen wie Grabsteine vom Himmel. "Für die erste Schlemmerwanderung hatte ich mir einen schöneren Start gewünscht", sagt der Gastwirt und Koch. Die 20 Gäste sind jedoch mit bunten Goretex-Jacken, Regenschirmen und  Wanderschuhen bestens gerüstet und entschlossen, dem Wetter zu trotzen.</p>
+    <p>In Baiersbronn spielt der Himmel eine große Rolle. Sieben Michelin-Sterne glänzen über dem Städtchen und seinen zehn Ortsteilen im nördlichen Schwarzwald. Nirgends sonst in Deutschland ist die Sterneköchedichte so hoch. Darauf darf man sich einiges einbilden. Die Urlaubsbroschüre protzt: "Mehr Schwarzwald gibt’s nirgends" lautet das Motto. Neben der Gastronomie wartet der Ort mit dem "Baiersbronner Wanderhimmel" auf. Die – nach Stuttgart flächenmäßig größte Gemeinde in Baden-Württemberg – ist stolz auf  ihr 550 Kilometer umfassendes Wanderwegenetz. Und da Wandern bekanntlich hungrig macht, liegt es auf der Hand, Wandern und Schlemmen miteinander zu verbinden.</p>
+    <p>Hotelier Klumpp bietet seinen Gästen deshalb mehr als gutes Essen. Er schnürt sogar mit ihnen die Wanderschuhe. Vor einer Woche noch war er fünf Tage auf der 66 Kilometer langen "Murgleiter" unterwegs. Heute soll es gemütlicher werden: Nur sieben Kilometer sind eingeplant. Das soll vier Stunden dauern. Schnuppern, Schlemmern, Staunen inklusive. Eins stellt Klumpp von Anfang an klar: "Wir machen keinen Kochkurs im Wald." Jeder Gang wird Stück für Stück erwandert, das Essen aber fährt auf Rädern vor und das Tischlein steht gedeckt im Walde, wenn die Hungrigen eintreffen. </p>
+    <p>Kaum sind die ersten Meter zurückgelegt, zupft Friedrich Klumpp bereits erstes Grünzeug vom Wegesrand. Und nach zehn Minuten ist klar, weshalb sich das Ganze Schlemmerwanderung nennt. Auf dem Parkplatz Höferköpfle angekommen, öffnet sich ein Panoramablick auf Baiersbronn, der einer kitschigen Postkarte entstammen könnte – wäre denn das Wetter besser. Das Essen wartet bereits mit dem ersten Tischlein-Deck-Dich vor Ort. Ein Apéro, Sekt mit Holunderblütensaft, wird von Mitarbeiterin Kathrin gereicht. Dazu gibt es das Lieblingskraut des Wanderkochs: frische Brunnenkresse, mit Quark zubereitet,  auf Baguette gestrichen.</p>
+    <p>Nächste Kostprobe, die grüne Ranke vom Ortsrand: "Erst reiben, dann riechen." Manch einer rümpft die Nase. Ein strenger Geruch. Wen wundert’s, das Kraut ist eine Knoblauchrauke. Während Kathrin eifrig Brunnenkressebrötchen serviert und Sekt nachschenkt, gehört die Aufmerksamkeit des Chefs bereits dem Wiesenboden nebenan. "Roter Wiesenklee, Sauerampfer, Frauenmantel, Spitzwegerich, Wiesenschaumkraut", erläutert Klumpp seine Ausbeute.  Auch Löwenzahn ist dabei. Dass einheimische Kräuter fürs Kochen wieder an Bedeutung gewinnen, freut Klumpp, denn es passt zu ihm, dem bodenständigen Schwaben.</p>
+    <p>Es geht weiter. Ein schmaler Pfad führt in den Wald hinein. "In der Küche", berichtet er, "geht es oft so stressig zu." Im Wald findet er seine Mitte. "Das ist Seelenbalsam." Und wieder hat er etwas Grünes in der Hand. "Adlerfarn", erklärt Klumpp und hält ihn in die Runde, so dass jeder von den zartgrünen Knospen probieren kann. Aber nur von den ganz jungen, deren Spitzen noch eingerollt sind. "Nussig, wie Buttermandel.". "Bitter, wie Walnüsse", "Mich erinnert das an Marzipan, wenn man es länger kaut", lauten die Meinungen.</p>
+    <p>Klumpp will experimentieren, ausprobieren. Dafür hat er auch Lehrgeld gezahlt. Einmal bot er auf der Speisekarte Spinat vom Schlangenknöterich an. "Das schmeckte den Gästen überhaupt nicht." Denn auch gekocht bleibt Schlangenknöterich fest im Biss.</p>
+    <p>
+      <image xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" align="left" src="http://xml.zeit.de/bilder/2009/25/reisen/wanderkoch/wanderkoch-artikel-3-210.jpg" type="jpg" publication-date="" expires="">
+        <bu>Semmelknödel mit Rahmpilzsoße schmecken in freier Natur besonders gut</bu>
+        <copyright py:pytype="str" link="http://www.bcmpress.com">© Birgit-Cathrin Duval</copyright>
+      </image>
+      Der Weg führt bergan. Bald blitzt zwischen Tannengrün und Bergbach etwas auf: Das Tischlein mit der weißen Decke. Klumpp schreitet zur Tat: Wildkräuter werden geschnitten und mit Blattsalaten in einer Schüssel mit Himbeerdressing vermengt. Es duftet nach den Zutaten aus der Natur: Schafgarbe, schmalblättriges Veilchenröschen, roter Wiesenklee, Bärwurz, Taubnessel, Giersch, Sauerampfer und Wiesenknopf. "Wir haben da mal was vorbereitet", sagt Klumpp und richtet Semmelknödel in Rahmpilzsauce auf kleinen Tellern an. Inmitten des würzigen Dufts der Tannenwälder und des moosig-nassen Waldbodens schmeckt es vorzüglich.
+    </p>
+    <p>Klumpp erzählt vom Silva Negra, dem schwarzen, finsteren Wald, der den abergläubischen Römern so viel Furcht einjagte. Weil sie dort Hexen, Trolle und Teufel vermuteten. Von den Bären und Wölfen ganz zu schweigen. Und den Kelten, seinen Vorfahren, wie er nicht ganz ohne Stolz vermerkt. Eben noch ganz Koch, wird er zum Waldökologen, wenn er die Speicherfähigkeit des Mooses demonstriert oder eine Rasenbinse knickt und zeigt, sie sich ohne Schaden wieder selbst aufrichtet. Oder weshalb Rehe nur Weißtannen fressen, aber keine Fichten – "zu pieksig".</p>
+    <p>Kaum ist die dritte Schlemmerstation an der Höferköpflehütte auf knapp 700 Metern erreicht, öffnet der Himmel seine Pforten. Zum Glück hat der Gastwirt tags zuvor in weiser Voraussicht einen Pavillon aufgestellt. Der dritte Gang wird serviert: Fleischbällchen mit Vogelbeeren. Vogelbeeren? Einen Augenblick herrscht Irritation in der Gruppe: "Die darf man doch nicht essen, das lernt man schon als Kind." Doch die Beeren der Eberesche sind durchaus essbar und sehr schmackhaft. Frisch vom Baum gepflückt sind sie zwar sauer und bitter und können durch ihren hohen Gehalt an Parasorbinsäure heftige Magenstimmungen verursachen. Das Geheimnis: Abgekocht und eingefroren werden die giftigen Stoffe abgebaut, und nach vier bis sechs Wochen kann man das Mark als Paste verarbeiten. Die Fleischbällchen mit Ebereschenmark werden mit einer Sauce aus Feldthymian verfeinert. Die Gäste kauen zufrieden, Friedrich Klumpp ist glücklich.</p>
+    <p>Am Löchlebrunnen wartet ein deftiges Vesper aus Hirschschinken, Walnussbroten und Preiselbeerbutter. Verziert mit einem Klacks Mädesüß-Schlagsahne. In der französischen Küche weiß man die Pflanze zu schätzen, in der deutschen wird sie bisher kaum verwendet. Bevor es weitergeht, reicht Mitarbeiterin Kathrin Kirschwasser – wie es sich im Schwarzwald eben gehört.</p>
+    <p>Auch Klumpp greift zum Spirituellen – er hält eine kleine meditative Lesung. Schließlich halten nicht nur Essen und Trinken Leib und Seele zusammen. Klumpp ist kein Prediger, kein Mann der lauten Worte. Seine leise und zurückhaltende Art, die Mischung aus Waldökologie, Naturwissen und Küche machen die Exkursion so sympathisch.</p>
+    <p>Der Pfad wird enger, steiler, steiniger. Bevor die Gruppe den Wald verlässt, tischt Friedrich Klumpp einen Kuchen auf. Gemacht aus den Beeren der Pflanze, der wir – unbemerkt – am häufigsten begegnet sind. Die Beeren stammen noch aus dem vorigen Jahr, denn noch ist keine Heidelbeer-Zeit, doch der Kuchen ist so lecker, dass man sich wünscht, die Früchte wären reif.</p>
+    <p>Der Wald lichtet sich und gibt den Blick preis auf die Wiesenlandschaft, die Baiersbronn umsäumt. Noch ein Dessert zum Abschluss. Wie war das noch? Rehe fressen keine Fichten, weil die so stachelig sind? Für die Schlemmerwanderer hat Friedrich Klumpp ein Fichtennadelparfait zubereitet. Die jungen Triebe darauf pieksen überhaupt nicht, sondern sind wunderbar weich. Ein wohliges Gefühl stellt sich ein. Daran kann auch das trübe Wetter nichts ändern.</p>
+    <p>
+      <strong>INFORMATION</strong>
+    </p>
+    <p>
+      Die nächsten Schlemmerwanderungen finden am
+      <strong>19. Juni, 3., 17. und 31. Juli sowie am 7. und 21. August 2009</strong>
+      statt. Treffpunkt ist jeweils um 10 Uhr am Hotel Rosengarten in Baiersbronn. Die Wanderung ist inklusive Speisen und Getränken für 19 Euro über das Büro der Baiersbronn Touristik buchbar.
+      <br />
+      Weitere Informationen im Internet unter
+      <a href="http://www.baiersbronn.de" target="_blank">www.baiersbronn.de</a>
+      <br />
+      <strong>Anmeldung</strong>
+      unter der Telefonnummer 07442/180080 oder per E-Mail an
+      <a href="http://mailto:info@baiersbronn.de">info@baiersbronn.de</a>
+    </p>
+    <p>
+      <strong>Infos über den Schwarzwald</strong>
+      allgemein
+      <br />
+      <a href="http://www.schwarzwald-tourismus.info" target="_blank">www.schwarzwald-tourismus.info</a>
+    </p>
+    <p>
+      <strong>Übernachtung in Baiersbronn:</strong>
+      <br />
+      Hotel Rosengarten (3 Sterne Superior)
+      <br />
+      Tel. 07442 84340
+      <br />
+      <a href="http://www.rosengarten-baiersbronn.de" target="_blank">www.rosengarten-baiersbronn.de</a>
+      <br />
+      Preis: ab 46 Euro pro Nacht und Person inklusive Frühstück
+    </p>
+    <p>
+      Hotel Lamm (4 Sterne)
+      <br />
+      Tel. 07442/4980
+      <br />
+      <a href="http://www.lamm-mitteltal.de" target="_blank">www.lamm-mitteltal.de</a>
+      <br />
+      Preis: ab 42 Euro pro Person
+    </p>
+    <p>
+      Hotel Traube Tonbach (5 Sterne)
+      <br />
+      Tel. 07442-492 0
+      <br />
+      <a href="http://www.traube-tonbach.de" target="_blank">www.traube-tonbach.de</a>
+      <br />
+      Preis: ab 152 Euro pro Nacht und Person
+    </p>
+  </body>
+  <teaser>
+    <title py:pytype="str">Ein Tischlein steht im Walde</title>
+    <text py:pytype="str">In Baiersbronn lässt sich vorzüglich speisen – und wandern. Wer beides kombinieren möchte, kann sich Profikoch Friedrich Klumpp anschließen.</text>
+  </teaser>
+  <indexteaser>
+    <title py:pytype="str">Schwarzwald</title>
+    <text py:pytype="str">Ein Tischlein steht im Walde</text>
+  </indexteaser>
+</article>
+

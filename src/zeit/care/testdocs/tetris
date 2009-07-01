@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<article xmlns:py="http://codespeak.net/lxml/objectify/pytype">
+  <head>
+    <keywordset>
+      <keyword py:pytype="str" source="manual">computer</keyword>
+      <keyword py:pytype="str" source="manual">computerspiel</keyword>
+    </keywordset>
+    <image xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" align="left" title="tetris" base-id="http://xml.zeit.de/bilder/2009/25/digital/tetris/" type="jpg" publication-date="" expires="">
+      <bu>Bis heute ist das Prinzip Tetris lebendig - wie hier, wo sich mit einem Klon des Spiels jemand die Zeit vertreibt, der eigentlich dem Erzbischof von Canterbury lauschen sollte</bu>
+      <copyright py:pytype="str">©Daniel Berehulak/Getty Images</copyright>
+    </image>
+    <references>
+      <reference xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="intern" href="http://xml.zeit.de/1997/08/tetris.txt.19970214.xml" publication-date="" expires="" year="1997" issue="8">
+        <supertitle xsi:nil="true"/>
+        <title py:pytype="str"></title>
+        <text py:pytype="str"></text>
+        <description py:pytype="str"></description>
+        <byline py:pytype="str">Thomas Stratmann</byline>
+        <short>
+          <title xsi:nil="true"/>
+          <text xsi:nil="true"/>
+        </short>
+        <homepage>
+          <title xsi:nil="true"/>
+          <text xsi:nil="true"/>
+        </homepage>
+      </reference>
+      <reference xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="intern" href="http://xml.zeit.de/online/2008/22/independent-games" publication-date="" expires="" year="2008" issue="22">
+        <supertitle py:pytype="str">Computerspiele</supertitle>
+        <title py:pytype="str">Hacken, knacken, besser machen</title>
+        <text py:pytype="str">Independent-Games sind meist Remakes von Spieleklassikern wie Pong oder Tetris. Aber gelegentlich sind sie ästhetisch und inhaltlich auch schon eine Klasse für sich.</text>
+        <description py:pytype="str">Independent-Games sind meist Remakes von Spieleklassikern wie Pong oder Tetris. Aber gelegentlich sind sie ästhetisch und inhaltlich auch schon eine Klasse für sich.</description>
+        <byline py:pytype="str">Frank Magdans</byline>
+        <short>
+          <title py:pytype="str">Plasma Pong</title>
+          <text py:pytype="str">Independent-Games von klassisch bis innovativ</text>
+        </short>
+        <homepage>
+          <title xsi:nil="true"/>
+          <text xsi:nil="true"/>
+        </homepage>
+        <image base-id="http://xml.zeit.de/bilder/2008/22/wissen/computer/game/" type="jpg" publication-date="" expires="">
+          <bu xsi:nil="true"/>
+          <copyright py:pytype="str">©</copyright>
+        </image>
+      </reference>
+    </references>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="DailyNL">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="artbox_thema">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="author">Witold Pryjda</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="banner">yes</attribute>
+    <attribute ns="INTERNAL" name="cached-time">2009-06-11 07:43:02.297968+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="comments">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="copyrights">ZEIT ONLINE</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="corrected">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date-last-modified">2009-06-11T07:43:02.356234+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">2009-06-10T15:18:38.502105+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="date_last_published">2009-06-11T07:44:02.132891+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="edited">yes</attribute>
+    <attribute py:pytype="str" ns="http://apache.org/dav/props/" name="executable">F</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="export_cds">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="first_count">2009-06-10</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="has_recensions">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="images_added">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last-semantic-change">2009-06-10T13:45:30.818244+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="last_count">2009-06-10</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last_modified_by">ldap.kbiermann</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="mostread">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="paragraphsperpage">7</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="published">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="refined">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="ressort">Digital</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="status">OK</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="sub_ressort">Games</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="text-length">4493</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="total_hits">900</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/meta" name="type">article</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="urgent">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="uuid">{urn:uuid:70259cbb-db4f-4323-899c-8e814c817f2c}</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="volume">25</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="was_automatically_syndicated_into"></attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="year">2009</attribute>
+  </head>
+  <body>
+    <supertitle py:pytype="str">Casual Games</supertitle>
+    <byline py:pytype="str">Von Witold Pryjda</byline>
+    <title>Tetris und der Siegeszug der fallenden Steine</title>
+    <subtitle>Ein simples Spiel erblickte vor 25 Jahren das Licht der Bildschirme und wurde ein Sensationserfolg: Tetris. Es war der Ursprung einer ganzen Gattung, der Casual Games</subtitle>
+    <p>Ein Quadrat, mehr benötigte Alexej Paschitnow nicht, um in die Geschichte einzugehen und die Welt der Computerspiele bis heute zu prägen. Doch, halt, eines noch: Die Idee, jeweils vier dieser Quadrate zu sieben unterschiedlichen Bausteinen zusammenzusetzen, und diese nacheinander vom Himmel fallen zu lassen. Im Sinken muss die Figur bewegt und gedreht werden, um sie möglichst Platz sparend zu positionieren. Eine horizontale Reihe von Quadraten verschwindet, sobald sie voll ist. "Game Over" heißt es, wenn neue Steine keinen Platz mehr haben, man also oben angekommen ist.</p>
+    <p>Eigentlich sollte sich der sowjetische Programmierer Paschitnow mit der Erforschung von Künstlicher Intelligenz und mit Spracherkennung beschäftigen. Doch gelangweilt vom Leerlauf an der Moskauer Akademie der Wissenschaften dachte sich der damals 29-Jährige Computer-Knobeleien aus. Darunter Tetris, dessen Hauptinspiration das mathematische Puzzle <a target="_blank" href="http://de.wikipedia.org/wiki/Pentomino">Pentomino</a> war.</p>
+    <p>Sein minimalistisches Aussehen verdankt Tetris der Tatsache, dass der sowjetische "Elektronika 60"-Computer, auf dem Paschitnow arbeitete, keine Grafik darstellen konnte. Ihm standen nur die Zeichen einer normalen Tastatur zur Verfügung und so baute er die Tetris-Bausteine aus zwei eckigen Klammern: [ ]. Farbe und Sound folgten erst in späteren Versionen. Denn bald wurde das Spiel für das westliche MS-DOS umgeschrieben, die PC-Version fand daraufhin Fans auf der ganzen Welt.</p>
+    <p>Paschitnow hatte davon nicht viel. Mehrere Firmen reklamierten die Rechte für sich. Als Sieger ging der japanische Konsolen-Hersteller Nintendo hervor, als Verlierer die damalige Branchengröße Atari, die sich bis zu ihrem Ende nicht von dieser Niederlage erholen konnte.</p>
+    <p>Für Nintendo erwies sich Tetris als Glücksgriff. Vor allem trug es maßgeblich zum Erfolg der 1989 gestarteten Taschen-Konsole Game Boy bei, der ein Exemplar beilag. Bis heute ist es mit 35 Millionen Kopien das meistverkaufte Game-Boy-Spiel, insgesamt wurden weltweit mehr als 125 Millionen Stück für über 50 unterschiedliche Spiele-Plattformen abgesetzt.</p>
+    <p>Doch war Tetris nicht nur ein Geschicklichkeitsspiel, es wurde zum Gründer einer ganzen Gattung, den heute sogenannten Casual Games – intuitiven, schnellen Spielen für Zwischendurch. Bald gab es Nachahmer, die das Tetris-Konzept aufgriffen: Etwa "Dr. Mario" (1990), bei dem zusätzlich Farbe eine Rolle spielte, oder das jüngere "Lumines" (2004), bei dem zusammenhängende Felder durch eine von links nach rechts laufende Linie abgeräumt werden.</p>
+    <p>Tetris legte das Fundament und zeigte, dass aus einfachen geometrischen Mustern spannende Spiele entstehen können. Paschitnows Bastelei gab außerdem ein bis heute gültiges Prinzip für gutes Spieldesign vor: Einfach zu lernen, schwer zu meistern. In Tetris fallen die Steine immer schneller. Anfangs kommt jeder problemlos zurecht, für höhere Stufen dagegen ist viel Übung erforderlich.</p>
+    <p>Wirtschaftlich sind solche Casual Games heute eine fixe Größe. So existiert abseits großer Namen wie Nintendo, Sony, Microsoft, Electronic Arts oder Ubisoft eine Industrie, die sich erfolgreich auf derartige Titel konzentriert. Branchenprimus ist PopCap Games, ein in Seattle ansässiges Unternehmen mit 200 Mitarbeitern. Der Entwickler und Publisher veröffentlicht seine Puzzles zumeist als abgerüstete Gratisvarianten, bei denen eine Vollversion gekauft werden kann. Das populärste heißt "Bejeweled" und funktioniert nach einem Tetris-ähnlichen Prinzip. 150 Millionen Mal wurde es bereits heruntergeladen, davon kauften 25 Millionen Nutzer das volle Spiel.</p>
+    <p>Paschitnow indes durfte am finanziellen Erfolg lange nicht teilhaben, das sowjetische Gesetz kannte kein Copyright. Erst 1996 fielen die Rechte an den inzwischen in die USA ausgewanderten Spiele-Designer.</p>
+    <p>Immerhin gebührt ihm der Verdienst, gezeigt zu haben, dass sich mit kleinen Spielen viel Geld verdienen lässt. Und er bewies: Unter Zeitdruck nachzudenken macht Spaß. Oder wie er in einem <a target="_blank" href="http://www.golem.de/0711/55975.html">Interview</a> mit dem Technik-Portal <em>golem.de</em> über das Erfolgsgeheimnis sagte: "Du erledigst ständig Aufgaben, du wirst ständig vor ein neues Problem gestellt und löst es so gut es geht. Doch was übrig bleibt, sind nur deine Fehler. Die hässlichen Löcher auf dem Spielfeld. Also bist du stets motiviert, auch noch diese Aufgabe zu lösen!"</p>
+  </body>
+  <teaser>
+    <title py:pytype="str">Tetris und der Siegeszug der fallenden Steine</title>
+    <text py:pytype="str">Ein simples Spiel erblickte vor 25 Jahren das Licht der Bildschirme und wurde ein Sensationserfolg: Tetris. Es war der Ursprung einer ganzen Gattung, der Casual Games.</text>
+  </teaser>
+  <indexteaser>
+    <title py:pytype="str">Tetris</title>
+    <text py:pytype="str">Der Vater der Casual Games hat 25. Geburtstag</text>
+  </indexteaser>
+</article>
