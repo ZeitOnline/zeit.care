@@ -38,7 +38,7 @@ Check conversion
 >>> from lxml import etree
 >>> import StringIO, os
 >>> tree = etree.parse(StringIO.StringIO(new_xml))
->>> for d in tree.xpath('//body/division'):
+>>> for d in tree.xpath('//body/division[@type="page"]'):
 ...     print len(d.xpath('p'))
 6
 0
@@ -94,7 +94,7 @@ Convert all test resources
 ...         new_xml = resource.data.read()
 ...         tree = etree.parse(StringIO.StringIO(new_xml))
 ...         if tree.getroot().tag == 'article':
-...             len(tree.xpath('//body/division')) > 0
+...             len(tree.xpath('//body/division[@type="page"]')) > 0
 True
 True
 True

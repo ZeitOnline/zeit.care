@@ -25,7 +25,7 @@ class Converter(object):
 
         body_divisions = []
         for d in divisons:
-            new_div = etree.Element("division")
+            new_div = etree.Element("division", type="page")
             new_div.extend(d)
             body_divisions.append(new_div)
 
@@ -36,7 +36,8 @@ class Converter(object):
         return new_body
 
     def _get_params_per_page(self, tree):
-        p = tree.xpath("//head/attribute[@ns='http://namespaces.zeit.de/CMS/document' and @name='paragraphsperpage']")
+        p = tree.xpath("//head/attribute[@ns='http://namespaces.zeit.de/CMS/document' \
+	and @name='paragraphsperpage']")
         if p: 
             paras_per_page = int(p[0].text)
         else: 
@@ -52,7 +53,7 @@ class Converter(object):
             return self.xml
         elif tree.xpath('//body/division'):
             return self.xml
-
+	
         paras_per_page = self._get_params_per_page(tree)                    
         div_list = []
         xp = 0
@@ -66,7 +67,7 @@ class Converter(object):
                 continue
 
             div.append(e)
-            if e.tag == 'p': xp += 1     
+            if e.tag in ['p','video']: xp += 1     
 
             if paras_per_page == xp:
                 div_list.append(div)
@@ -107,7 +108,8 @@ def dev_main():
     connector.add(col)  
 
     testdir = os.path.dirname(__file__)+'/testdocs/'
-    testdocs = [(f,testdir+f) for f in os.listdir(testdir) if os.path.isfile(testdir+f)]
+    testdocs = [(f,testdir+f) for f in os.listdir(testdir) if \
+	os.path.isfile(testdir+f)]
 
     for (filename, filepath) in testdocs[0:13]:
         res = Resource('http://xml.zeit.de/testdocs/'+filename,
