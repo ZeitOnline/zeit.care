@@ -1,0 +1,84 @@
+At first, we need a connector for our beloved crawler.
+
+>>> import zeit.connector.mock
+>>> connector = zeit.connector.mock.Connector()
+>>> connector
+<zeit.connector.mock.Connector object at 0x...>
+
+Import the Boxinjector
+
+>>> from zeit.care.boxinjector import BoxInjector
+>>> BoxInjector
+<class 'zeit.care.boxinjector.BoxInjector'>
+
+Create test collection
+
+>>> import StringIO
+>>> from zeit.connector.resource import Resource
+>>> coll_path = 'http://xml.zeit.de/testdocs/with_divisions'
+>>> col = Resource(coll_path,
+...                    'with_divisions',
+...                    'collection',
+...                    StringIO.StringIO(''))
+>>> connector.add(col)  
+>>> connector[coll_path].type
+'collection'
+
+Get Testdocs
+
+>>> import os
+>>> testdir = os.path.dirname(__file__)+'/testdocs/with_divisions/'
+>>> testdocs = [(f,testdir+f) for f in os.listdir(testdir) if os.path.isfile(testdir+f)]
+>>> len(testdocs) > 0
+True
+
+
+Create test articles 
+
+>>> for (filename, filepath) in testdocs:
+...     res = Resource('http://xml.zeit.de/testdocs/with_divisions/'+filename,
+...                filename,
+...                'article',
+...                open(filepath),
+...                contentType = 'text/xml')
+...     connector.add(res)
+
+check the new ressources
+
+>>> for (filename, filepath) in testdocs:
+...     'http://xml.zeit.de/testdocs/with_divisions/'+filename in connector
+True
+True
+True
+...
+
+
+Convert all test resources, not every article will be touched
+
+>>> from zeit.care.boxinjector import crawler_worker
+>>> for (filename, filepath) in testdocs:
+...     crawler_worker(connector['http://xml.zeit.de/testdocs/with_divisions/'+filename], connector)
+http://xml.zeit.de/testdocs/with_divisions/...
+http://xml.zeit.de/testdocs/with_divisions/...
+http://xml.zeit.de/testdocs/with_divisions/...
+
+
+Test conversion
+
+>>> from lxml import etree
+>>> resource = connector['http://xml.zeit.de/testdocs/with_divisions/kapitalismus-staatsschulden.xml'] 
+>>> tree = etree.parse(StringIO.StringIO(resource.data.read()))
+>>> tree.xpath('//body/division[position() = 2]/*')[0]
+<Element portraitbox at ...
+
+>>> resource = connector['http://xml.zeit.de/testdocs/with_divisions/iran-krise-ausweg'] 
+>>> tree = etree.parse(StringIO.StringIO(resource.data.read()))
+>>> tree.xpath('//body/division[position() = 1]/*')[5]
+<Element gallery at ...
+>>> tree.xpath('//body/division[position() = 1]/*')[6]
+<Element infobox at ...
+
+>>> resource = connector['http://xml.zeit.de/testdocs/with_divisions/amerikagrippe-who-pandemiefall'] 
+>>> tree = etree.parse(StringIO.StringIO(resource.data.read()))
+>>> tree.xpath('//body/division[position() = 1]/*')[5]
+<Element gallery at ...

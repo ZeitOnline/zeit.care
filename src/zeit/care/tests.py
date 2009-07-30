@@ -7,6 +7,7 @@ def test_suite():
         'README.txt',
         'date_test.txt',
 	'divisor.txt',
+	'boxinjector.txt',
         optionflags=doctest.ELLIPSIS
         ))
 
