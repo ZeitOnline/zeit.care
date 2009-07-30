@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<article xmlns:py="http://codespeak.net/lxml/objectify/pytype">
+  <head>
+    <keywordset>
+      <keyword py:pytype="str" source="manual">iran</keyword>
+      <keyword py:pytype="str" source="manual">demonstration</keyword>
+      <keyword py:pytype="str" source="manual">demokratie</keyword>
+    </keywordset>
+    <references>
+      <reference xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="intern" href="http://xml.zeit.de/themen/international/iran/index" publication-date="" expires="" year="2009">
+        <supertitle py:pytype="str">Iran</supertitle>
+        <title py:pytype="str">Iran</title>
+        <text py:pytype="str">Iran hat gewählt. Zweifel an einem regelgerechten Ablauf der Wahl führen zu wütenden Protesten. Welche Rolle will das Land spielen? Analysen und Reportagen </text>
+        <description py:pytype="str">Iran hat gewählt. Zweifel an einem regelgerechten Ablauf der Wahl führen zu wütenden Protesten. Welche Rolle will das Land spielen? Analysen und Reportagen </description>
+        <byline xsi:nil="true"/>
+        <short>
+          <title py:pytype="str">Iran</title>
+          <text py:pytype="str">Die neue Regionalmacht. Analysen und Reportagen</text>
+        </short>
+        <homepage>
+          <title py:pytype="str">Proteste in Iran</title>
+          <text py:pytype="str">Welchen Weg geht die neue Regionalmacht? Schwerpunkt</text>
+        </homepage>
+        <image align="left" base-id="http://xml.zeit.de/bilder/2009/standards/international/iran/" type="jpg" publication-date="" expires="">
+          <bu xsi:nil="true"/>
+          <copyright py:pytype="str">© Behrouz Mehri/AFP/Getty Images</copyright>
+        </image>
+      </reference>
+      <reference xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="intern" href="http://xml.zeit.de/online/2009/25/iran-politik-system" publication-date="" expires="" year="2009" issue="25">
+        <supertitle py:pytype="str">Iran </supertitle>
+        <title py:pytype="str">"Mussawi ist kein Reformer"</title>
+        <text py:pytype="str">Es gab keine richtigen Wahlen und das politische System Irans ist nicht reformierbar: Iran-Experte Wahdat-Hagh über den Ausgang der Präsidentenwahl</text>
+        <description py:pytype="str">Es gab keine richtigen Wahlen und das politische System Irans ist nicht reformierbar: Iran-Experte Wahdat-Hagh über den Ausgang der Präsidentenwahl</description>
+        <byline xsi:nil="true"/>
+        <short>
+          <title py:pytype="str">Iran </title>
+          <text py:pytype="str">"Mussawi ist kein Reformer"</text>
+        </short>
+        <homepage>
+          <title py:pytype="str">Scheinheiliger Reformer?</title>
+          <text py:pytype="str">"Mussawi ist selbst ein Hardliner"</text>
+        </homepage>
+        <image alt="Mir-Husein Mussawi" align="left" base-id="http://xml.zeit.de/bilder/2009/25/politik/ausland/iran-mussavi-menge/" type="jpg" publication-date="" expires="">
+          <bu>Die Menge feiert ihn: Mir-Hussein Mussawi, Gegner des amtierenden Präsidenten Ahmadineschad, soll die Wahl verloren haben</bu>
+          <copyright py:pytype="str">(c) BEHROUZ MEHRI/AFP/Getty Images</copyright>
+        </image>
+      </reference>
+    </references>
+    <image xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" alt="Revolutionsführer Chamenei" align="left" base-id="http://xml.zeit.de/bilder/2009/25/politik/ausland/khamenei-2/" type="jpg" publication-date="" expires="">
+      <bu>Der oberste  Revolutionsführer Chamenei hat in der Politik Irans das letzte Wort - und muss einen Ausweg aus der Krise finden</bu>
+      <copyright py:pytype="str">© OLIVIER LABAN-MATTEI/AFP/Getty Images</copyright>
+    </image>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="DailyNL">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="artbox_gallery">http://xml.zeit.de/online/2009/25/bg-iran-demonstration</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="artbox_info">http://xml.zeit.de/online/2009/25/iran-machtstrukturen</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="artbox_thema">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="author">Martin Gehlen</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="banner">yes</attribute>
+    <attribute ns="INTERNAL" name="cached-time">2009-07-03 10:02:49.468974+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="comments">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="copyrights">ZEIT ONLINE</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="corrected">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date-last-modified">2009-07-03T10:02:49.607004+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">2009-06-18T04:40:50.448160+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="date_last_published">2009-07-03T10:03:49.276885+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="edited">notnecessary</attribute>
+    <attribute py:pytype="str" ns="http://apache.org/dav/props/" name="executable">F</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="first_count">2009-06-18</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="has_recensions">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="images_added">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last-semantic-change">2009-06-18T06:46:45.033911+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="last_count">2009-06-30</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last_modified_by">ldap.haake</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="mostread">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="paragraphsperpage">6</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="published">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="refined">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="ressort">Politik</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="status">OK</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="sub_ressort">Ausland</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="text-length">4145</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="total_hits">15159</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/meta" name="type">article</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="urgent">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="uuid">{urn:uuid:6995331d-e5b6-4a7e-8092-004d85254cab}</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="volume">25</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="was_automatically_syndicated_into"/>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="year">2009</attribute>
+  </head>
+  <body><supertitle py:pytype="str">Unruhe in Iran</supertitle>
+    <byline py:pytype="str">Von Martin Gehlen, Kairo</byline>
+    <title>Revolutionsführer Chamenei sucht den Ausweg</title>
+    <subtitle>Iran steckt nach der umstrittenen Präsidentenwahl in der politischen Sackgasse. Eine Lösung der Krise verläuft für das Regime nicht ohne Gesichtsverlust. Vier Szenarien</subtitle>
+    <division type="page"><p>Keine Parolen, nur ein Schweigemarsch durch die Stadt. So hieß die Anweisung des offiziell unterlegenen Präsidentschaftsbewerbers Mir Hussein Mussawi am Mittwoch an seine Anhänger. Für Freitag hat er einen Tag der Besinnung und der Trauer ausgerufen, er selbst will in einer Moschee der  getöteten Demonstranten gedenken. Und er will offenbar Ajatollah Ali Chamenei eine erste kurze Atempause geben für die Suche nach einem Ausweg aus der politischen Sackgasse.</p>
+    <p>Am Dienstag hatte der Revolutionsführer erstmals Vertreter der vier Präsidentschaftskandidaten empfangen. Und dem Vernehmen nach wurde auf dem Treffen Tacheles geredet. Die Emissäre Mussawis und des Präsidentschafts-Mitbewerbers Mehdi Karroubi forderten eine Neuwahl, der frühere Chef der Revolutionären Garden, Mohsen Rezai, ließ ausrichten, er wünsche eine Liste mit allen gezählten Stimmen – und zwar von jeder einzelnen der rund 50.000 Wahlurnen. Wenn er diese Liste nicht in 24 Stunden in den Händen halte, werde er den Wächterrat "um etwas anderes bitten" – also ebenfalls um die Annullierung der Wahl.</p>
+    <p>Nun sucht das Regime nach politischen Auswegen, die allen Seiten erlauben, das Gesicht und gleichzeitig die Legitimität der Islamischen Republik zu wahren. So forderte Chamenei alle Iraner auf, sich hinter die geistliche Führung des Landes zu stellen. "Bei der Wahl hatten die Wähler unterschiedliche Tendenzen, aber sie glauben gleichermaßen an das Regierungssystem und unterstützen die Islamische Republik", erklärte er.</p>
+    <p>Entsprechend milde war am Mittwoch früh auch der Ton in den Regierungszeitungen. Sie druckten Bilder von Mussawi-Demonstranten, die Plakate mit der Aufschrift trugen "Wir sind keine Unruhestifter". Die Menge habe ohne Gewalt demonstriert, "die Menschen hielten Bilder von Mussawi und Chatami in die Höhe, um gegen den Ausgang der Wahlen zu protestieren", hieß es in der Zeitung <em>Etelat</em>, deren Chefredakteur vom Revolutionsführer Chamenei persönlich ernannt wird.</p>
+    <p><image xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" align="left" src="http://xml.zeit.de/bilder/2009/25/politik/ausland/iran-karte/iran-karte.gif" type="gif" publication-date="" expires=""><bu>Kartenausschnitt Iran</bu><copyright py:pytype="str">© Anne Gerdes/ZEIT-Grafik</copyright></image>Bislang hat der Wächterrat angeboten, strittige Wahlbezirke neu auszählen zu lassen – und zwar unter Beteiligung von Vertretern aller vier Kandidaten. Die Opposition dagegen fordert ein sogenanntes "Komitee zu Feststellung der Wahrheit", welches viel weitergehende Kompetenzen haben soll. Doch wie immer das Gerangel um das Prüfungsgremium ausgeht, ein politischer Ausweg, der das aufgebrachte Volk beruhigt, ohne die zentralen Institutionen der Islamischen Republik zu beschädigen, kommt einer Quadratur des Kreises gleich. Vier Szenarien sind denkbar:</p>
+    <p><strong>Mussawi wird zum Sieger erklärt:</strong> Das würde bedeuten, mehr als zehn Millionen Stimmen wurden gefälscht – ein irreparabler Ansehensverlust für Chamenei, der den Sieg Ahmadineschads als "göttliches Signal" gepriesen hatte. Dessen Anhänger würden dann protestieren – Gewalt und Unruhen gingen weiter, nur unter umgekehrten Vorzeichen.</p>
+    </division><division type="page"><p><strong>Ahmadineschad wird zum Sieger erklärt, aber mit geringerer Stimmenzahl:</strong> Der Wahlbetrug wäre implizit zugegeben. Das Volk jedoch wird sich dadurch nicht beruhigen lassen. Dann aber wäre das Regime gezwungen, mit aller Härte gegen die Opposition vorzugehen, um sie zum Schweigen zu bringen.</p>
+    <p><strong>Doch eine Stichwahl:</strong> Vielleicht der Ausweg mit dem geringsten Imageschaden für das Regime. Man räumt den Wahlbetrug ein, lässt aber eine Korrektur durch das Volk zu – unter der Aufsicht von anerkannten Persönlichkeiten des Landes. Für Mussawi ein schwieriges Angebot: Sein Hauptquartier ist zerstört, seine Wahlkampfmannschaft aus Angst vor Verhaftung in alle Winde zerstreut.</p>
+    <p><strong>Neuwahlen:</strong> Das verlangen alle drei Herausforderer. Für das Regime wäre das eine Niederlage, die an den Fundamenten der Islamischen Republik rüttelt.</p>
+    <p>Aber unabhängig von allen kurzfristigen Szenarien: Das Ansehen des Regimes und ihres obersten Führers Chamenei wird durch die Umstände der Präsidentenwahl bei vielen Iranern dauerhaft beschädigt bleiben.</p>
+  </division></body><teaser>
+    <title py:pytype="str">Revolutionsführer Chamenei sucht den Ausweg</title>
+    <text py:pytype="str">Iran steckt nach der umstrittenen Präsidentenwahl in der politischen Sackgasse. Eine Lösung der Krise verläuft für das Regime nicht ohne Gesichtsverlust. Vier Szenarien.</text>
+  </teaser>
+  <indexteaser>
+    <title py:pytype="str">Unruhe in Iran</title>
+    <text py:pytype="str">Revolutionsführer Chamenei sucht den Ausweg</text>
+  </indexteaser>
+  <homepageteaser>
+    <title py:pytype="str">Sackgasse</title>
+  </homepageteaser>
+</article>

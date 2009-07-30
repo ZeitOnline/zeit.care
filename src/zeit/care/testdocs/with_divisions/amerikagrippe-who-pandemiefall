@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<article xmlns:py="http://codespeak.net/lxml/objectify/pytype">
+  <head>
+    <keywordset>
+      <keyword py:pytype="str" source="manual">pandemie</keyword>
+      <keyword py:pytype="str" source="manual">schweinegrippe</keyword>
+      <keyword py:pytype="str" source="manual">Gesundheit</keyword>
+      <keyword py:pytype="str" source="manual">virus</keyword>
+      <keyword py:pytype="str" source="manual">infektionskrankheit</keyword>
+    </keywordset>
+    <references>
+      <reference xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="intern" href="http://xml.zeit.de/online/2009/18/schweinegrippe-fragen-und-antworten" publication-date="" expires="" year="2009" issue="18">
+        <supertitle py:pytype="str">Angst vor der Pandemie</supertitle>
+        <title py:pytype="str">Wie gefährlich ist das Schweinegrippe-Virus?</title>
+        <text py:pytype="str">Antworten zur Seuchengefahr, Schutzmaßnahmen und Symptomen der Amerika- Influenza sowie die weltweit bestätigten Fälle.</text>
+        <description py:pytype="str">Antworten zur Seuchengefahr, Schutzmaßnahmen und Symptomen der Amerika- Influenza sowie die weltweit bestätigten Fälle.</description>
+        <byline py:pytype="str">Von Sven Stockrahm</byline>
+        <short>
+          <title py:pytype="str">Amerika-Virus</title>
+          <text py:pytype="str">Wie gefährlich ist der neue Influenza-Erreger?</text>
+        </short>
+        <homepage>
+          <title xsi:nil="true"/>
+          <text xsi:nil="true"/>
+        </homepage>
+        <image align="left" base-id="http://xml.zeit.de/bilder/2009/standards/wissen/grippe-karte/" type="jpg" publication-date="" expires="">
+          <bu xsi:nil="true"/>
+          <copyright py:pytype="str">© googlemaps</copyright>
+        </image>
+      </reference>
+      <reference xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="intern" href="http://xml.zeit.de/themen/wissen/gesundheit/grippe/index" publication-date="" expires="" year="2009" issue="18">
+        <supertitle py:pytype="str">Amerikanische Grippe</supertitle>
+        <title py:pytype="str">Angst vor der Pandemie</title>
+        <text py:pytype="str">Wie gefährlich ist der Influenza–Erreger A/H1N1? Wie kann der Mensch ihn bekämpfen? Ein Themenschwerpunkt</text>
+        <description py:pytype="str">Wie gefährlich ist der Influenza–Erreger A/H1N1? Wie kann der Mensch ihn bekämpfen? Ein Themenschwerpunkt</description>
+        <byline xsi:nil="true"/>
+        <short>
+          <title py:pytype="str">Amerikanische Grippe</title>
+          <text py:pytype="str">Angst vor der Pandemie – ein Schwerpunkt</text>
+        </short>
+        <homepage>
+          <title py:pytype="str">Angst vor der Pandemie</title>
+          <text py:pytype="str">Amerikagrippe geht um die Welt. Schwerpunkt</text>
+        </homepage>
+        <image alt="Ein Themenschwerpunkt zur aktuellen Grippegefahr" align="left" base-id="http://xml.zeit.de/bilder/2009/standards/wissen/cp-grippe/" type="jpg" publication-date="" expires="">
+          <bu>Ein Themenschwerpunkt zur aktuellen Grippegefahr</bu>
+          <copyright py:pytype="str">© Alfredo Estrella/AFP/Getty Images</copyright>
+        </image>
+      </reference>
+    </references>
+    <image xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" align="left" base-id="http://xml.zeit.de/bilder/2009/25/politik/ausland/pandemie/" type="jpg" publication-date="" expires="">
+      <bu>Höchste Alarmstufe: Die WHO hat die Schweinegrippe als Pandemie eingestuft</bu>
+      <copyright py:pytype="str">© Noah Seelam/AFP/Getty Images</copyright>
+    </image>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="DailyNL">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="artbox_gallery">http://xml.zeit.de/online/2009/18/bg-impfung-grippe</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="artbox_thema">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="author">Sven Stockrahm</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="banner">yes</attribute>
+    <attribute ns="INTERNAL" name="cached-time">2009-06-11 17:11:54.644762+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="comments">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="copyrights">ZEIT ONLINE, dpa, sst</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="corrected">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date-last-modified">2009-06-11T17:11:54.724843+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">2009-06-11T14:46:31.721803+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="date_last_published">2009-06-11T17:12:54.451618+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="edited">yes</attribute>
+    <attribute py:pytype="str" ns="http://apache.org/dav/props/" name="executable">F</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="export_cds">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="has_recensions">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="images_added">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last-semantic-change">2009-06-11T17:11:32.206997+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last_modified_by">ldap.mechlenburg</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="mostread">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="paragraphsperpage">10</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="published">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="refined">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="ressort">Wissen</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="status">OK</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="sub_ressort">Gesundheit</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="text-length">4394</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/meta" name="type">article</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="urgent">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="uuid">{urn:uuid:49c4fe29-faf3-4214-8088-b9104a60266d}</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="volume">25</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="was_automatically_syndicated_into"/>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="year">2009</attribute>
+  </head>
+  <body><supertitle py:pytype="str">Schweinegrippe</supertitle>
+    <title>WHO ruft höchste Warnstufe aus</title>
+    <subtitle>Die Weltgesundheitsbehörde hat die Amerikagrippe offiziell als globale Seuche eingestuft. Zu Panik aber besteht kein Grund, das H1N1-Virus gilt als milde</subtitle>
+    <division type="page"><p>
+      Jetzt ist es auch offiziell:
+      <a target="_blank" href="http://www.zeit.de/themen/wissen/gesundheit/grippe/index">Die sogenannte Schweinegrippe</a>
+      ist eine Pandemie. Das hat die Weltgesundheitsbehörde (WHO) in Genf bestätigt. Die höchste Stufe, sprich die Stufe 6 des WHO-Pandemie-Alarmplans, war bislang noch nie ausgerufen worden. Dies liegt auch daran, dass der Plan nicht für gewöhnliche Grippen, sondern allein für neue Erreger gilt.
+    </p>
+    <p>Der Pandemiefall, also die weltweite Ausbreitung einer Erkrankung, tritt per WHO-Definition dann ein, wenn es auf mindestens zwei Kontinenten zu einer fortgesetzten Mensch-zu-Mensch-Übertragung kommt. Dies ist in den vergangenen Wochen in puncto Amerikagrippe der Fall gewesen, wenngleich nicht überall eine entsprechende Verbreitung des Erregers herrscht.</p>
+    <p>Am Vormittag war in Genf der Notfall-Ausschuss der WHO zur Influenza H1N1 zusammengekommen, um über die Erhöhung der Alarmstufe zu beraten. Bereits am Mittwoch hatte WHO-Generalsekretärin Margaret Chan mit Vertretern von acht Ländern konferiert, in denen das Virus verstärkt auftritt. Darunter war auch Australien, wo es mittlerweile mehr als 1200 Fälle gibt.</p>
+    <p>
+      In Deutschland ändert sich an der aktuellen Einschätzung der Lage wenig. Experten warnen auch vor jeder Form von Panik. Die Erhöhung der Alarmstufe sei eine reine Formsache. "Alle erforderlichen Strukturen funktionieren bereits jetzt", sagte der Präsident des Robert-Koch-Instituts (RKI), Jörg Hacker. Die deutsche Regierung hatte bereits 2005 einen nationalen Pandemieplan verabschiedet, der sich an den Vorgaben der WHO orientiert. Die Koordination obliegt dabei dem
+      <a href="http://www.zeit.de/2009/20/M-RKI-Reportage" target="_blank">RKI in Berlin</a>
+      , Bund und Länder stimmen sich regelmäßig ab, die Bundesländer haben antivirale Medikamente in großen Mengen eingelagert.
+    </p>
+    <p>
+      Hinzu kommt, dass das H1N1-Virus zwar durchaus unberechenbar sei, die nun bestätigte Influenza-Pandemie
+      <a href="http://www.zeit.de/online/2009/18/schweinegrippe-fragen-und-antworten" target="_blank">aber eher harmlos verläuft</a>
+      . Zum Vergleich: An einer "gewöhnlichen Grippe", die in Deutschland im Winter, auf der Südhalbkugel dagegen zu unserer Sommerzeit auftritt, sterben allein hierzulande jedes Jahr zwischen 8000 bis 11.000 Menschen. Besonders betroffen sind vor allem Senioren und Kinder. In Jahren mit besonders schweren Epidemien, wie in der Saison 1995/96, kann es in Deutschland auch bis zu 30.000 Toten kommen. Allerdings gibt es gegen die seit Langem bekannten Erreger wirksame Impfstoffe.
+    </p>
+    <p>Trotz der jüngsten Entscheidung der WHO gilt auch weiterhin die Ansicht des Gesundheitsministeriums: Der Pandemiefall ist hierzulande noch nicht eingetreten. Der Pandemieplan aus Genf gebe naturgemäß nur grobe Leitlinien vor, sagte RKI-Sprecherin Susanne Glasmacher. "Was im Einzelnen sinnvoll ist, muss jeder Staat für sich entscheiden." Und in Deutschland würden die Behörden derzeit nur eine "überschaubare Zahl von Erkrankungen" registrieren.</p>
+    <video xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expires="2009-07-11T17:42:00+02:00" videoID="20090611ecf5b0" format=" "/>
+    <p>
+      Dennoch infizieren sich auch in Deutschland noch Menschen an der Krankheit. So haben sich
+      <a href="http://www.zeit.de/online/2009/25/schweinegrippe-schule" target="_blank">mindestens 30 Kinder der japanischen Schule in Düsseldorf</a>
+      mit der Amerikagrippe angesteckt. Den Kindern gehe es überwiegend gut und alle befänden sich zu Hause in Quarantäne, teilte das zuständige Gesundheitsamt mit. Die Zahl der Fälle in Nordrhein-Westfalen stieg mit den neuen Infektionen auf mehr als 40. Erst am Montag waren bundesweit 19 neue Fälle gezählt worden.
+    </p>
+    <p>In vielen anderen Ländern zieht die jetzt ausgerufene höchste Warnstufe 6 jedoch weitere Vorsorgemaßnahmen nach sich, die bislang nicht installiert worden seien. Allerdings werden nun nicht – wie dies in Mexiko unmittelbar nach Ausbruch der Grippe der Fall war – Behörden, öffentliche Gebäude oder gar Schulen und Kindergärten geschlossen. Die WHO empfiehlt auch keine weiteren Beschränkungen, insbesondere nicht für Reisen, oder Grenzschließungen. "Keine bisherige Pandemie ist so früh entdeckt und von Anfang an so zeitnah beobachtet worden", sagte WHO-Chefin Chan.</p>
+    <p>
+      Unterdessen sucht die Wissenschaft nach einem neuen Impfstoff. Die
+      <a xmlns:ns0="http://namespaces.zeit.de/CMS/link" class="textlink" target="_blank" href="http://www.zeit.de/online/2009/18/bg-impfung-grippe">entsprechende Entwicklung</a>
+      ist nach Einschätzung von Forscherkreisen inzwischen so weit fortgeschritten, dass mit der Produktion bald begonnen werden kann. Im Herbst könnten also Impfstoffe gegen die Amerikagrippe zur Verfügung stehen. Weltweit sind seit dem ersten Auftreten des neuen Influenza-Erregers im Mai knapp 28.000 Menschen daran erkrankt. 141 Grippe Patienten sind gestorben.
+    </p>
+  </division></body><teaser>
+    <title py:pytype="str">WHO ruft höchste Warnstufe aus</title>
+    <text py:pytype="str">Die Weltgesundheitsbehörde hat die Amerikagrippe offiziell als globale Seuche eingestuft. Zu Panik aber besteht kein Grund, das H1N1-Virus gilt als milde</text>
+  </teaser>
+  <indexteaser>
+    <title py:pytype="str">Schweinegrippe</title>
+    <text py:pytype="str">WHO ruft höchste Warnstufe aus</text>
+  </indexteaser>
+</article>

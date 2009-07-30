@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<article xmlns:py="http://codespeak.net/lxml/objectify/pytype">
+  <head>
+    <image xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" align="left" base-id="http://xml.zeit.de/bilder/2009/25/wirtschaft/faller-1/" type="jpg" publication-date="" expires="">
+      <bu>Der Kapitalismus ist schwer angeschlagen. Zeit, ihn zu verstehen.</bu>
+      <copyright py:pytype="str" link="http://www.jens-luestraeten.com/">© Jens Lüstraeten</copyright>
+    </image>
+    <references>
+      <reference xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="intern" href="http://xml.zeit.de/themen/wirtschaft/finanzkrise/index" publication-date="" expires="" year="2009">
+        <supertitle py:pytype="str">Finanzkrise</supertitle>
+        <title py:pytype="str">Wirtschaftskrise - Das Vertrauen ist weg</title>
+        <text py:pytype="str">Die Weltwirtschaft taumelt. Helfen Konjunkturprogramme? Was sind die Ursachen für die Krise? Ein Schwerpunkt</text>
+        <description py:pytype="str">Die Weltwirtschaft taumelt. Helfen Konjunkturprogramme? Was sind die Ursachen für die Krise? Ein Schwerpunkt</description>
+        <byline xsi:nil="true"/>
+        <short>
+          <title py:pytype="str">Finanzkrise</title>
+          <text py:pytype="str">Das Vertrauen ist weg. Ein Schwerpunkt</text>
+        </short>
+        <homepage>
+          <title py:pytype="str">Das Vertrauen ist weg</title>
+          <text py:pytype="str">Von der Finanz- zur Wirtschaftskrise</text>
+        </homepage>
+        <image alt="Das Vertrauen ist weg - Ein Schwerpunkt zur Finanzkrise" align="left" base-id="http://xml.zeit.de/bilder/2008/standards/wirtschaft/finanzmaerkte/boersenchaos/" type="jpg" publication-date="" expires="">
+          <bu>Das Vertrauen ist weg - Ein Schwerpunkt zur Finanzkrise</bu>
+          <copyright py:pytype="str">©  </copyright>
+        </image>
+      </reference>
+    </references>
+    <keywordset>
+      <keyword py:pytype="str" source="manual">staatsverschuldung</keyword>
+      <keyword py:pytype="str" source="manual">finanzkrise</keyword>
+      <keyword py:pytype="str" source="manual">finanzmarkt</keyword>
+    </keywordset>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="DailyNL">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="artbox_portrait">http://xml.zeit.de/online/2009/25/portrait-faller</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="artbox_thema">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="author">Heike Faller</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="banner">yes</attribute>
+    <attribute ns="INTERNAL" name="cached-time">2009-07-05 12:26:38.092182+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="comments">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="copyrights">ZEIT ONLINE</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="corrected">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date-last-modified">2009-07-05T12:26:38.290981+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">2009-06-17T07:41:29.765913+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="date_last_published">2009-06-17T11:14:25.279330+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="edited">yes</attribute>
+    <attribute py:pytype="str" ns="http://apache.org/dav/props/" name="executable">F</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="export_cds">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="first_count">2009-06-16</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="has_recensions">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="images_added">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last-semantic-change">2009-06-17T11:12:30.958883+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="last_count">2009-07-04</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last_modified_by">ldap.endres</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="mostread">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="paragraphsperpage">7</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="published">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="refined">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="ressort">Wirtschaft</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="status">OK</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="text-length">3944</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="total_hits">35055</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/meta" name="type">article</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="urgent">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="uuid">{urn:uuid:bc4b7a0f-52d7-4a43-bba5-13b0923bdcf3}</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="volume">25</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="was_automatically_syndicated_into"/>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="year">2009</attribute>
+  </head>
+  <body><supertitle py:pytype="str">Kapitalismus für Anfänger</supertitle>
+    <byline py:pytype="str">Von Heike Faller</byline>
+    <title>Kann ein Staat Bankrott gehen?</title>
+    <subtitle>Von dieser Woche an erklärt unsere Autorin regelmäßig Phänomene des Kapitalismus. Diesmal will sie wissen, wie viele Schulden ein Staat auf Dauer aushalten kann.</subtitle>
+    <division type="page"><p>Volkswirtschaftler und Volk ähneln zur Zeit einem Paar, das versucht, eine längere Affäre zu verarbeiten. Schlimmer als das, was passiert ist, sind die Lügen: Der Markt wird alle Probleme schon lösen, neue mathematische Risikomodelle die Finanzmärkte sicherer machen. Blablabla. Jetzt geht es um die Staatsschulden, die so hoch sind wie noch nie. Die Ökonomen behaupten wieder, das sei gefahrlos.</p>
+    <p>"Wie lange schultert der Staat das? Wann ist er bankrott?", <a target="_blank" href="http://www.faz.net/s/Rub58241E4DF1B149538ABC24D0E82A6266/Doc~E863485EFF4F6474D950ACA08C2F1BE7B~ATpl~Ecommon~Scontent.html?rss_googlefeed_wirtschaft">fragte die <em>FAZ</em> neulich Peter Bofinger,</a> einen der fünf "Wirtschaftsweisen" der Bundesregierung. Antwort: "Die meisten Leute haben da unglaubliche Ängste. Zu Unrecht. Selbst wenn wir in den Jahren 2009 und 2010 rund 500 Milliarden Euro Schulden machen würden – und das halte ich nicht für realistisch – würde unser Schuldenstand von 65 Prozent des Bruttoinlandsproduktes auf 85 Prozent steigen. Das ist ein Wert, der international noch nicht im roten Bereich liegt. Große Staaten haben breite Schultern."</p>
+    <p>Übersetzt heißt das: "Da werde jetzt wieder deine Verlustängste von früher wach, Baby. Und selbst wenn ich mal schwach werde – und  das halte ich nicht für realistisch – im Vergleich zu manchen Kollegen bin ich echt zahm. Ich liebe dich."</p>
+    <p>Früher haben solche Interviews wie K.O.-Tropfen auf mich gewirkt. Ich verstand sie nicht, schweifte ab, blätterte weiter. Aber so leicht lasse ich mich nicht mehr beruhigen, nicht nach allem, was passiert ist. Ich frage mich: Selbst wenn die Italiener, Briten, Japaner noch höhere Schulden haben, sagt das noch nichts darüber aus, ob wir unsere Schulden bezahlen können.</p>
+    <p>Deutschland hat in den vergangenen 41 Jahren immer nur Geld aufgenommen. Wir haben es in all der Zeit nicht geschafft, Schulden in Höhe von 40 oder 65 Prozent des Bruttoinlandsproduktes zurückzuzahlen – warum sollten wir das bei einem Schuldenstand von 85 Prozent hinbekommen? Und wenn man seine Schulden nicht bezahlen kann, muss man Bankrott anmelden oder die Druckerpresse anschmeißen, richtig? Dann aber steigen die Preise immer weiter, und irgendwann kommt es zur Inflation. Oder?</p>
+    <p>Ich rief meinen Kollegen aus der Wirtschaftsredaktion an.</p>
+    <p>"Als Staat musst du Schulden nicht zurückbezahlen“, sagte er zu meiner Überraschung. "Staatsschulden sind welche, die man immer refinanziert. Was ist eine Staatsschuld? Eine Anleihe, die eine gewisse Laufzeit hat und danach neu aufgelegt wird, um von neuen Gläubigern gekauft zu werden. Und so weiter.“<br/>
+<br/>
+"Also umgeschuldet. Wo ist da der Unterschied zu Privatschulden?", fragte ich.<br/>
+<br/>
+"Dass Staaten theoretisch ewig leben. So lange der Staat Ressourcen hat, also Steuern erheben und seine Zinsen bezahlen kann, ist alles ok. Die Frage ist eher, wie hoch die Schulden sein dürfen."</p>
+    </division><division type="page"><p>"Und was meinst du?“</p>
+    <p>“Bei 85 Prozent könnte es schon kritisch werden. Vielleicht zweifeln die Anleger, dass der Staat eine solche Last schultern, also seine Schulden bedienen kann. Dann verlangen sie als Ausgleich für die gestiegenen Risiken höhere Zinsen, der Staat muss noch mehr Geld für den Schuldendienst aufwenden. Die Verschuldung steigt quasi automatisch.”</p>
+    <p>"Aber wir könnten bald 85 Prozent erreichen, Mark“, sagte ich streng.</p>
+    <p>„Naja. Vielleicht ist es auch erst bei 150 Prozent des BiP so weit.“</p>
+    <p>Wie hoch die Quote ist, ab der ein Staat überschuldet ist, ist nicht ganz klar. Staatsschulden in Friedenszeiten sind ein relativ neues Phänomen, sie sind erst durch den britischen Ökonomen John Maynard Keynes in die Welt gekommen, der den Staat als Nachfrager in der Krise auftreten ließ. Wie in allen Wirtschaftsdingen wissen wir vorher nicht, wozu das Experiment führen wird. Und vielleicht wollen wir es auch nicht so genau wissen. Es gibt ja Situationen, in denen es eine Zeitlang angenehmer ist, sich belügen zu lassen.</p>
+  </division></body><teaser>
+    <title py:pytype="str">Kann ein Staat Bankrott gehen?</title>
+    <text py:pytype="str">Von dieser Woche an erklärt unsere Autorin regelmäßig Phänomene des Kapitalismus. Diesmal will sie wissen, wie viele Schulden ein Staat auf Dauer aushalten kann.</text>
+  </teaser>
+  <indexteaser>
+    <title py:pytype="str">Kapitalismuskritik</title>
+    <text py:pytype="str">Kann ein Staat Bankrott gehen?</text>
+  </indexteaser>
+  <homepageteaser>
+    <title py:pytype="str">Kapitalismus für Anfänger</title>
+    <text py:pytype="str">Kann ein Staat Bankrott gehen?</text>
+  </homepageteaser>
+</article>
