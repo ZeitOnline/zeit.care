@@ -23,7 +23,6 @@ setup(
         [console_scripts]  
         isofication = zeit.care.worker:isofy_main
         divisor = zeit.care.divisor:main
-        divisor_dev = zeit.care.divisor:dev_main
         boxinjector = zeit.care.boxinjector:main
         """
 )

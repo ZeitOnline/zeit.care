@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
-import sys
 import StringIO
+from optparse import OptionParser
 from lxml import etree
 import zeit.care.crawl
 import zeit.connector.connector
@@ -96,7 +96,7 @@ def division_worker(resource, connector):
         connector[resource.id] = new_resource
 
 
-def dev_main():
+def dev():
     import zeit.connector.mock
 
     connector = zeit.connector.mock.Connector()
@@ -122,14 +122,44 @@ def dev_main():
         print connector[res.id].data.read()
 
 def main():
+    usage = "usage: %prog [options] arg"
+    parser = OptionParser(usage)
+    parser.add_option("-m", "--mode", dest="mode",
+                      help="dev for dev mode, live for live connector",
+                      choices=['dev','live'])
+    parser.add_option("-c", "--collection", dest="collection",
+                      help="entry collection for starting the conversion")
+    parser.add_option("-w", "--webdav", dest="webdav",
+                      help="webdav server uri")
+    parser.add_option("-f", "--force", action="store_true", dest="force",
+                        help="no reinsurance question, for batch mode e.g.")
+    #parser.add_option("-v", "--verbose",
+                      #action="store_true", dest="verbose")
+    #parser.add_option("-q", "--quiet",
+                      #action="store_false", dest="verbose")
 
-    if len(sys.argv) < 3:
-        sys.exit('parameters missing')
+    (options, args) = parser.parse_args()
 
-    webdav_uri = sys.argv[1]
-    start_container = sys.argv[2]
-    connector = zeit.connector.connector.Connector(roots=dict(
-        default=webdav_uri))
+    if not options.mode:
+        parser.error("missing mode")
 
-    crawler = zeit.care.crawl.Crawler(connector, division_worker)
-    crawler.run(start_container)
+    if options.mode == 'dev':
+        dev()
+    elif options.mode == 'live':
+        if not options.collection:
+            parser.error("missing entry point for conversion")
+
+        if not options.webdav:
+            parser.error("missing webdav uri")
+           
+        if not options.force:
+            user_ok = raw_input('\nConversion will start at %s.\nAre you sure? [y|n]: ' \
+                % options.collection)
+        else: 
+            user_ok = "y" 
+
+        if user_ok == "y":
+            connector = zeit.connector.connector.Connector(roots=dict(
+                default=options.webdav))
+            crawler = zeit.care.crawl.Crawler(connector, division_worker)
+            crawler.run(options.collection)

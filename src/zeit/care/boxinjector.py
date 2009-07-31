@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import os
-import sys
 import StringIO
 from optparse import OptionParser
 from lxml import etree
@@ -118,7 +117,7 @@ class BoxInjector(object):
         injects article boxes found in properties in the article
         '''
         self.tree = etree.parse(StringIO.StringIO(self.xml))
-
+            
         # only articles
         if not self.tree.xpath('//article'):
             return self.xml
@@ -126,7 +125,7 @@ class BoxInjector(object):
         self._get_portait_box()
         self._get_artbox_gallery()
         self._get_artbox_info()
- 
+
         if self.art_boxes:
             # change the doc
             for prop in self.art_boxes:    
@@ -192,6 +191,8 @@ def main():
                       help="entry collection for starting the conversion")
     parser.add_option("-w", "--webdav", dest="webdav",
                       help="webdav server uri")
+    parser.add_option("-f", "--force", action="store_true", dest="force",
+                        help="no reinsurance question, for batch mode e.g.")
     #parser.add_option("-v", "--verbose",
                       #action="store_true", dest="verbose")
     #parser.add_option("-q", "--quiet",
@@ -210,13 +211,17 @@ def main():
 
         if not options.webdav:
             parser.error("missing webdav uri")
-
-        user_ok = raw_input('conversion will start at %s.\nAre you sure? [y|n]: ' \
+           
+        if not options.force:
+            user_ok = raw_input('\nConversion will start at %s.\nAre you sure? [y|n]: ' \
                 % options.collection)
+        else: 
+            user_ok = "y" 
+
         if user_ok == "y":
             connector = zeit.connector.connector.Connector(roots=dict(
                 default=options.webdav))
             crawler = zeit.care.crawl.Crawler(connector, crawler_worker)
-            #crawler.run(start_container)
+            crawler.run(options.collection)
     
 
