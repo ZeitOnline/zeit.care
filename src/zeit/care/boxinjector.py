@@ -7,6 +7,7 @@ from datetime import datetime
 import zeit.care.crawl
 import zeit.connector.connector
 from zeit.connector.resource import Resource
+import zeit.connector.interfaces
 import zope.authentication.interfaces
 
 _NS_DOC = 'http://namespaces.zeit.de/CMS/document'
@@ -102,7 +103,9 @@ class BoxInjector(object):
                 break
             else:
                 position = int(position - sum_paras)
-        self.tree.xpath('//article/body/division')[in_division-1].insert(position,box.get('element'))
+
+        if in_division:
+            self.tree.xpath('//article/body/division')[in_division-1].insert(position,box.get('element'))
 
     def _remove_xml_attr(self, prop):
         '''
@@ -110,7 +113,8 @@ class BoxInjector(object):
         '''
         xpath_qry = '//article/head/attribute[@ns="%s" and @name="%s"]' % (prop[1], prop[0])
         prop_attr = self.tree.xpath(xpath_qry)
-        self.tree.xpath('//article/head')[0].remove(prop_attr[0])
+        if prop_attr:
+            self.tree.xpath('//article/head')[0].remove(prop_attr[0])
 
     def convert(self): 
         '''
@@ -130,8 +134,8 @@ class BoxInjector(object):
             # change the doc
             for prop in self.art_boxes:    
                 self._insert_box(self.art_boxes[prop])
-                self._remove_xml_attr(prop)
-                del self.resource.properties[prop]
+                self._remove_xml_attr(prop)            
+
             self.new_xml = etree.tostring(self.tree, encoding="UTF-8", xml_declaration=True)
 
     def get_new_resource(self):
@@ -141,8 +145,13 @@ class BoxInjector(object):
         if self.new_xml:
             new_resource = Resource(self.resource.id, 
                 self.resource.__name__, self.resource.type, 
-                StringIO.StringIO(self.new_xml), self.resource.properties, 
-                self.resource.contentType)
+                StringIO.StringIO(self.new_xml),
+                contentType=self.resource.contentType)
+            for p in self.resource.properties:
+                if p not in self.art_boxes:
+                    new_resource.properties[p] = (self.resource.properties[p])
+                else:
+                    new_resource.properties[p] = (zeit.connector.interfaces.DeleteProperty)
             return new_resource
         return None
         

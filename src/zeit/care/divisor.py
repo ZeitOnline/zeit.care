@@ -67,7 +67,7 @@ class Converter(object):
                 continue
 
             div.append(e)
-            if e.tag in ['p','video']: xp += 1     
+            if e.tag in ['p','video','raw']: xp += 1     
 
             if paras_per_page == xp:
                 div_list.append(div)
@@ -94,6 +94,7 @@ def division_worker(resource, connector):
             resource.properties, 
             resource.contentType)
         connector[resource.id] = new_resource
+        print resource.id
 
 
 def dev():

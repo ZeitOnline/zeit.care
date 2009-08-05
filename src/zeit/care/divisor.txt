@@ -87,6 +87,11 @@ Convert all test resources
 >>> from zeit.care.divisor import division_worker
 >>> for (filename, filepath) in testdocs:
 ...     division_worker(connector['http://xml.zeit.de/testdocs/'+filename], connector)
+http://xml.zeit.de/testdocs/baiersbronn-wanderkoch
+http://xml.zeit.de/testdocs/199910.pegasus.xml
+http://xml.zeit.de/testdocs/Argument-Banken
+http://xml.zeit.de/testdocs/199910.weimar_.xml
+...
 
 >>> for (filename, filepath) in testdocs:
 ...     resource = connector['http://xml.zeit.de/testdocs/'+filename]
