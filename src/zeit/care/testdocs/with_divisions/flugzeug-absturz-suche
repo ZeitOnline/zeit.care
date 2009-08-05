@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<article xmlns:py="http://codespeak.net/lxml/objectify/pytype">
+  <head>
+    <keywordset>
+      <keyword py:pytype="str" source="manual">flugzeug</keyword>
+      <keyword py:pytype="str" source="manual">flugzeugunglueck</keyword>
+      <keyword py:pytype="str" source="manual">luftverkehr</keyword>
+      <keyword py:pytype="str" source="manual">opfer</keyword>
+      <keyword py:pytype="str" source="manual">katastrophe</keyword>
+    </keywordset>
+    <references>
+      <reference xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="intern" href="http://xml.zeit.de/online/2009/23/flugzeugabsturz-unwetter-gewitter" publication-date="" expires="" year="2009" issue="23">
+        <supertitle py:pytype="str">Airbus-Absturz</supertitle>
+        <title py:pytype="str">Flug in die Gewitterfront</title>
+        <text py:pytype="str">Einen Tag nach Absturz eines Airbus 330 sind viele Fragen offen: Warum etwa haben die Piloten das gigantische Unwetter über dem Atlantik nicht umflogen?</text>
+        <description py:pytype="str">Einen Tag nach Absturz eines Airbus 330 sind viele Fragen offen: Warum etwa haben die Piloten das gigantische Unwetter über dem Atlantik nicht umflogen?</description>
+        <byline py:pytype="str">Von Tilman Steffen</byline>
+        <short>
+          <title py:pytype="str">Offene Fragen</title>
+          <text py:pytype="str">Flug in die Gewitterfront</text>
+        </short>
+        <homepage>
+          <title py:pytype="str">Flug in die Gewitterfront</title>
+          <text py:pytype="str">Viele offene Fragen, viele Spekulationen</text>
+        </homepage>
+        <image align="left" base-id="http://xml.zeit.de/bilder/2009/23/gesellschaft/gewitter-2/" type="jpg" publication-date="" expires="">
+          <bu>Nicht nur an Land gefährlich: Gewitter</bu>
+          <copyright py:pytype="str">© Ethan Miller/Getty Images</copyright>
+        </image>
+      </reference>
+      <reference xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="intern" href="http://xml.zeit.de/online/2009/23/blitzeinschlag-flugzeuge" publication-date="" expires="" year="2009">
+        <supertitle py:pytype="str">Flugsicherheit</supertitle>
+        <title py:pytype="str">Wie gefährlich sind Blitze für Flugzeuge?</title>
+        <text py:pytype="str">Die Absturzursache der Air-France-Maschine ist noch unklar. Dennoch macht das Gerücht über einen Blitzeinschlag die Runde. Experten halten das für unwahrscheinlich.</text>
+        <description py:pytype="str">Die Absturzursache der Air-France-Maschine ist noch unklar. Dennoch macht das Gerücht über einen Blitzeinschlag die Runde. Experten halten das für unwahrscheinlich.</description>
+        <byline py:pytype="str">Von Ralf Nestler und Juliane Schäuble</byline>
+        <short>
+          <title py:pytype="str">Flugsicherheit</title>
+          <text py:pytype="str">Wie gefährlich sind Blitze für Flugzeuge?</text>
+        </short>
+        <homepage>
+          <title xsi:nil="true"/>
+          <text xsi:nil="true"/>
+        </homepage>
+        <image alt="Gewitter Blitz Donner Unwetter Wetter" align="left" base-id="http://xml.zeit.de/bilder/2009/24/wissen/unwetter-gewitter/" type="jpg" publication-date="" expires="">
+          <bu>Blitze über der Bahamas-Insel San Salvador 
+ </bu>
+          <copyright py:pytype="str">© Jose Cabezas/AFP/Getty Images</copyright>
+        </image>
+      </reference>
+    </references>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="DailyNL">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="artbox_info">http://xml.zeit.de/online/2009/23/info-airbus-airfrance</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="artbox_thema">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="author">aku</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="banner">yes</attribute>
+    <attribute ns="INTERNAL" name="cached-time">2009-06-19 16:08:08.480264+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="comments">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="copyrights">ZEIT ONLINE, aku, dpa</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="corrected">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date-last-modified">2009-06-23T09:47:27.759068+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">2009-06-10T06:33:04.616609+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="date_last_published">2009-06-10T06:33:04.616609+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="edited">yes</attribute>
+    <attribute py:pytype="str" ns="http://apache.org/dav/props/" name="executable">F</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="first_count">2009-06-10</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="has_recensions">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="images_added">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last-semantic-change">2009-06-10T06:32:07.359323+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="last_count">2009-06-17</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last_modified_by">ldap.pilz</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="mostread">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="paragraphsperpage">7</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="published">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="refined">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="ressort">Gesellschaft</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="serie">News</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="status">OK</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="sub_ressort">Zeitgeschehen</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="text-length">1681</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="total_hits">2802</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/meta" name="type">article</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="urgent">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="uuid">{urn:uuid:966abb1d-2745-409f-a936-1daf46e99270}</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="volume">25</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="was_automatically_syndicated_into">http://xml.zeit.de/hp_channels/channel_news_auto</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="year">2009</attribute>
+  </head>
+  <body>
+    <supertitle py:pytype="str">Airbus-Opfer</supertitle>
+    <title>Suche soll Richtung Afrika ausgedehnt werden</title>
+    <subtitle>Die brasilianische Marine hat weitere 17 Todesopfer des verunglückten Airbus' im Atlantik gefunden. Auch in den Gewässern vor der Küste Senegals soll gesucht werden</subtitle>
+    <p>Die Zahl der gefundenen Leichen ist mittlerweile auf 41 gestiegen. Die <a href="http://www.zeit.de/online/2009/24/airbus-absturz-leichenfund">ersten 16 Toten waren zuvor bereits an Land</a> gebracht worden. Zwei Hubschrauber hatten sie von Marineschiffen übernommen und zur Insel Fernando de Noronha geflogen. Von dort sollten sie nach einer ersten Untersuchung per Flugzeug zum Festland gebracht werden. Die Suche nach den Opfern soll nun auch auf die Gewässer des westafrikanischen Senegals ausgedehnt werden. Soweit könnte die Strömung die Körper schon getragen haben.<br/>
+<br/>
+Die sterblichen Überreste der anderen bisher geborgenen 25 Opfer befanden sich an Bord der brasilianischen Fregatte Bocicio. Das Schiff habe inzwischen Kurs auf Fernando de Noronha genommen, sagte ein Marinesprecher. Die Bergungsmannschaften fanden bis Dienstagabend auch hunderte Wrackteile und persönliche Gegenstände der Passagiere, darunter Taschen, Laptops, Video- und Fotokameras, Kleidungsstücke und Papiere. Auch ein Teil des Seitenleitwerks der Unglücksmaschine wurde im Wasser gefunden. <br/>
+<br/>
+Unterdessen wurde das <a href="http://www.zeit.de/online/2009/24/flugzeugabsturz-brasilien-opfer">französische Atom-U-Boot <em>Emeraude</em> </a>im Suchgebiet erwartet. Es hat hoch entwickelte Horch- und Sonartechnologien an Bord und soll vor allem die Suche nach dem Flugschreiber unterstützen.<br/>
+<br/>
+An Bord der Air-France-Maschine, die am Montag vergangener Woche auf dem Weg von Rio de Janeiro nach Paris aus noch ungeklärter Ursache ins Meer gestürzt war, befanden sich insgesamt 228 Menschen. <a href="http://www.zeit.de/online/2009/23/flugzeugabsturz-unwetter-gewitter">Offenbar war die Crew von einem Gewitter überrascht worden.</a></p>
+  </body>
+  <teaser>
+    <title py:pytype="str">Suche soll Richtung Afrika ausgedehnt werden</title>
+    <text py:pytype="str">Die brasilianische Marine hat weitere 17 Todesopfer des verunglückten Airbus' im Atlantik gefunden. Auch in den Gewässern vor der Küste Senegals soll gesucht werden</text>
+  </teaser>
+  <indexteaser>
+    <title py:pytype="str">Airbus-Opfer</title>
+    <text py:pytype="str">Suche soll Richtung Afrika ausgedehnt werden</text>
+  </indexteaser>
+</article>

@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<article xmlns:py="http://codespeak.net/lxml/objectify/pytype">
+  <head>
+    <keywordset>
+      <keyword py:pytype="str" source="manual">klimawandel</keyword>
+      <keyword py:pytype="str" source="manual">klima</keyword>
+      <keyword py:pytype="str" source="manual">klimaschutz</keyword>
+      <keyword py:pytype="str" source="manual">umwelt</keyword>
+      <keyword py:pytype="str" source="manual">umweltschutz</keyword>
+      <keyword py:pytype="str" source="manual">umweltpolitik</keyword>
+      <keyword py:pytype="str" source="manual">usa</keyword>
+      <keyword py:pytype="str" source="manual">naturkatastrophe</keyword>
+      <keyword py:pytype="str" source="manual">naturschutz</keyword>
+      <keyword py:pytype="str" source="manual">meteorologie</keyword>
+      <keyword py:pytype="str" source="manual">Wissenschaft</keyword>
+      <keyword py:pytype="str" source="manual">geowissenschaft</keyword>
+    </keywordset>
+    <references>
+      <reference xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="intern" href="http://xml.zeit.de/themen/wissen/wissenschaft/klima/index" publication-date="" expires="" year="2009">
+        <supertitle py:pytype="str">Erderwärmung</supertitle>
+        <title py:pytype="str">Klimadebatte</title>
+        <text py:pytype="str">Was hilft gegen den Klimawandel, wie reagiert die Politik? Was weiß die Forschung und wie kann Klimaschutz finanziert werden?</text>
+        <description py:pytype="str">Was hilft gegen den Klimawandel, wie reagiert die Politik? Was weiß die Forschung und wie kann Klimaschutz finanziert werden?</description>
+        <byline xsi:nil="true"/>
+        <short>
+          <title py:pytype="str">Klimadebatte</title>
+          <text py:pytype="str">Was wissen wir und was müssen wir tun?</text>
+        </short>
+        <homepage>
+          <title py:pytype="str">Globale Erwärmung</title>
+          <text py:pytype="str">Was wissen wir wirklich und was ist zu tun?</text>
+        </homepage>
+        <image align="left" base-id="http://xml.zeit.de/bilder/2009/standards/wissen/klima/" type="jpg" publication-date="" expires="">
+          <bu>LONDON, ENGLAND - JANUARY 26:  A 16 foot high sculpture of a polar bear and cub, afloat on a small iceberg on the River Thames, passes in front of Tower Bridge  on January 26, 2009 in London, England. The sculpture was launched to provide a warning to members of parliament of the dangers of climate change and to launch a new natural history television channel.  (Photo by Oli Scarff/Getty Images)</bu>
+          <copyright py:pytype="str">© Oli Scarff/Getty Images</copyright>
+        </image>
+      </reference>
+      <reference xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="intern" href="http://xml.zeit.de/themen/wissen/erde-der-zukunft/index" publication-date="" expires="" year="2009">
+        <supertitle py:pytype="str">Zukunftsforschung</supertitle>
+        <title py:pytype="str">Erde 3.0</title>
+        <text py:pytype="str">Wie könnte unser Leben aussehen? Ein Schwerpunkt von ZEIT ONLINE, zusammen mit "spektrumdirekt.de" und "Spektrum der Wissenschaft"</text>
+        <description py:pytype="str">Wie könnte unser Leben aussehen? Ein Schwerpunkt von ZEIT ONLINE, zusammen mit "spektrumdirekt.de" und "Spektrum der Wissenschaft"</description>
+        <byline xsi:nil="true"/>
+        <short>
+          <title py:pytype="str">Erde 3.0</title>
+          <text py:pytype="str">Wie leben wir in Zukunft? Ein Schwerpunkt</text>
+        </short>
+        <homepage>
+          <title xsi:nil="true"/>
+          <text xsi:nil="true"/>
+        </homepage>
+        <image alt="Erde 3.0 - Wie wird die Forschung unsere Welt verändern? Ein Schwerpunkt" align="left" base-id="http://xml.zeit.de/bilder/2009/standards/wissen/erde-3.0/2-erde-3.0/" type="jpg" publication-date="" expires="">
+          <bu>Erde 3.0 – Wie wird die Forschung unsere Welt verändern? Ein Schwerpunkt</bu>
+          <copyright py:pytype="str">© ZEIT ONLINE Grafik</copyright>
+        </image>
+      </reference>
+    </references>
+    <image xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" alt="klima report usa klimawandel noaa klimabehörde waldbrand überschwemmungen" align="left" base-id="http://xml.zeit.de/bilder/2009/25/wissen/klimawandel-feuer/" type="jpg" publication-date="" expires="">
+      <bu>Auswirkungen des Klimawandels? Jedes Jahr wüten Waldbrände in Kalifornien und im Südwesten der USA. Sie zerstören Tausende Hektar Land und verwüsten ganze Siedlungen</bu>
+      <copyright py:pytype="str">© David McNew/Getty Images</copyright>
+    </image>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="DailyNL">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="artbox_thema">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="author"></attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="banner">yes</attribute>
+    <attribute ns="INTERNAL" name="cached-time">2009-07-30 13:54:00.736022+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="comments">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="copyrights">ZEIT ONLINE, dpa</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="corrected">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date-last-modified">2009-07-30T13:54:00.850545+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">2009-06-17T16:39:48.345029+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="date_last_published">2009-07-30T13:55:00.562106+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="edited">yes</attribute>
+    <attribute py:pytype="str" ns="http://apache.org/dav/props/" name="executable">F</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="export_cds">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="first_count">2009-06-17</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="has_recensions">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="images_added">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last-semantic-change">2009-07-30T13:53:34.683586+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="last_count">2009-07-29</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last_modified_by">ldap.neu</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="mostread">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="paragraphsperpage">7</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="published">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="refined">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="ressort">Wissen</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="serie">erde/umwelt</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="status">OK</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="sub_ressort">Umwelt</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="text-length">3634</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="total_hits">11364</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/meta" name="type">article</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="urgent">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="uuid">{urn:uuid:b45e2ea8-7b44-4765-b953-23537be561bf}</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="volume">25</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="was_automatically_syndicated_into"></attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="year">2009</attribute>
+  </head>
+  <body>
+    <supertitle py:pytype="str">Neue Studie</supertitle>
+    <title>Die USA spüren die Folgen des Klimawandels</title>
+    <subtitle>In den USA sind die Folgen des Klimawandels bereits zu spüren. Das steht in einem aufrüttelnden Regierungsbericht, der am Dienstag im Weißen Haus präsentiert wurde </subtitle>
+    <p>"Unterm Strich steht fest: Der Klimawandel beeinflusst schon Dinge, die uns wichtig sind", sagte John Holdren, Chef des Büros für Wissenschaftspolitik am Dienstag bei der Präsentation der neuen Studie in Washington (<a href="http://www.globalchange.gov/images/cir/pdf/20page-highlights-brochure.pdf" target="_blank">Zusammenfassung als PDF in englischer Sprache</a>).</p>
+    <p>Darauf deuteten Trends bei extremen Wetterphänomenen, Dürren und Waldbränden hin. "Wir beginnen, in jeder Region die Auswirkungen des Klimawandels zu fühlen", sagte Holdren. Werde umgehend gehandelt, könnten die schlimmsten Folgen allerdings noch abgewendet werden.</p>
+    <p>In dem Bericht "Die Auswirkungen des globalen Klimawandels in den USA" heißt es, dass der Temperaturanstieg der vergangenen Jahrzehnte vor allem menschengemacht sei. Der 190-Seiten Report, der unter Leitung der US-Klimabehörde NOAA verfasst wurde, berichtet zudem von einem steigenden Meeresspiegel und mehr starken Regenfällen. Die eisfreie Zeit der Seen und Flüsse nehme zu. "Diese Auswirkungen werden stärker."</p>
+    <p>Alaska habe sich in den vergangenen 50 Jahren doppelt so schell erwärmt wie der Rest der USA. Dies habe bereits jetzt unter anderem zu einer früheren Schneeschmelze geführt. Die Gletscher gehen rasch zurück, und der Permafrostboden taut bereits, heißt es weiter.</p>
+    <raw>
+      <object width="425" height="344">
+        <param name="movie" value="http://www.youtube.com/v/y88sgDM9HmA"/>
+        <param name="allowFullScreen" value="true"/>
+        <param name="allowscriptaccess" value="always"/>
+        <embed src="http://www.youtube.com/v/y88sgDM9HmA" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"/>
+      </object>
+    </raw>
+    <p>
+      <strong>
+        <em>Auf der Präsentation der Studie in Washington, die Sie hier auf Englisch im Video sehen können, entwarfen die Experten ein Schreckensszenario.</em>
+      </strong>
+    </p>
+    <p>Sollte nichts gegen die drohende Klimakatastrophe unternommen werden, droht dem Bericht zufolge eine Reihe dramatischer Entwicklungen. Hitzewellen würden häufiger und intensiver werden. Heftigere Regenfälle führten zu mehr Überschwemmungen, steigende Meerestemperaturen bedrohten<a href="http://www.zeit.de/online/2009/17/saure-meere" target="_blank"> Korallenriffe</a> und die damit verbundenen Ökosysteme. Außerdem nähmen Waldbrände  in den USA bereits jetzt zu – und kämen bei steigender Erderwärmung noch öfter vor.</p>
+    <p>Durch <a href="http://www.zeit.de/online/2009/12/klimakongress-rahmstorf-interview" target="_blank">steigende Meeresspiegel</a> könnten die Inselgruppe der Florida Keys und das Feuchtgebiet der Everglades im Süden Floridas untergehen, sagte Holdren. "Es gibt einige kritische Schwellen, die bereits überschritten sind, und der Anstieg des Meeresspiegels ist ein gutes Beispiel", sagte der Direktor des Nationalen Zentrums für Klimadaten, Thomas Karl.</p>
+    <p>Einen Zeitrahmen, wann diese Entwicklungen eintreten könnten, nannte Holdren nicht. Auch beinhaltet der Bericht keine konkreten politischen Gegenmaßnahmen. An der Studie arbeiteten Wissenschaftler von rund einem Dutzend staatlicher Forschungseinrichtungen, großen Universitäten und unabhängigen Instituten mit.</p>
+    <p>Wissenschaftler sind sich zwar inzwischen einig, dass der weltweite CO<sub>2</sub>-Ausstoß zu einer globalen Erwärmung führt – mit fatalen Folgen für die Natur und den Menschen. Besondere Wetterereignisse und regionale <a href="http://www.zeit.de/themen/wissen/wissenschaft/klima/index">Klimaveränderungen</a> lassen sich aber häufig nicht eindeutig auf die Treibhausgase zurückführen. Prognosen, wie sich das Klima in den nächsten Jahrzehnten und Jahrhunderten entwickeln wird, variieren stark.</p>
+    <p>Der US-Kongress berät derzeit ein umfangreiches Gesetzespaket über ein System zum Emissionshandel, das es in den USA bislang nicht gibt. Danach soll der <a target="_blank" href="http://www.zeit.de/online/2009/25/klimaschutz-usa">Ausstoß von Treibhausgasen</a> bis zum Jahr 2020 um 17 Prozent unter das Niveau von 2005 gedrückt werden und danach um 80 Prozent bis zum Jahr 2050. In Europa ist hingegen eine Reduzierung um 20 Prozent unter das Niveau von 1990 bis 2020 angepeilt.</p>
+    <p>Auf der <a target="_blank" href="http://www.zeit.de/online/2009/14/klima-vorbereitungsgipfel">Klimakonferenz in Bonn</a> hatten die USA vorgeschlagen, dass alle Industrieländer ihre Treibhausgas-Emissionen bis 2050 um 80 Prozent reduzieren sollten.</p>
+  </body>
+  <teaser>
+    <title py:pytype="str">Die USA spüren die Folgen des Klimawandels</title>
+    <text py:pytype="str">In den USA sind die Folgen des Klimawandels bereits zu spüren. Das steht in einem aufrüttelnden Regierungsbericht, der am Dienstag im Weißen Haus präsentiert wurde.</text>
+  </teaser>
+  <indexteaser>
+    <title py:pytype="str">Neue Studie</title>
+    <text py:pytype="str">Die USA spüren die Folgen des Klimawandels</text>
+  </indexteaser>
+</article>
