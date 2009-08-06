@@ -61,14 +61,14 @@ class BoxInjector(object):
         '''
         xml_id = self.resource.properties.get(_PROP_GALLERY)
         if xml_id and xml_id.startswith('http://xml.zeit.de'):
+            position = 3
             first_released = self._get_doc_date()
             if first_released:
                 if first_released > datetime(2009,4,21):
                     position = 5
                 elif first_released > datetime(2008,9,30):
                     position = 7
-                else:
-                    position = 3
+                
             attrib = {'expires':'', 'href':xml_id, 'publication-date':''}
             self.art_boxes[_PROP_GALLERY] = {
                 'element': etree.Element("gallery", attrib=attrib),

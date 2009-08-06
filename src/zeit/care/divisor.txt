@@ -105,3 +105,11 @@ True
 True
 True
 ...
+
+Check for some special cases:
+
+>>> res = connector['http://xml.zeit.de/testdocs/klimawandel-usa']
+>>> tree = etree.parse(StringIO.StringIO(res.data.read()))
+>>> para = tree.xpath('//body/division[@type="page"][2]')[0].getchildren()[0]
+>>> print etree.tostring(para, method="text", encoding="utf-8")
+Durch steigende Meeresspiegel könnten die Inselgruppe der Florida Keys ...

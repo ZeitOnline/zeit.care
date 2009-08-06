@@ -67,11 +67,19 @@ Test conversion
 
 >>> from lxml import etree
 >>> resource = connector['http://xml.zeit.de/testdocs/with_divisions/kapitalismus-staatsschulden.xml'] 
+>>> resource.properties.has_key(('artbox_portrait', 'http://namespaces.zeit.de/CMS/document'))
+False
 >>> tree = etree.parse(StringIO.StringIO(resource.data.read()))
 >>> tree.xpath('//body/division[position() = 2]/*')[0]
 <Element portraitbox at ...
 
 >>> resource = connector['http://xml.zeit.de/testdocs/with_divisions/iran-krise-ausweg'] 
+>>> resource.properties.has_key(('artbox_info', 'http://namespaces.zeit.de/CMS/document'))
+False
+>>> resource.properties.has_key(('artbox_gallery', 'http://namespaces.zeit.de/CMS/document'))
+False
+>>> resource.properties.has_key(('artbox_thema', 'http://namespaces.zeit.de/CMS/document'))
+True
 >>> tree = etree.parse(StringIO.StringIO(resource.data.read()))
 >>> tree.xpath('//body/division[position() = 1]/*')[5]
 <Element gallery at ...
