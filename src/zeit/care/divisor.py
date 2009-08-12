@@ -15,7 +15,8 @@ class Converter(object):
 
     def __init__(self, xml_str):
         self.xml = xml_str
-        self.body_elems = ['title','subtitle','byline','supertitle']
+        self.body_elems = ['title','subtitle','byline','supertitle','bu']
+        self.div_elems = ['p','video','raw','intertitle','article_extra']
 
     def _build_new_body(self, elements, divisons):
         '''builds a new body node with the standard elements and the dvisions'''
@@ -67,7 +68,7 @@ class Converter(object):
                 continue
 
             div.append(e)
-            if e.tag in ['p','video','raw']: xp += 1     
+            if e.tag in self.div_elems: xp += 1     
 
             if paras_per_page == xp:
                 div_list.append(div)
