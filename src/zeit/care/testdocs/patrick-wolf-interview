@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<article xmlns:py="http://codespeak.net/lxml/objectify/pytype">
+  <head>
+    <keywordset>
+      <keyword py:pytype="str" source="manual">Kultur</keyword>
+      <keyword py:pytype="str" source="manual">Musik</keyword>
+      <keyword py:pytype="str" source="manual">tontraeger</keyword>
+      <keyword py:pytype="str" source="manual">pop</keyword>
+      <keyword py:pytype="str" source="manual">elektronika</keyword>
+      <keyword py:pytype="str" source="manual">folk</keyword>
+      <keyword py:pytype="str" source="manual">musiker</keyword>
+    </keywordset>
+    <image xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" align="left" base-id="http://xml.zeit.de/bilder/2009/25/kultur/musik/wolf-iv/" type="jpg" publication-date="" expires="">
+      <bu>"Ich musste mich für alles rechtfertigen, für die Texte, meine Haarfarbe und meine ganze Persönlichkeit", sagt Patrick Wolf</bu>
+      <copyright py:pytype="str">© Nick Thornton-Jones, Warren Du Preez</copyright>
+    </image>
+    <references>
+      <reference xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns0="http://namespaces.zeit.de/CMS/link" type="intern" href="http://xml.zeit.de/online/2009/25/blog-tontraeger-patrick-wolf" publication-date="" expires="" year="2009" issue="25" ns0:href="http://blog.zeit.de/tontraeger/2009/06/10/opus-aus-wolfs-revier_2859">
+        <image align="left" base-id="http://xml.zeit.de/bilder/2009/25/kultur/musik/wolf-teaser/" type="jpg" publication-date="" expires="">
+          <bu xsi:nil="true"/>
+          <copyright py:pytype="str">© Nick Thornton-Jones, Warren Du Preez</copyright>
+        </image>
+        <supertitle py:pytype="str">Elektro-Folk</supertitle>
+        <title py:pytype="str">Opus aus Wolfs Revier</title>
+        <text py:pytype="str">Samtweiche Geigen, stahlharte Beats: Der exzentrische Brite Patrick Wolf liebt die Gegensätze und hat sie zu einem beeindruckenden Elektro-Folk-Album gefügt.</text>
+        <description py:pytype="str">Samtweiche Geigen, stahlharte Beats: Der exzentrische Brite Patrick Wolf liebt die Gegensätze und hat sie zu einem beeindruckenden Elektro-Folk-Album gefügt.</description>
+        <byline py:pytype="str">Von Rabea Weihser</byline>
+        <short>
+          <title py:pytype="str">Großartiges Album</title>
+          <text py:pytype="str">Der junge Brite Patrick Wolf und sein Elektro-Folk</text>
+        </short>
+        <homepage>
+          <title xsi:nil="true"/>
+          <text xsi:nil="true"/>
+        </homepage>
+      </reference>
+    </references>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="DailyNL">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="artbox_thema">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="author">Barbara Mürdter</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="banner">yes</attribute>
+    <attribute ns="INTERNAL" name="cached-time">2009-06-24 21:27:11.717327+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="comments">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="copyrights">ZEIT ONLINE</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="corrected">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date-last-modified">2009-06-24T21:38:24.246512+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">2009-06-10T10:53:39.514725+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="date_last_published">2009-06-10T14:55:59.678930+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="edited">yes</attribute>
+    <attribute py:pytype="str" ns="http://apache.org/dav/props/" name="executable">F</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="first_count">2009-06-10</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="has_recensions">no</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="images_added">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last-semantic-change">2009-06-24T21:38:24.182612+00:00</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="last_count">2009-06-23</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="last_modified_by">ldap.stockrahm</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="mostread">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="paragraphsperpage">7</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="published">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="refined">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="ressort">Kultur</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="status">OK</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="sub_ressort">Musik</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="text-length">7109</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/lifetimecounter" name="total_hits">7281</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/meta" name="type">article</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="urgent">yes</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="uuid">{urn:uuid:2403bc3c-1ad2-4ab1-acba-b200cff1df6e}</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="volume">25</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/workflow" name="was_automatically_syndicated_into"></attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="year">2009</attribute>
+  </head>
+  <body>
+    <supertitle py:pytype="str">Elektro-Folk</supertitle>
+    <title>"Ein bisschen Sex nach dem Auftritt"</title>
+    <subtitle>Patrick Wolf aus London ist ein faszinierender Musiker. Er fordert mehr Toleranz gegenüber Schwulen, Lesben und Transsexuellen. Das klingt auch noch toll! Ein Interview</subtitle>
+    <p><strong>ZEIT ONLINE:</strong> Mr. Wolf, Sie sind von Ihrer Plattenfirma Universal fallengelassen worden und haben ein eigenes Label gegründet. Ihr Album <a href="http://blog.zeit.de/tontraeger/2009/06/10/opus-aus-wolfs-revier_2859" target="_blank"><em>The Bachelor</em></a> wurde unter anderem über die Internetseite <a target="_blank" href="http://www.bandstocks.com">Bandstocks.com</a> finanziert. Dort können Fans Aktien an dem entstehenden Werk eines Künstlers kaufen.</p>
+    <p><strong>Patrick Wolf:</strong> Wenn heute noch jemand für ein Album bezahlt, ist das ja wie ein Wunder (<em>lacht</em>). Ich habe nur vier oder fünf Ausschnitte online gestellt. Das haben sich die Leute nicht einmal angehört – sie hatten einfach das Bedürfnis, mich zu unterstützen. Ich habe mich sehr geschmeichelt gefühlt, wirklich inspiriert, weil meine Arbeit den Menschen etwas bedeutet.</p>
+    <p><strong>ZEIT ONLINE:</strong> Die ersten Stücke der neuen Platte sind auf einer Amerika-Tour entstanden. Wie schreibt es sich unterwegs?</p>
+    <p><strong>Wolf: </strong>Ich habe dort oft Zeit überbrücken müssen. In Los Angeles habe ich eine Woche auf einen Fernsehauftritt  gewartet. Ich hatte nichts zu tun – also viel Zeit, um Nachzudenken und neue Sachen zu erfahren. Seit ich 19 war, war ich beinahe pausenlos auf Tour. Mal zwei Tage in Australien, dann direkt nach Japan, dann nach Amerika und dann wieder vorwärts und zurück. Ich fühlte mich in 1000 Teile geteilt, die irgendwo in der Welt waren. Im vergangenen Jahr habe ich alle Tour-Angebote abgelehnt, alle Festivals und alle Interviews. Ich wollte ein neues Kapitel beginnen, meine Gefühle sortieren. Erst Mitte des Jahres habe ich überhaupt kapiert, dass ich mittlerweile ziemlich depressiv geworden war.</p>
+    <p><strong>ZEIT ONLINE: </strong>Um diese Krise dreht sich auch Ihr Album. Zunächst sollte es ein politisches Werk werden.</p>
+    <p><strong>Wolf:</strong> Ich habe mich lange Zeit missverstanden gefühlt. Gerade auf Tour durch Amerika oder andere Gegenden, die in ihrem Kern konservativ sind – ich musste mich für alles rechtfertigen, für die Texte, meine Haarfarbe und meine ganze Persönlichkeit, bevor es um die Musik ging. Das ist jetzt besser, da ich bekannter bin. Ich war aber lange in dieser Verteidigungshaltung. Zudem haben mich das Alleinsein und die Depression aggressiver gemacht, auch politisch.<br/>
+<br/>
+<strong>ZEIT ONLINE: </strong>In Songs wie <em>Hard Times</em> rufen Sie die Hörer auf, aktiv zu werden, sich zur Wehr zu setzen. Wie sehen Sie die gesellschaftliche Situation in England im Moment?</p>
+    <p><strong>Wolf:</strong> Es ist komisch, dass es den Leuten ans Geld gehen muss, damit sie aufbegehren. Wenn ich etwas beeinflussen könnte, würde ich Aufstände wegen soziopolitischer Themen anzetteln: Rassengleichheit, Feminismus, Schwulen-, Lesben- und Transgenderrechte. Diese Themen sind zwar politisch verankert, aber nicht gesellschaftlich. Und auch die Medien fürchten sich noch vor Dingen, die schon von Generationen vor uns etabliert wurden.</p>
+    <p><strong>ZEIT ONLINE:</strong> Hat es Sie verändert, dass Sie jetzt mehr Respekt erfahren und auch einfach älter geworden sind?</p>
+    <audio xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" audioID="list_81" expires="" format="large"/>
+    <p><strong>Wolf:</strong> Ja, ich werde nicht mehr diese Peter-Pan-Figur sein. Mir ist es wichtig, ehrlich zu meinem Alter zu stehen, zu meiner emotionalen Entwicklung und dem nie endenden Lernprozess. Viele Leute sind von ihrer Jugend besessen – ich dagegen von meinem Reifeprozess. Darum arbeite ich gern mit Leuten, die so viel in ihrem Leben erreicht haben wie Marianne Faithfull oder <a href="http://www.zeit.de/2008/07/Tilda-Swinton-07" target="_blank">Tilda Swinton</a>, mit Menschen, die so viel zu geben und zu erzählen haben. Ich fühle mich solchen Leuten stärker verbunden als meinen Altersgenossen.</p>
+    <p><strong>ZEIT ONLINE:</strong> Wie wollen Sie sein, wenn Sie alt sind?</p>
+    <p><strong>Wolf:</strong> Wenn ich eine Glatze bekomme, werde ich es wie Andy Warhol halten: Perücken, Perücken, Perücken. Und viele Pelzmäntel. Und ich werde die Altersexzentrik als Entschuldigung dafür gebrauchen, Dinge zu tun, die ich bisher noch nicht gewagt habe.</p>
+    <p><strong>ZEIT ONLINE:</strong> Exzentrik ist ja etwas stereotyp Englisches. Sie beziehen sich auch in Ihrer Musik stark auf englische – und irische – Musiktraditionen. Was reizt Sie daran?</p>
+    <p><strong>Wolf:</strong> Ich glaube, es ist eine Reminiszenz an meine Familie. Mein Vater ist englisch, durch und durch. Und meine Mutter ist Irin. Der tiefe emotionale Kontakt zu meinen Eltern zieht sich durch alle meine Alben. Auf meinem ersten Album <em>Lycantrophy</em> betrauere ich, dass ich von zu Hause weggelaufen bin und auf gewisse Weise keine Eltern hatte. Auf dem zweiten Album <em>Wind In The Wires</em> komme ich wieder zurück. Mein Vater hat darauf gespielt und meine Schwester. Dann sind meine Großeltern gestorben. Das dritte Album <a target="_blank" href="http://blog.zeit.de/tontraeger/2007/05/16/mein-leben-als-musical_404"><em>The Magic Position</em></a> enthält einen Brief an sie und meine Mutter. Auf dem neuen Album singe ich <em>Blackdown</em> für meinen Vater. Es gibt nur eine kleine Gruppe an Leuten, die ich wirklich liebe und denen ich mein Leben anvertraue. Sie tauchen dann immer irgendwie in den Songs auf.</p>
+    <p><strong>ZEIT ONLINE: </strong>Den natürlichen Folk-Klängen setzen Sie synthetische gegenüber. Was interessiert Sie an elektronischer Musik?</p>
+    <p><strong>Wolf: </strong>Sie hat sich im 20. Jahrhundert als total neue, wunderbare Art der Kommunikation entwickelt. Diese Klangschablone ist noch so unschuldig und jung im Vergleich zu Streichersätzen, die es seit Hunderten von Jahren gibt. Das ist ein alter, gereifter Klang. Viel kann man damit nicht machen. Aber elektronische Musik ist noch frisch. Im Herzen bin ich Futurist, auch wenn ich vom Cembalo und Elisabethanischer Musik beeinflusst bin, konzentriere ich mich nicht auf die Vergangenheit, sondern schaue in die Zukunft.<strong><br/></strong></p>
+    <p><strong>ZEIT ONLINE:</strong> Schon im kommenden Jahr soll ein weiteres Album von Ihnen erscheinen. Sie müssen sehr produktiv arbeiten.</p>
+    <p><strong>Wolf:</strong> Ich bin 2008 mit etwa 40 Songs ins Studio gegangen und fühlte mich dann schuldig, dass ich mich von mindestens 20 verabschieden müsste, weil sie nicht alle auf ein Album passen. Als ich mir dann die Texte, die Akkorde und die Tonlagen genauer anschaute, stellte ich fest, dass ich Zwillinge geboren hatte. Sie sind sich sehr ähnlich, aber doch zwei verschiedene Kreaturen. Ich muss das zweite eben auch so schnell wie möglich herausbringen.</p>
+    <p><strong>ZEIT ONLINE: </strong>Das Album-Projekt trägt den Namen <em>The Battle</em> – sehr kämpferisch.</p>
+    <p><strong>Wolf: </strong> Battle heißt die Stadt, in der ich die Musik aufgenommen habe. Und tatsächlich vermitteln viele Songs eine kämpferische Stimmung. Dazu stritt ich mit meiner Plattenfirma Universal, bis sie mich rauswarf. Ich musste das Album allein mit geringem Budget fertigstellen. Also entschied ich mich, ersteinmal <em>The Bachelor</em> zu veröffentlichen. Ich wollte mit dem negativen Zustand, den Problemen, der Depression beginnen. Und mit dem zweiten Teil,<em> The Conquerer</em>, folgt dann die Genesung, das Positive.</p>
+    <p><strong>ZEIT ONLINE:</strong> Sie gehen auch wieder auf Tour. Fühlen Sie sich jetzt sicherer?<br/>
+<br/>
+<strong>Wolf:</strong> Diesmal werde ich es mehr genießen. Ich bin jetzt 25. Ich bin erwachsen geworden und habe gelernt, meinen Körper besser zu beherrschen. Und ich habe jetzt auch meinen Freund dabei. Ein bisschen Sex nach dem Auftritt, das macht glücklich (<em>lacht</em>).<br/>
+<br/>
+Das Gespräch führte <strong>Barbara Mürdter</strong><br/>
+<br/>
+<br/>
+<strong><em>Plattenrezensionen, Künstlerporträts und Netzradio rund um die Uhr gibt's auf <a target="_blank" href="http://www.zeit.de/musik/index">zeit.de/musik »</a><br/>
+<br/>
+Sie wollen auf dem Laufenden bleiben? <a target="_blank" href="http://newsfeed.zeit.de/musik/index">Klicken Sie hier</a>, und unser RSS-Newsletter bringt Ihnen die Musik direkt auf den Schirm.</em></strong></p>
+  </body>
+  <teaser>
+    <title py:pytype="str">"Ein bisschen Sex nach dem Auftritt"</title>
+    <text py:pytype="str">Patrick Wolf aus London ist ein faszinierender Musiker. Er fordert mehr Toleranz gegenüber Schwulen, Lesben und Transsexuellen. Das klingt auch noch toll! Ein Interview</text>
+  </teaser>
+  <indexteaser>
+    <title py:pytype="str">Patrick Wolf</title>
+    <text py:pytype="str">Ein Interview über Musik und ein bisschen Sex</text>
+  </indexteaser>
+</article>
