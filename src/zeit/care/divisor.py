@@ -13,7 +13,7 @@ import zope.authentication.interfaces
 logger = logging.getLogger(__name__) 
 
 _DAV_PROP_NAME_ = ('file-name', 'http://namespaces.zeit.de/CMS/document')
-_PARAMS_PER_PAGE_ = 5
+_PARAMS_PER_PAGE_ = 7
 
 class Converter(object):
 
