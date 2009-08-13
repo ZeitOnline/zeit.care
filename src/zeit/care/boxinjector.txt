@@ -58,10 +58,6 @@ Convert all test resources, not every article will be touched
 >>> from zeit.care.boxinjector import crawler_worker
 >>> for (filename, filepath) in testdocs:
 ...     crawler_worker(connector['http://xml.zeit.de/testdocs/with_divisions/'+filename], connector)
-http://xml.zeit.de/testdocs/with_divisions/...
-http://xml.zeit.de/testdocs/with_divisions/...
-http://xml.zeit.de/testdocs/with_divisions/...
-
 
 Test conversion
 

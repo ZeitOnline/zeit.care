@@ -1,14 +1,18 @@
 # -*- coding: utf-8 -*-
 import os
+import logging 
 import StringIO
 from optparse import OptionParser
 from lxml import etree
 from datetime import datetime
+from zeit.care import add_file_logging
 import zeit.care.crawl
 import zeit.connector.connector
 from zeit.connector.resource import Resource
 import zeit.connector.interfaces
 import zope.authentication.interfaces
+
+logger = logging.getLogger(__name__) 
 
 _NS_DOC = 'http://namespaces.zeit.de/CMS/document'
 _PROP_RELEASED = ('date_first_released', _NS_DOC)
@@ -158,12 +162,15 @@ class BoxInjector(object):
 
 def crawler_worker(resource, connector):
     if resource.type == "article":
-        injector = BoxInjector(resource)
-        injector.convert()
-        new_resource = injector.get_new_resource()
-        if new_resource:
-            print resource.id            
-            connector[resource.id] = new_resource
+        try:
+            injector = BoxInjector(resource)
+            injector.convert()
+            new_resource = injector.get_new_resource()
+            if new_resource:
+                connector[resource.id] = new_resource
+                logger.info(resource.id)
+        except:
+            logger.exception(resource.id)
 
 def dev():
     import zeit.connector.mock
@@ -188,7 +195,6 @@ def dev():
                 contentType = 'text/xml')
         connector.add(res)
         crawler_worker(connector[res.id], connector)
-        #print connector[res.id].data.read()
 
 def main():
     usage = "usage: %prog [options] arg"
@@ -200,6 +206,8 @@ def main():
                       help="entry collection for starting the conversion")
     parser.add_option("-w", "--webdav", dest="webdav",
                       help="webdav server uri")
+    parser.add_option("-l", "--log", dest="logfile",
+                      help="logfile")
     parser.add_option("-f", "--force", action="store_true", dest="force",
                         help="no reinsurance question, for batch mode e.g.")
     #parser.add_option("-v", "--verbose",
@@ -220,13 +228,16 @@ def main():
 
         if not options.webdav:
             parser.error("missing webdav uri")
+
+        if options.logfile:
+            add_file_logging(logger, options.logfile)
            
         if not options.force:
             user_ok = raw_input('\nConversion will start at %s.\nAre you sure? [y|n]: ' \
                 % options.collection)
         else: 
             user_ok = "y" 
-
+        
         if user_ok == "y":
             connector = zeit.connector.connector.Connector(roots=dict(
                 default=options.webdav))

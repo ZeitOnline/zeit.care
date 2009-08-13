@@ -83,17 +83,9 @@ True
 ...
 
 Convert all test resources
-
 >>> from zeit.care.divisor import division_worker
 >>> for (filename, filepath) in testdocs:
 ...     division_worker(connector['http://xml.zeit.de/testdocs/'+filename], connector)
-http://xml.zeit.de/testdocs/Rissforschung
-http://xml.zeit.de/testdocs/baiersbronn-wanderkoch
-http://xml.zeit.de/testdocs/199910.pegasus.xml
-http://xml.zeit.de/testdocs/Argument-Banken
-http://xml.zeit.de/testdocs/199910.weimar_.xml
-...
-
 >>> for (filename, filepath) in testdocs:
 ...     resource = connector['http://xml.zeit.de/testdocs/'+filename]
 ...     if resource.type == 'article':
@@ -126,6 +118,12 @@ Vorbei. Die Idee von der Dauerfestigkeit ...
 >>> para = tree.xpath('//body/division[@type="page"][2]')[0].getchildren()[0]
 >>> print etree.tostring(para, method="text", encoding="utf-8")
 Die Infrastruktur bröckelt. Überall sehen Amerikaner Verfall: ausgefahrene Straßen,...
+
+>>> res = connector['http://xml.zeit.de/testdocs/patrick-wolf-interview']
+>>> tree = etree.parse(StringIO.StringIO(res.data.read()))
+>>> para = tree.xpath('//body/division[@type="page"][3]')[0].getchildren()[0]
+>>> print etree.tostring(para, method="text", encoding="utf-8")
+ZEIT ONLINE: Den natürlichen Folk-Klängen setzen Sie synthetische gegenüber. ...
 
 >>> res = connector['http://xml.zeit.de/testdocs/Konjunkturprogramm']
 >>> tree = etree.parse(StringIO.StringIO(res.data.read()))

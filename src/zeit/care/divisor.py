@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
 import os
+import logging 
 import StringIO
 from optparse import OptionParser
 from lxml import etree
 import zeit.care.crawl
+from zeit.care import add_file_logging
 import zeit.connector.connector
 from zeit.connector.resource import Resource
 import zope.authentication.interfaces
+
+logger = logging.getLogger(__name__) 
 
 _DAV_PROP_NAME_ = ('file-name', 'http://namespaces.zeit.de/CMS/document')
 _PARAMS_PER_PAGE_ = 5
@@ -16,7 +20,7 @@ class Converter(object):
     def __init__(self, xml_str):
         self.xml = xml_str
         self.body_elems = ['title','subtitle','byline','supertitle','bu']
-        self.div_elems = ['p','video','raw','intertitle','article_extra']
+        self.div_elems = ['p','video','audio','raw','intertitle','article_extra']
 
     def _build_new_body(self, elements, divisons):
         '''builds a new body node with the standard elements and the dvisions'''
@@ -55,7 +59,8 @@ class Converter(object):
         elif tree.xpath('//body/division'):
             return self.xml
 	
-        paras_per_page = self._get_params_per_page(tree)                    
+        paras_per_page = self._get_params_per_page(tree)          
+
         div_list = []
         xp = 0
         div = []
@@ -87,15 +92,18 @@ class Converter(object):
 
 def division_worker(resource, connector):
     if resource.type == "article":
-        new_xml = Converter(resource.data.read()).convert()
-        new_resource = Resource(resource.id, 
-            resource.__name__, 
-            resource.type, 
-            StringIO.StringIO(new_xml), 
-            resource.properties, 
-            resource.contentType)
-        connector[resource.id] = new_resource
-        print resource.id
+        try:
+            new_xml = Converter(resource.data.read()).convert()
+            new_resource = Resource(resource.id, 
+                resource.__name__, 
+                resource.type, 
+                StringIO.StringIO(new_xml), 
+                resource.properties, 
+                resource.contentType)
+            connector[resource.id] = new_resource
+            logger.info(resource.id)
+        except:
+            logger.exception(resource.id)
 
 
 def dev():
@@ -120,7 +128,7 @@ def dev():
                 open(filepath),
                 contentType = 'text/xml')
         connector.add(res)
-        division_worker(connector[res.id], connector)
+        division_worker(connector[res.id], connector)        
         print connector[res.id].data.read()
 
 def main():
@@ -133,17 +141,15 @@ def main():
                       help="entry collection for starting the conversion")
     parser.add_option("-w", "--webdav", dest="webdav",
                       help="webdav server uri")
+    parser.add_option("-l", "--log", dest="logfile",
+                      help="logfile")
     parser.add_option("-f", "--force", action="store_true", dest="force",
                         help="no reinsurance question, for batch mode e.g.")
-    #parser.add_option("-v", "--verbose",
-                      #action="store_true", dest="verbose")
-    #parser.add_option("-q", "--quiet",
-                      #action="store_false", dest="verbose")
 
     (options, args) = parser.parse_args()
 
     if not options.mode:
-        parser.error("missing mode")
+        parser.error("missing mode")   
 
     if options.mode == 'dev':
         dev()
@@ -153,7 +159,10 @@ def main():
 
         if not options.webdav:
             parser.error("missing webdav uri")
-           
+
+        if options.logfile:
+            add_file_logging(logger, options.logfile)
+
         if not options.force:
             user_ok = raw_input('\nConversion will start at %s.\nAre you sure? [y|n]: ' \
                 % options.collection)
