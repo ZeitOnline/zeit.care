@@ -172,36 +172,9 @@ def crawler_worker(resource, connector):
         except:
             logger.exception(resource.id)
 
-def dev():
-    import zeit.connector.mock
-
-    connector = zeit.connector.mock.Connector()
-    coll_path = 'http://xml.zeit.de/testdocs/with_divisions/'
-    col = Resource(coll_path,
-                    'testdocs',
-                    'collection',
-                    StringIO.StringIO(''))
-    connector.add(col)  
-
-    testdir = os.path.dirname(__file__)+'/testdocs/with_divisions/'
-    testdocs = [(f,testdir+f) for f in os.listdir(testdir) if \
-    os.path.isfile(testdir+f)]
-
-    for (filename, filepath) in testdocs[0:13]:
-        res = Resource('http://xml.zeit.de/testdocs/with_divisions/'+filename,
-                filename,
-                'article',
-                open(filepath),
-                contentType = 'text/xml')
-        connector.add(res)
-        crawler_worker(connector[res.id], connector)
-
 def main():
     usage = "usage: %prog [options] arg"
     parser = OptionParser(usage)
-    parser.add_option("-m", "--mode", dest="mode",
-                      help="dev for dev mode, live for live connector",
-                      choices=['dev','live'])
     parser.add_option("-c", "--collection", dest="collection",
                       help="entry collection for starting the conversion")
     parser.add_option("-w", "--webdav", dest="webdav",
@@ -213,31 +186,25 @@ def main():
 
     (options, args) = parser.parse_args()
 
-    if not options.mode:
-        parser.error("missing mode")
+    if not options.collection:
+        parser.error("missing entry point for conversion")
 
-    if options.mode == 'dev':
-        dev()
-    elif options.mode == 'live':
-        if not options.collection:
-            parser.error("missing entry point for conversion")
+    if not options.webdav:
+        parser.error("missing webdav uri")
 
-        if not options.webdav:
-            parser.error("missing webdav uri")
-
-        if options.logfile:
-            add_file_logging(logger, options.logfile)
-           
-        if not options.force:
-            user_ok = raw_input('\nConversion will start at %s.\nAre you sure? [y|n]: ' \
-                % options.collection)
-        else: 
-            user_ok = "y" 
+    if options.logfile:
+        add_file_logging(logger, options.logfile)
         
-        if user_ok == "y":
-            connector = zeit.connector.connector.Connector(roots=dict(
-                default=options.webdav))
-            crawler = zeit.care.crawl.Crawler(connector, crawler_worker)
-            crawler.run(options.collection)
+    if not options.force:
+        user_ok = raw_input('\nConversion will start at %s.\nAre you sure? [y|n]: ' \
+            % options.collection)
+    else: 
+        user_ok = "y" 
+    
+    if user_ok == "y":
+        connector = zeit.connector.connector.Connector(roots=dict(
+            default=options.webdav))
+        crawler = zeit.care.crawl.Crawler(connector, crawler_worker)
+        crawler.run(options.collection)
     
 
