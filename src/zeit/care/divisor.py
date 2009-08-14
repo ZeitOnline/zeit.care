@@ -142,7 +142,7 @@ def main():
     parser.add_option("-w", "--webdav", dest="webdav",
                       help="webdav server uri")
     parser.add_option("-l", "--log", dest="logfile",
-                      help="logfile")
+                      help="logfile for errors")
     parser.add_option("-f", "--force", action="store_true", dest="force",
                         help="no reinsurance question, for batch mode e.g.")
 
