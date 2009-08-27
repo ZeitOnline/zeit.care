@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+import sys
 import logging 
 import StringIO
 from optparse import OptionParser
@@ -169,6 +170,9 @@ def crawler_worker(resource, connector):
             if new_resource:
                 connector[resource.id] = new_resource
                 logger.info(resource.id)
+        except KeyboardInterrupt,e:
+            logger.info('SCRIPT STOPPED')
+            sys.exit()
         except:
             logger.exception(resource.id)
 

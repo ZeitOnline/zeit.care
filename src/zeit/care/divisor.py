@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+import sys
 import logging 
 import StringIO
 from optparse import OptionParser
@@ -102,6 +103,9 @@ def division_worker(resource, connector):
                 resource.contentType)
             connector[resource.id] = new_resource
             logger.info(resource.id)
+        except KeyboardInterrupt,e:
+            logger.info('SCRIPT STOPPED')
+            sys.exit()
         except:
             logger.exception(resource.id)
 
