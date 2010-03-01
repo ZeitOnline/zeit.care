@@ -12,4 +12,3 @@ class Crawler(object):
             if self.connector[container].type == "collection" or \
                 self.connector[container].type == "imagegroup": 
                     stack.extend(r[1] for r in self.connector.listCollection(container))
-        
