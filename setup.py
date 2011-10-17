@@ -24,5 +24,6 @@ setup(
         isofication = zeit.care.worker:isofy_main
         divisor = zeit.care.divisor:main
         boxinjector = zeit.care.boxinjector:main
+        ressortindexwriter = zeit.care.ressortindex:main
         """
 )

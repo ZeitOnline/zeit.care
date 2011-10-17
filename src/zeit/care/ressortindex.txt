@@ -1,0 +1,82 @@
+At first we do this
+
+>>> from zeit.care.ressortindex import Ressortindexmanipulator
+>>> Ressortindexmanipulator
+<class 'zeit.care.ressortindex.Ressortindexmanipulator'>
+
+We import our mockconnector module
+
+>>> import zeit.connector.mock
+>>> mockconnector = zeit.connector.mock.Connector()
+>>> mockconnector
+<zeit.connector.mock.Connector object at 0x...>
+
+Test some methods
+
+>>> ids = Ressortindexmanipulator().get_ids(mockconnector)
+>>> ids
+[['http://xml.zeit.de/politik/2010-01/index', '2010', '01', 'politik'],...
+
+>>> ressortlist = Ressortindexmanipulator().convert_ressortxmlfile_to_list(mockconnector)
+>>> ressortlist
+['politik', 'politik/deutschland', ...
+
+>>> xml = Ressortindexmanipulator().read_index_template_file(mockconnector)
+>>> xml
+'<?xml ...
+
+>>> Ressortindexmanipulator().write_new_xml_from_template(xml,ids[0])
+<Element centerpage at ...
+
+>>> Ressortindexmanipulator().insert_id_parameters_in_template(mockconnector)
+<zeit.connector.mock.Connector ...
+
+>>> mockconnector['http://xml.zeit.de/wissen/2010-01/index'].type
+'centerpage'
+
+>>> dir(mockconnector)
+['__class__', ...
+
+####################################################################################
+Do we get XML with the correct values depending on the path (e.g. digital/2011-03)? 
+####################################################################################
+>>> from lxml import etree
+>>> import StringIO, os
+>>> res = mockconnector['http://xml.zeit.de/digital/2011-03/index']
+>>> xml = res.data.read()
+
+Is there a centerpage-output?
+>>> print(xml)
+<?xml ...
+
+The concrete values:
+>>> tree = etree.parse(StringIO.StringIO(xml))
+>>> attr_date_first_released = tree.xpath('//attribute[@name="date_first_released"]')[0]
+>>> print(etree.tostring(attr_date_first_released, method="text", encoding=unicode))
+2011-03-01T00:00:00.000001+00:00
+...
+
+>>> attr_ressort = tree.xpath('//attribute[@name="ressort"]')[0]
+>>> print(etree.tostring(attr_ressort, method="text", encoding="UTF-8"))
+Digital...
+...
+
+>>> attr_year = tree.xpath('//attribute[@name="year"]')[0]
+>>> print(etree.tostring(attr_year, method="text", encoding="UTF-8"))
+2011
+...
+
+>>> bodytitle = tree.xpath('//body/title')[0]
+>>> print(etree.tostring(bodytitle, method="text", encoding="UTF-8"))
+Artikel und Nachrichten im März 2011 aus dem Ressort Digital | ZEIT ONLINE
+...
+
+>>> teasertitle = tree.xpath('//teaser/title')[0]
+>>> print(etree.tostring(teasertitle, method="text", encoding="UTF-8"))
+Artikel und Nachrichten im März 2011 aus dem Ressort Digital | ZEIT ONLINE
+...
+
+>>> teasertext = tree.xpath('//teaser/text')[0]
+>>> print(etree.tostring(teasertext, method="text", encoding="UTF-8"))
+Lesen Sie alle Artikel und Nachrichten vom März 2011 aus dem Ressort Digital auf ZEIT ONLINE
+...
