@@ -23,11 +23,10 @@ class Ressortindexmanipulator(object):
 
         self.templatedir = os.path.dirname(__file__)+'/ressortindex_files/'
         self.templatedocs = [(f,self.templatedir+f) for f in os.listdir(self.templatedir) if os.path.isfile(self.templatedir+f)]
-        #print self.templatedocs
 
     # Return a list with ressorts, months, years
-    def get_ids(self,connector):
-        ressorts = self.convert_ressortxmlfile_to_list(connector)
+    def get_ids(self):
+        ressorts = self.convert_ressortxmlfile_to_list()
         months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
         thisyear = int(datetime.today().strftime("%Y"))
         thismonth = str(datetime.today().strftime("%m"))
@@ -49,7 +48,7 @@ class Ressortindexmanipulator(object):
                         break
         return id_infos
 
-    def convert_ressortxmlfile_to_list(self,connector):
+    def convert_ressortxmlfile_to_list(self):
         output = []
         xml = etree.parse(self.templatedir+'ressorts.xml')
         paths = xml.xpath('/ressortpfade/pfad')
@@ -57,12 +56,13 @@ class Ressortindexmanipulator(object):
             output.append(path.text)  
         return output
 
-    def read_index_template_file(self, connector):
+    def read_index_template_file(self):
         resource = open(self.templatedir+'index')
         xml = resource.read()
         return xml
 
     def write_new_xml_from_template(self,templatexml,id):
+       
         tree = etree.parse(StringIO.StringIO(templatexml))
         centerpage = tree.xpath('//centerpage')[0]
         # Elements which should be replaced
@@ -87,22 +87,27 @@ class Ressortindexmanipulator(object):
         bodytitle.text = "Artikel und Nachrichten im "+month_string+" "+year_string+" aus dem Ressort "+ressort_string+" | ZEIT ONLINE"
         teasertitle.text = "Artikel und Nachrichten im "+month_string+" "+year_string+" aus dem Ressort "+ressort_string+" | ZEIT ONLINE"
         teasertext.text = "Lesen Sie alle Artikel und Nachrichten vom "+month_string+" "+year_string+" aus dem Ressort "+ressort_string+" auf ZEIT ONLINE"
-        new_cp = etree.tostring(centerpage, encoding="UTF-8", xml_declaration=True)
-        return centerpage 
+        
+        new_resource = Resource(id[0],
+           'index',
+           'centerpage',
+           StringIO.StringIO(etree.tostring(centerpage, encoding="UTF-8", xml_declaration=True)),
+           contentType = 'text/xml')
+        
+        new_resource.properties[('http://namespaces.zeit.de/CMS/document','date_first_released')] = attr_date_first_released.text
+        new_resource.properties[('http://namespaces.zeit.de/CMS/document','ressort')] = attr_ressort.text
+        new_resource.properties[('http://namespaces.zeit.de/CMS/document','year')] = attr_year.text
 
-    def insert_id_parameters_in_template(self, connector):  
-        ids = self.get_ids(connector)
-        templatexml = self.read_index_template_file(connector)
+        return new_resource 
+
+    def put_xml_from_ids(self, connector):  
+        ids = self.get_ids()
+        templatexml = self.read_index_template_file()
 
         for id in ids:
-            new_xml = self.write_new_xml_from_template(templatexml,id)
             connector_id = id[0]
-            new_resource = Resource(connector_id,
-                'index',
-                'centerpage',
-                StringIO.StringIO(etree.tostring(new_xml, encoding="UTF-8", xml_declaration=True)),
-                contentType = 'text/xml')
-            connector[connector_id] = new_resource
+            res = self.write_new_xml_from_template(templatexml,id)
+            connector[connector_id] = res
         return connector
 
 def main():
