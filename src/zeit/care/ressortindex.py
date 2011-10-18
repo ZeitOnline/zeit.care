@@ -15,12 +15,13 @@ import zope.authentication.interfaces
 import zeit.connector.mock
 
 
+logger = logging.getLogger(__name__) 
 
 class Ressortindexmanipulator(object):
 
     def __init__(self):
         self.months = {'01': 'Januar','02': 'Februar','03': u'März','04': 'April','05': 'Mai','06': 'Juni','07': 'Juli','08': 'August','09': 'September','10': 'Oktober','11': 'November','12': 'Dezember'}
-
+        self.start_id = 'http://xml.zeit.de'
         self.templatedir = os.path.dirname(__file__)+'/ressortindex_files/'
         self.templatedocs = [(f,self.templatedir+f) for f in os.listdir(self.templatedir) if os.path.isfile(self.templatedir+f)]
 
@@ -33,12 +34,11 @@ class Ressortindexmanipulator(object):
         id_infos = []
         for ressort in ressorts:
             year = 2010
-            #while year <= thisyear:
             for year in range(year,thisyear+1):
                 year_str = str(year)
                 for month in months:
                     infos = []
-                    infos.append('http://xml.zeit.de/'+ressort+'/'+year_str+'-'+month+'/index')
+                    infos.append(self.start_id+'/'+ressort+'/'+year_str+'-'+month+'/index')
                     infos.append(year_str)
                     infos.append(month)
                     infos.append(ressort)
@@ -61,6 +61,10 @@ class Ressortindexmanipulator(object):
         xml = resource.read()
         return xml
 
+    def ressort_divider(self, ressortstring):
+        ressortstring.split('/')
+        return xml
+
     def write_new_xml_from_template(self,templatexml,id):
        
         tree = etree.parse(StringIO.StringIO(templatexml))
@@ -68,6 +72,7 @@ class Ressortindexmanipulator(object):
         # Elements which should be replaced
         attr_date_first_released = tree.xpath('//attribute[@name="date_first_released"]')[0]
         attr_ressort = tree.xpath('//attribute[@name="ressort"]')[0]
+        attr_subressort = tree.xpath('//attribute[@name="sub_ressort"]')[0]
         attr_year = tree.xpath('//attribute[@name="year"]')[0]
         bodytitle = tree.xpath('//body/title')[0]
         teasertitle = tree.xpath('//teaser/title')[0]
@@ -79,10 +84,22 @@ class Ressortindexmanipulator(object):
         year_string = id[1] 
         # Prepare variables
         month_string = self.months[id[2]] # '01' -> 'Januar'
-        ressort_string = id[3][0].upper()+id[3][1:] # 'ressort' -> 'Ressort'
+        #do we have a path like zeit.de/ressort/subressort/...? 
+        ressort_strings = id[3].split('/')
+        ressort_string = ressort_strings[0][0].upper()+ressort_strings[0][1:] # 'ressort' -> 'Ressort'
+        subressort_string = ''
+        if len(ressort_strings) == 2:
+            subressort_string = ressort_strings[1][0].upper()+ressort_strings[1][1:]
+        
         # Replacing
         attr_date_first_released.text = datetime(int(id[1]), int(id[2]), 1, 0, 0, 0, microsecond=1).isoformat()+"+00:00"
         attr_ressort.text = ressort_string
+        if len(ressort_strings) == 2:
+            attr_subressort.text = subressort_string
+            ressort_string = subressort_string #we
+        else:
+            attr_subressort.text = ''
+            attr_subressort.getparent().remove(attr_subressort)
         attr_year.text = year_string
         bodytitle.text = "Artikel und Nachrichten im "+month_string+" "+year_string+" aus dem Ressort "+ressort_string+" | ZEIT ONLINE"
         teasertitle.text = "Artikel und Nachrichten im "+month_string+" "+year_string+" aus dem Ressort "+ressort_string+" | ZEIT ONLINE"
@@ -94,9 +111,11 @@ class Ressortindexmanipulator(object):
            StringIO.StringIO(etree.tostring(centerpage, encoding="UTF-8", xml_declaration=True)),
            contentType = 'text/xml')
         
-        new_resource.properties[('http://namespaces.zeit.de/CMS/document','date_first_released')] = attr_date_first_released.text
-        new_resource.properties[('http://namespaces.zeit.de/CMS/document','ressort')] = attr_ressort.text
-        new_resource.properties[('http://namespaces.zeit.de/CMS/document','year')] = attr_year.text
+        new_resource.properties[('date_first_released','http://namespaces.zeit.de/CMS/document')] = attr_date_first_released.text
+        new_resource.properties[('ressort','http://namespaces.zeit.de/CMS/document')] = attr_ressort.text
+        if len(ressort_strings) == 2:
+            new_resource.properties[('sub_ressort','http://namespaces.zeit.de/CMS/document')] = attr_subressort.text
+        new_resource.properties[('year','http://namespaces.zeit.de/CMS/document')] = attr_year.text
 
         return new_resource 
 
@@ -105,9 +124,11 @@ class Ressortindexmanipulator(object):
         templatexml = self.read_index_template_file()
 
         for id in ids:
+            logger.info("to be written "+id[0])
             connector_id = id[0]
             res = self.write_new_xml_from_template(templatexml,id)
             connector[connector_id] = res
+            logger.info(id[0]+' written')
         return connector
 
 def main():
@@ -142,4 +163,7 @@ def main():
     if user_ok == "y":
        connector = zeit.connector.connector.Connector(roots=dict(
             default=options.webdav))
-       insert_id_parameters_in_template(connector)
+
+       indexwriter = Ressortindexmanipulator()
+       indexwriter.start_id = options.collection
+       indexwriter.put_xml_from_ids(connector)

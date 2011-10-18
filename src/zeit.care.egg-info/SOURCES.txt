@@ -20,9 +20,12 @@ src/zeit/care/date_test.txt
 src/zeit/care/divisor.py
 src/zeit/care/divisor.txt
 src/zeit/care/ressortindex.py
-src/zeit/care/ressortindex_spielwiese.py
+src/zeit/care/ressortindex.pyc
+src/zeit/care/ressortindex.txt
 src/zeit/care/tests.py
 src/zeit/care/worker.py
+src/zeit/care/ressortindex_files/index
+src/zeit/care/ressortindex_files/ressorts.xml
 src/zeit/care/testdocs/199910.pegasus.xml
 src/zeit/care/testdocs/199910.weimar_.xml
 src/zeit/care/testdocs/Argument-Banken

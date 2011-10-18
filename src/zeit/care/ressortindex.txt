@@ -19,7 +19,9 @@ Build a ressort list
 
 Build resource ids to be rewritten. We need 'year','volume' and ressort
 
->>> ids = Ressortindexmanipulator().get_ids()
+>>> indexwriter = Ressortindexmanipulator()
+>>> indexwriter.start_id='http://xml.zeit.de'
+>>> ids = indexwriter.get_ids()
 >>> ids
 [['http://xml.zeit.de/politik/2010-01/index', '2010', '01', 'politik'],...
 
@@ -45,9 +47,14 @@ Do we get XML with the correct values depending on the path (e.g. digital/2011-0
 ####################################################################################
 >>> from lxml import etree
 >>> import StringIO, os
->>> rid = 'http://xml.zeit.de/digital/2011-03/index'
+
+
+First test: path WITH Subressort 
+================================
+>>> rid = 'http://xml.zeit.de/politik/deutschland/2011-03/index'
 >>> res = mockconnector[rid]
 >>> xml = res.data.read()
+>>> tree = etree.parse(StringIO.StringIO(xml))
 
 Did we create a centerpage property for a given resource?
 
@@ -59,25 +66,33 @@ Is there an output for the resource?
 <?xml ...
 
 The concrete values:
->>> tree = etree.parse(StringIO.StringIO(xml))
 >>> attr_date_first_released = tree.xpath('//attribute[@name="date_first_released" and  @ns="http://namespaces.zeit.de/CMS/document"]')[0]
 >>> print(etree.tostring(attr_date_first_released, method="text", encoding=unicode))
 2011-03-01T00:00:00.000001+00:00
 ...
 
-
 Does the property have the same value?
->>> res.properties[('http://namespaces.zeit.de/CMS/document','date_first_released')]
+
+>>> res.properties[('date_first_released','http://namespaces.zeit.de/CMS/document')]
 '2011-03-01T00:00:00.000001+00:00'
 
 >>> attr_ressort = tree.xpath('//attribute[@name="ressort" and  @ns="http://namespaces.zeit.de/CMS/document"]')[0]
 >>> print(etree.tostring(attr_ressort, method="text", encoding="UTF-8"))
-Digital...
+Politik...
+...
+
+>>> attr_subressort = tree.xpath('//attribute[@name="sub_ressort" and  @ns="http://namespaces.zeit.de/CMS/document"]')[0]
+>>> print(etree.tostring(attr_subressort, method="text", encoding="UTF-8"))
+Deutschland...
 ...
 
 Does the property have the same value?
->>> res.properties[('http://namespaces.zeit.de/CMS/document','ressort')]
-'Digital'
+>>> res.properties[('ressort','http://namespaces.zeit.de/CMS/document')]
+'Politik'
+
+Does the property have the same value?
+>>> res.properties[('sub_ressort','http://namespaces.zeit.de/CMS/document')]
+'Deutschland'
 
 >>> attr_year = tree.xpath('//attribute[@name="year" and @ns="http://namespaces.zeit.de/CMS/document"]')[0]
 >>> print(etree.tostring(attr_year, method="text", encoding="UTF-8"))
@@ -85,20 +100,58 @@ Does the property have the same value?
 ...
 
 Does the property have the same value?
->>> res.properties[('http://namespaces.zeit.de/CMS/document','year')]
+>>> res.properties[('year','http://namespaces.zeit.de/CMS/document')]
 '2011'
 
 >>> bodytitle = tree.xpath('//body/title')[0]
 >>> print(etree.tostring(bodytitle, method="text", encoding="UTF-8"))
-Artikel und Nachrichten im März 2011 aus dem Ressort Digital | ZEIT ONLINE
+Artikel und Nachrichten im März 2011 aus dem Ressort Deutschland | ZEIT ONLINE
 ...
 
 >>> teasertitle = tree.xpath('//teaser/title')[0]
 >>> print(etree.tostring(teasertitle, method="text", encoding="UTF-8"))
-Artikel und Nachrichten im März 2011 aus dem Ressort Digital | ZEIT ONLINE
+Artikel und Nachrichten im März 2011 aus dem Ressort Deutschland | ZEIT ONLINE
 ...
 
 >>> teasertext = tree.xpath('//teaser/text')[0]
 >>> print(etree.tostring(teasertext, method="text", encoding="UTF-8"))
-Lesen Sie alle Artikel und Nachrichten vom März 2011 aus dem Ressort Digital auf ZEIT ONLINE
+Lesen Sie alle Artikel und Nachrichten vom März 2011 aus dem Ressort Deutschland auf ZEIT ONLINE
 ...
+
+
+2n test: path WITHOUT Subressort 
+================================
+>>> rid = 'http://xml.zeit.de/politik/2011-03/index'
+>>> res = mockconnector[rid]
+>>> xml = res.data.read()
+>>> tree = etree.parse(StringIO.StringIO(xml))
+
+Does the property have the same value?
+>>> res.properties[('ressort','http://namespaces.zeit.de/CMS/document')]
+'Politik'
+
+>>> bodytitle = tree.xpath('//body/title')[0]
+>>> print(etree.tostring(bodytitle, method="text", encoding="UTF-8"))
+Artikel und Nachrichten im März 2011 aus dem Ressort Politik | ZEIT ONLINE
+...
+
+>>> teasertitle = tree.xpath('//teaser/title')[0]
+>>> print(etree.tostring(teasertitle, method="text", encoding="UTF-8"))
+Artikel und Nachrichten im März 2011 aus dem Ressort Politik | ZEIT ONLINE
+...
+
+>>> teasertext = tree.xpath('//teaser/text')[0]
+>>> print(etree.tostring(teasertext, method="text", encoding="UTF-8"))
+Lesen Sie alle Artikel und Nachrichten vom März 2011 aus dem Ressort Politik auf ZEIT ONLINE
+...
+
+In this case there should not be values for the subressort property and attribute
+
+Does the property have the same value?
+>>> prop = ('sub_essort','http://namespaces.zeit.de/CMS/document')
+>>> prop in res.properties.keys()
+False
+
+>>> attr_subressort = tree.xpath('//attribute[@name="sub_ressort" and  @ns="http://namespaces.zeit.de/CMS/document"]')
+>>> len(attr_subressort)
+0

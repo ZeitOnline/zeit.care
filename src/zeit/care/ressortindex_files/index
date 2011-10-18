@@ -5,6 +5,7 @@
     <snapshot xsi:nil="true"/>
     <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="date_first_released">2010-04-28T11:52:32.389315+00:00</attribute>
     <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="ressort">Wissen</attribute>
+    <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="sub_ressort">Umwelt</attribute>
     <attribute py:pytype="str" ns="http://namespaces.zeit.de/CMS/document" name="year">2010</attribute>
   </head>
   <body>
