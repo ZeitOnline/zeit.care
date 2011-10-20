@@ -1,12 +1,5 @@
 <ressortpfade>
-    <pfad>politik</pfad>
-    <pfad>politik/deutschland</pfad>
-    <pfad>politik/ausland</pfad>
-    <pfad>wirtschaft</pfad>
-    <pfad>wirtschaft/unternehmen</pfad>
-    <pfad>wirtschaft/geldanlage</pfad>
     <pfad>wirtschaft/boerse</pfad>
-    <pfad>gesellschaft</pfad>
     <pfad>gesellschaft</pfad>
     <pfad>gesellschaft/zeitgeschehen</pfad>
     <pfad>gesellschaft/familie</pfad>
@@ -28,8 +21,6 @@
     <pfad>studium</pfad>
     <pfad>studium/uni-leben</pfad>
     <pfad>studium/hochschule</pfad>
-    <pfad>studium/rankings</pfad>
-    <pfad>studium/studiengaenge</pfad>
     <pfad>karriere</pfad>
     <pfad>karriere/bewerbung</pfad>
     <pfad>karriere/beruf</pfad>

@@ -13,7 +13,7 @@ from zeit.connector.resource import Resource
 import zeit.connector.interfaces
 import zope.authentication.interfaces
 import zeit.connector.mock
-
+import httplib
 
 logger = logging.getLogger(__name__) 
 
@@ -33,10 +33,12 @@ class Ressortindexmanipulator(object):
         thismonth = str(datetime.today().strftime("%m"))
         id_infos = []
         for ressort in ressorts:
-            year = 2010
+            year = 2009
             for year in range(year,thisyear+1):
                 year_str = str(year)
                 for month in months:
+                    if year==2009 and not(month in ["09","10","11","12"]):
+                        continue
                     infos = []
                     infos.append(self.start_id+'/'+ressort+'/'+year_str+'-'+month+'/index')
                     infos.append(year_str)
@@ -126,10 +128,14 @@ class Ressortindexmanipulator(object):
         for id in ids:
             logger.info("to be written "+id[0])
             connector_id = id[0]
-            res = self.write_new_xml_from_template(templatexml,id)
-            connector[connector_id] = res
-            logger.info(id[0]+' written')
+            try:
+                res = self.write_new_xml_from_template(templatexml,id)
+                connector[connector_id] = res
+                logger.info(id[0]+' written')
+            except httplib.HTTPException:
+                logger.error("could not be written")
         return connector
+
 
 def main():
     usage = "usage: %prog [options] arg"
@@ -163,7 +169,7 @@ def main():
     if user_ok == "y":
        connector = zeit.connector.connector.Connector(roots=dict(
             default=options.webdav))
-
+       
        indexwriter = Ressortindexmanipulator()
        indexwriter.start_id = options.collection
        indexwriter.put_xml_from_ids(connector)
