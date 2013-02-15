@@ -18,7 +18,6 @@ instanciated crawler.
 >>> crawler
 <zeit.care.crawl.Crawler object at 0x...>
 
-
 Start to crawl.
 
 >>> crawler.run('http://xml.zeit.de/online/')
@@ -57,3 +56,49 @@ Now we define a worker that sets a property on each resource.
 >>> import pprint
 >>> pprint.pprint(dict(resource.properties)[('bar', 'foo')])
 'batz'
+
+
+Lets try the file crawler. It takes a list of webdav-resources.
+As above these resources can be manipulated by a worker.
+There is also an option to define a publisher and pass it as keyword-argument.
+
+>>> def worker(resource, connector):
+...     print resource.id
+>>> import os
+>>> path = os.path.dirname(__file__)+'/resources.list'
+>>> crawler = zeit.care.crawl.FileProcess(
+...     path, connector, worker)
+>>> crawler
+<zeit.care.crawl.FileProcess object at ...>
+
+Lets try if the worker is working. Its supposed to just output any url it is
+getting
+>>> crawler.run()
+http://xml.zeit.de/online/2007/01/4schanzentournee-abgesang
+http://xml.zeit.de/online/2007/01/Arbeitsmarktzahlen
+http://xml.zeit.de/online/2007/01/EU-Beitritt-rumaenien-bulgarien
+http://xml.zeit.de/online/2007/01/Flugsicherheit
+http://xml.zeit.de/online/2007/01/Ford-Beerdigung
+http://xml.zeit.de/online/2007/01/Gesundheitsreform-Die
+http://xml.zeit.de/online/2007/01/Guantanamo
+
+We define a publisher, which will be executed, if the worker did its job
+>>> def worker(resource, connector):
+...     return True
+>>> def publisher(url):
+...   print "publish "+url
+>>> crawler = zeit.care.crawl.FileProcess(
+...     path, connector, worker,publish=publisher)
+>>> crawler.run()
+publish http://xml.zeit.de/online/2007/01/4schanzentournee-abgesang
+publish http://xml.zeit.de/online/2007/01/Arbeitsmarktzahlen
+publish http://xml.zeit.de/online/2007/01/EU-Beitritt-rumaenien-bulgarien
+publish http://xml.zeit.de/online/2007/01/Flugsicherheit
+publish http://xml.zeit.de/online/2007/01/Ford-Beerdigung
+publish http://xml.zeit.de/online/2007/01/Gesundheitsreform-Die
+publish http://xml.zeit.de/online/2007/01/Guantanamo
+
+
+
+
+

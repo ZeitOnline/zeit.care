@@ -11,7 +11,6 @@ def isofy_main():
     crawler = zeit.care.crawl.Crawler(connector, isofy_worker)
     crawler.run(start_container)
 
-
 def isofy_worker(resource, connector):
     dlm = resource.properties.get((
          'date-last-modified',
@@ -24,7 +23,6 @@ def isofy_worker(resource, connector):
                 'date-last-modified',
                 'http://namespaces.zeit.de/CMS/document'): dt})
 
-
 def isofy_date_last_modified(date):
     try:
         dt = datetime.datetime.strptime(date, "%d.%m.%Y - %H:%M")
@@ -32,3 +30,7 @@ def isofy_date_last_modified(date):
         return None
     dt = pytz.timezone("Europe/Berlin").localize(dt).astimezone(pytz.UTC)
     return dt.isoformat()
+
+def xslt_worker(resource,connector,**kwargs):
+    xslt = kwargs.pop('xslt')
+
