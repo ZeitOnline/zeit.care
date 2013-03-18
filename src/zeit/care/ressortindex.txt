@@ -23,7 +23,7 @@ Build resource ids to be rewritten. We need 'year','volume' and ressort
 >>> indexwriter.start_id='http://xml.zeit.de'
 >>> ids = indexwriter.get_ids()
 >>> ids
-[['http://xml.zeit.de/politik/2010-01/index', '2010', '01', 'politik'],...
+[['http://xml.zeit.de/politik/2009-09/index', '2009', '09', 'politik'],...
 
 The XML template which is used to fill in data.
 

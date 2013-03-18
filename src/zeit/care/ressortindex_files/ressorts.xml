@@ -1,4 +1,7 @@
 <ressortpfade>
+    <pfad>politik</pfad>
+    <pfad>politik/deutschland</pfad>
+    <pfad>politik/ausland</pfad>
     <pfad>wirtschaft/boerse</pfad>
     <pfad>gesellschaft</pfad>
     <pfad>gesellschaft/zeitgeschehen</pfad>
