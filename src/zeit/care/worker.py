@@ -3,6 +3,8 @@ import pytz
 import sys
 import zeit.care.crawl
 import zeit.connector.connector
+import lxml
+import StringIO
 
 def isofy_main():
     connector = zeit.connector.connector.Connector(roots=dict(
@@ -33,4 +35,12 @@ def isofy_date_last_modified(date):
 
 def xslt_worker(resource,connector,**kwargs):
     xslt = kwargs.pop('xslt')
+    xml = _xslt_transform(xslt,resource)
+    resource.data = StringIO.StringIO(xml) 
+    connector[resource.id] = resource
+
+def _xslt_transform(xslt,resource):
+    transform = lxml.etree.XSLT(lxml.etree.parse(xslt))
+    return transform(lxml.etree.XML(resource.data.read()))
+
 

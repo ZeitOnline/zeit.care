@@ -98,6 +98,23 @@ publish http://xml.zeit.de/online/2007/01/Ford-Beerdigung
 publish http://xml.zeit.de/online/2007/01/Gesundheitsreform-Die
 publish http://xml.zeit.de/online/2007/01/Guantanamo
 
+We want a XSLT based worker. It takes a file-location.
+>>> import zeit.care.worker
+>>> zeit.care.worker.xslt_worker
+<function xslt_worker at ...>
+>>> arg = {'xslt':os.path.dirname(__file__)+'/test.xslt'}
+>>> resource = connector['http://xml.zeit.de/online/2007/01/Flugsicherheit'] 
+
+Lets see if transformation is working
+>>> str(zeit.care.worker._xslt_transform(arg['xslt'],resource))
+'<?xml version="1.0"?>\n<foo>ba</foo>\n'
+
+>>> resource = connector['http://xml.zeit.de/online/2007/01/Flugsicherheit'] 
+>>> zeit.care.worker.xslt_worker(resource,connector,**arg)
+>>> resource = connector['http://xml.zeit.de/online/2007/01/Flugsicherheit'] 
+>>> resource.data.read()
+'<?xml version="1.0"?>\n<foo>ba</foo>\n'
+
 
 
 
