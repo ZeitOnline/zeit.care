@@ -1,7 +1,9 @@
 syntax: glob
 *.pyc
 *.egg-info
+*.swp
 .installed.cfg
 bin
 develop-eggs
+eggs
 parts
