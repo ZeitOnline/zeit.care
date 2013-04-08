@@ -10,7 +10,9 @@ from zeit.connector.resource import Resource
 logger = logging.getLogger(__name__) 
 
 def commentthread_worker(resource, connector):
-    pass
+    properties = resource.properties
+    comments = properties.get(
+        ('comments', 'http://namespaces.zeit.de/CMS/document'))
 
 def main():
     usage = "usage: %prog [options] arg"
