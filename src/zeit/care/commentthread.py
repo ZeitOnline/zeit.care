@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 from optparse import OptionParser
-import logging 
+import logging
 import os
 import sys
 import zeit.care.crawl
 import zeit.connector.connector
 from zeit.connector.resource import Resource
 
-logger = logging.getLogger(__name__) 
+logger = logging.getLogger(__name__)
 
 def commentthread_worker(resource, connector):
     properties = resource.properties
