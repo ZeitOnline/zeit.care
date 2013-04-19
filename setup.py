@@ -25,6 +25,6 @@ setup(
         divisor = zeit.care.divisor:main
         boxinjector = zeit.care.boxinjector:main
         ressortindexwriter = zeit.care.ressortindex:main
-        commentthreadwriter = zeit.care.commentthread:main
+        commentthreadworker = zeit.care.commentthread:main
         """
 )
