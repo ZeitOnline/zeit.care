@@ -10,6 +10,8 @@ import zeit.connector.connector
 logger = logging.getLogger(__name__)
 
 def commentthread_worker(resource, connector):
+    if resource.type == 'collection':
+        return
     properties = resource.properties
     cprop = properties.get(
         ('comments', 'http://namespaces.zeit.de/CMS/document'))
