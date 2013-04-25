@@ -1,16 +1,35 @@
 # -*- coding: utf-8 -*-
+from lxml import etree
 from optparse import OptionParser
-import logging 
-import os
-import sys
+from zeit.care import add_file_logging
+import logging
+import urllib
 import zeit.care.crawl
 import zeit.connector.connector
-from zeit.connector.resource import Resource
 
-logger = logging.getLogger(__name__) 
+logger = logging.getLogger(__name__)
 
 def commentthread_worker(resource, connector):
-    pass
+    if resource.type != 'article' and resource.type != 'gallery':
+        return
+    properties = resource.properties
+    cprop = properties.get(
+        ('comments', 'http://namespaces.zeit.de/CMS/document'))
+    if cprop and cprop == 'no':
+        logger.info(resource.id)
+        return
+    agatho_url = resource.id.replace(
+        'http://xml.zeit.de/', 'http://www.zeit.de/agatho/thread/')
+    fh = urllib.urlopen(agatho_url)
+    if fh.getcode() == 404:
+        logger.info(resource.id)
+        return
+    tree = etree.XML(fh.read())
+    ccount = tree.xpath('/comments/comment_count')[0]
+    if ccount.text == '0':
+        logger.info(resource.id)
+        return
+
 
 def main():
     usage = "usage: %prog [options] arg"
