@@ -110,7 +110,7 @@ Lets see if transformation is working
 '<?xml version="1.0"?>\n<foo>ba</foo>\n'
 
 >>> resource = connector['http://xml.zeit.de/online/2007/01/Flugsicherheit'] 
->>> zeit.care.worker.xslt_worker(resource,connector,**arg)
+>>> processed = zeit.care.worker.xslt_worker(resource,connector,**arg)
 >>> resource = connector['http://xml.zeit.de/online/2007/01/Flugsicherheit'] 
 >>> resource.data.read()
 '<?xml version="1.0"?>\n<foo>ba</foo>\n'

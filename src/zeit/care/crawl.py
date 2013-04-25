@@ -32,6 +32,6 @@ class FileProcess(object):
                     self.connector[uri].type != "imagegroup": 
                     processed = self.worker(self.connector[uri],
                                             self.connector,
-                                            *self.params)
+                                            **self.params)
                     if processed:
                         self.publish(uri)

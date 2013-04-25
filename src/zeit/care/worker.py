@@ -2,9 +2,11 @@ import datetime
 import pytz
 import sys
 import zeit.care.crawl
+import zeit.care.publish
 import zeit.connector.connector
 import lxml
 import StringIO
+from zeit.connector.resource import Resource
 
 def isofy_main():
     connector = zeit.connector.connector.Connector(roots=dict(
@@ -33,11 +35,27 @@ def isofy_date_last_modified(date):
     dt = pytz.timezone("Europe/Berlin").localize(dt).astimezone(pytz.UTC)
     return dt.isoformat()
 
+def xslt_main():
+    connector = zeit.connector.connector.Connector(roots=dict(
+        default=sys.argv[1]))
+    file = sys.argv[2]
+    xslt = sys.argv[3]
+    publish = zeit.care.publish.publish_xmlrpc
+    crawler = zeit.care.crawl.FileProcess(file, connector, xslt_worker, 
+                                                xslt=xslt, publish=publish)
+    crawler.run()
+
 def xslt_worker(resource,connector,**kwargs):
     xslt = kwargs.pop('xslt')
     xml = _xslt_transform(xslt,resource)
-    resource.data = StringIO.StringIO(xml) 
-    connector[resource.id] = resource
+    
+    new_resource = Resource(resource.id, 
+                            resource.__name__, 
+                            resource.type, 
+                            StringIO.StringIO(xml),
+                            contentType=resource.contentType)
+    connector[resource.id] = new_resource
+    return True
 
 def _xslt_transform(xslt,resource):
     transform = lxml.etree.XSLT(lxml.etree.parse(xslt))

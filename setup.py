@@ -22,6 +22,7 @@ setup(
     entry_points = """
         [console_scripts]  
         isofication = zeit.care.worker:isofy_main
+        xslt = zeit.care.worker:xslt_main
         divisor = zeit.care.divisor:main
         boxinjector = zeit.care.boxinjector:main
         ressortindexwriter = zeit.care.ressortindex:main
