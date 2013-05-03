@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
-import logging 
+import logging
 import StringIO
 from optparse import OptionParser
 from lxml import etree
@@ -15,7 +15,7 @@ import zope.authentication.interfaces
 import zeit.connector.mock
 import httplib
 
-logger = logging.getLogger(__name__) 
+logger = logging.getLogger(__name__)
 
 class Ressortindexmanipulator(object):
 
@@ -55,7 +55,7 @@ class Ressortindexmanipulator(object):
         xml = etree.parse(self.templatedir+'ressorts.xml')
         paths = xml.xpath('/ressortpfade/pfad')
         for path in paths:
-            output.append(path.text)  
+            output.append(path.text)
         return output
 
     def read_index_template_file(self):
@@ -68,7 +68,7 @@ class Ressortindexmanipulator(object):
         return xml
 
     def write_new_xml_from_template(self,templatexml,id):
-       
+
         tree = etree.parse(StringIO.StringIO(templatexml))
         centerpage = tree.xpath('//centerpage')[0]
         # Elements which should be replaced
@@ -83,16 +83,16 @@ class Ressortindexmanipulator(object):
         body = tree.xpath('//body')[0]
         teaser = tree.xpath('//teaser')[0]
         # Structure ids-variable: [[http://xml.zeit.de/<ressor>/<year>-<month>/index, <year>, <month>, <ressort>],...]
-        year_string = id[1] 
+        year_string = id[1]
         # Prepare variables
         month_string = self.months[id[2]] # '01' -> 'Januar'
-        #do we have a path like zeit.de/ressort/subressort/...? 
+        #do we have a path like zeit.de/ressort/subressort/...?
         ressort_strings = id[3].split('/')
         ressort_string = ressort_strings[0][0].upper()+ressort_strings[0][1:] # 'ressort' -> 'Ressort'
         subressort_string = ''
         if len(ressort_strings) == 2:
             subressort_string = ressort_strings[1][0].upper()+ressort_strings[1][1:]
-        
+
         # Replacing
         attr_date_first_released.text = datetime(int(id[1]), int(id[2]), 1, 0, 0, 0, microsecond=1).isoformat()+"+00:00"
         attr_ressort.text = ressort_string
@@ -106,22 +106,22 @@ class Ressortindexmanipulator(object):
         bodytitle.text = "Artikel und Nachrichten im "+month_string+" "+year_string+" aus dem Ressort "+ressort_string+" | ZEIT ONLINE"
         teasertitle.text = "Artikel und Nachrichten im "+month_string+" "+year_string+" aus dem Ressort "+ressort_string+" | ZEIT ONLINE"
         teasertext.text = "Lesen Sie alle Artikel und Nachrichten vom "+month_string+" "+year_string+" aus dem Ressort "+ressort_string+" auf ZEIT ONLINE"
-        
+
         new_resource = Resource(id[0],
            'index',
            'centerpage',
            StringIO.StringIO(etree.tostring(centerpage, encoding="UTF-8", xml_declaration=True)),
            contentType = 'text/xml')
-        
+
         new_resource.properties[('date_first_released','http://namespaces.zeit.de/CMS/document')] = attr_date_first_released.text
         new_resource.properties[('ressort','http://namespaces.zeit.de/CMS/document')] = attr_ressort.text
         if len(ressort_strings) == 2:
             new_resource.properties[('sub_ressort','http://namespaces.zeit.de/CMS/document')] = attr_subressort.text
         new_resource.properties[('year','http://namespaces.zeit.de/CMS/document')] = attr_year.text
 
-        return new_resource 
+        return new_resource
 
-    def put_xml_from_ids(self, connector):  
+    def put_xml_from_ids(self, connector):
         ids = self.get_ids()
         templatexml = self.read_index_template_file()
 
@@ -159,17 +159,17 @@ def main():
 
     if options.logfile:
         add_file_logging(logger, options.logfile)
-        
+
     if not options.force:
         user_ok = raw_input('\nWriting ressortindexfiles in webdav uri will start at %s.\nAre you sure? [y|n]: ' \
             % options.collection)
-    else: 
-        user_ok = "y" 
-    
+    else:
+        user_ok = "y"
+
     if user_ok == "y":
        connector = zeit.connector.connector.Connector(roots=dict(
             default=options.webdav))
-       
+
        indexwriter = Ressortindexmanipulator()
        indexwriter.start_id = options.collection
        indexwriter.put_xml_from_ids(connector)

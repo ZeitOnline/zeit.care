@@ -13,7 +13,7 @@ class FileProcess(object):
         with open(self.file, 'r') as f:
             for uri in f
                 if self.connector[uri].type != "collection" and \
-                    self.connector[container].type != "imagegroup": 
+                    self.connector[container].type != "imagegroup":
                     processed = self.worker(self.connector[uri], self.connector)
                     if processed and self.publish:
                         self.cms.publish(self.connector[uri])

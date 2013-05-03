@@ -22,7 +22,7 @@ def isofy_worker(resource, connector):
     if dlm is not None:
         dt = isofy_date_last_modified(dlm)
         if dt is not None:
-            print resource.id 
+            print resource.id
             connector.changeProperties(resource.id, {(
                 'date-last-modified',
                 'http://namespaces.zeit.de/CMS/document'): dt})
@@ -41,17 +41,17 @@ def xslt_main():
     file = sys.argv[2]
     xslt = sys.argv[3]
     publish = zeit.care.publish.publish_xmlrpc
-    crawler = zeit.care.crawl.FileProcess(file, connector, xslt_worker, 
+    crawler = zeit.care.crawl.FileProcess(file, connector, xslt_worker,
                                                 xslt=xslt, publish=publish)
     crawler.run()
 
 def xslt_worker(resource,connector,**kwargs):
     xslt = kwargs.pop('xslt')
     xml = _xslt_transform(xslt,resource)
-    
-    new_resource = Resource(resource.id, 
-                            resource.__name__, 
-                            resource.type, 
+
+    new_resource = Resource(resource.id,
+                            resource.__name__,
+                            resource.type,
                             StringIO.StringIO(xml),
                             contentType=resource.contentType)
     connector[resource.id] = new_resource

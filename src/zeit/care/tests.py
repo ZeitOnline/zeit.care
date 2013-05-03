@@ -6,9 +6,9 @@ def test_suite():
     suite.addTest(doctest.DocFileSuite(
         'README.txt',
         'date_test.txt',
-      	'divisor.txt',
-      	'boxinjector.txt',
-      	'ressortindex.txt',
+        'divisor.txt',
+        'boxinjector.txt',
+        'ressortindex.txt',
         optionflags=doctest.ELLIPSIS
         ))
 

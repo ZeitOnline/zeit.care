@@ -11,7 +11,7 @@ import zeit.connector.connector
 from zeit.connector.resource import Resource
 import zope.authentication.interfaces
 
-logger = logging.getLogger(__name__) 
+logger = logging.getLogger(__name__)
 
 _DAV_PROP_NAME_ = ('file-name', 'http://namespaces.zeit.de/CMS/document')
 _PARAMS_PER_PAGE_ = 7
@@ -44,12 +44,12 @@ class Converter(object):
     def _get_params_per_page(self, tree):
         p = tree.xpath("//head/attribute[@ns='http://namespaces.zeit.de/CMS/document' \
 	and @name='paragraphsperpage']")
-        if p: 
+        if p:
             paras_per_page = int(p[0].text)
-        else: 
+        else:
             paras_per_page = _PARAMS_PER_PAGE_
         return paras_per_page
-                
+
 
     def convert(self):
         tree = etree.parse(StringIO.StringIO(self.xml))
@@ -59,8 +59,8 @@ class Converter(object):
             return self.xml
         elif tree.xpath('//body/division'):
             return self.xml
-	
-        paras_per_page = self._get_params_per_page(tree)          
+
+        paras_per_page = self._get_params_per_page(tree)
 
         div_list = []
         xp = 0
@@ -74,7 +74,7 @@ class Converter(object):
                 continue
 
             div.append(e)
-            if e.tag in self.div_elems: xp += 1     
+            if e.tag in self.div_elems: xp += 1
 
             if paras_per_page == xp:
                 div_list.append(div)
@@ -95,11 +95,11 @@ def division_worker(resource, connector):
     if resource.type == "article":
         try:
             new_xml = Converter(resource.data.read()).convert()
-            new_resource = Resource(resource.id, 
-                resource.__name__, 
-                resource.type, 
-                StringIO.StringIO(new_xml), 
-                resource.properties, 
+            new_resource = Resource(resource.id,
+                resource.__name__,
+                resource.type,
+                StringIO.StringIO(new_xml),
+                resource.properties,
                 resource.contentType)
             connector[resource.id] = new_resource
             logger.info(resource.id)
@@ -135,8 +135,8 @@ def main():
     if not options.force:
         user_ok = raw_input('\nConversion will start at %s.\nAre you sure? [y|n]: ' \
             % options.collection)
-    else: 
-        user_ok = "y" 
+    else:
+        user_ok = "y"
 
     if user_ok == "y":
         connector = zeit.connector.connector.Connector(roots=dict(

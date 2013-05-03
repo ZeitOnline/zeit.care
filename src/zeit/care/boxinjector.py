@@ -13,7 +13,7 @@ from zeit.connector.resource import Resource
 import zeit.connector.interfaces
 import zope.authentication.interfaces
 
-logger = logging.getLogger(__name__) 
+logger = logging.getLogger(__name__)
 
 _NS_DOC = 'http://namespaces.zeit.de/CMS/document'
 _PROP_RELEASED = ('date_first_released', _NS_DOC)
@@ -34,7 +34,7 @@ class BoxInjector(object):
     def _get_doc_date(self):
         '''
         gets date first released
-        '''        
+        '''
         first_released = self.resource.properties.get(_PROP_RELEASED)
         if first_released:
             return datetime.strptime(first_released[0:19], '%Y-%m-%dT%H:%M:%S')
@@ -73,12 +73,12 @@ class BoxInjector(object):
                     position = 5
                 elif first_released > datetime(2008,9,30):
                     position = 7
-                
+
             attrib = {'expires':'', 'href':xml_id, 'publication-date':''}
             self.art_boxes[_PROP_GALLERY] = {
                 'element': etree.Element("gallery", attrib=attrib),
                 'position': position}
-    
+
     def _get_portait_box(self):
         '''
         gets infos about a possible portrait box
@@ -121,12 +121,12 @@ class BoxInjector(object):
         if prop_attr:
             self.tree.xpath('//article/head')[0].remove(prop_attr[0])
 
-    def convert(self): 
+    def convert(self):
         '''
         injects article boxes found in properties in the article
         '''
         self.tree = etree.parse(StringIO.StringIO(self.xml))
-            
+
         # only articles
         if not self.tree.xpath('//article'):
             return self.xml
@@ -137,9 +137,9 @@ class BoxInjector(object):
 
         if self.art_boxes:
             # change the doc
-            for prop in self.art_boxes:    
+            for prop in self.art_boxes:
                 self._insert_box(self.art_boxes[prop])
-                self._remove_xml_attr(prop)            
+                self._remove_xml_attr(prop)
 
             self.new_xml = etree.tostring(self.tree, encoding="UTF-8", xml_declaration=True)
 
@@ -148,8 +148,8 @@ class BoxInjector(object):
         returns a new resource with inline article boxes
         '''
         if self.new_xml:
-            new_resource = Resource(self.resource.id, 
-                self.resource.__name__, self.resource.type, 
+            new_resource = Resource(self.resource.id,
+                self.resource.__name__, self.resource.type,
                 StringIO.StringIO(self.new_xml),
                 contentType=self.resource.contentType)
             for p in self.resource.properties:
@@ -159,7 +159,7 @@ class BoxInjector(object):
                     new_resource.properties[p] = (zeit.connector.interfaces.DeleteProperty)
             return new_resource
         return None
-        
+
 
 def crawler_worker(resource, connector):
     if resource.type == "article":
@@ -198,17 +198,17 @@ def main():
 
     if options.logfile:
         add_file_logging(logger, options.logfile)
-        
+
     if not options.force:
         user_ok = raw_input('\nConversion will start at %s.\nAre you sure? [y|n]: ' \
             % options.collection)
-    else: 
-        user_ok = "y" 
-    
+    else:
+        user_ok = "y"
+
     if user_ok == "y":
         connector = zeit.connector.connector.Connector(roots=dict(
             default=options.webdav))
         crawler = zeit.care.crawl.Crawler(connector, crawler_worker)
         crawler.run(options.collection)
-    
+
 

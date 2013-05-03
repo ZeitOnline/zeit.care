@@ -10,7 +10,7 @@ class Crawler(object):
             container = stack.pop(0)
             self.worker(self.connector[container], self.connector)
             if self.connector[container].type == "collection" or \
-                self.connector[container].type == "imagegroup": 
+                self.connector[container].type == "imagegroup":
                     stack.extend(r[1] for r in self.connector.listCollection(container))
 
 class FileProcess(object):
@@ -29,7 +29,7 @@ class FileProcess(object):
             for uri in f:
                 uri = uri.rstrip("\n")
                 if self.connector[uri].type != "collection" and \
-                    self.connector[uri].type != "imagegroup": 
+                    self.connector[uri].type != "imagegroup":
                     processed = self.worker(self.connector[uri],
                                             self.connector,
                                             **self.params)
