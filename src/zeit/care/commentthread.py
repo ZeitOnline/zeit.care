@@ -20,7 +20,10 @@ def commentthread_worker(resource, connector):
         return
     agatho_url = resource.id.replace(
         'http://xml.zeit.de/', 'http://www.zeit.de/agatho/thread/')
-    fh = urllib.urlopen(agatho_url)
+    try:
+        fh = urllib.urlopen(agatho_url)
+    except UnicodeError:
+        return
     if fh.getcode() == 404:
         logger.info(resource.id)
         return
