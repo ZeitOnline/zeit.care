@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='zeit.care',
-    version='0.2dev',
+    version='0.3.dev0',
     author='Christian Zagrodnick, Ron Drongowski, Dominik Hoppe',
     author_email='cz@gocept.com',
     url='http://trac.gocept.com/zeit',
