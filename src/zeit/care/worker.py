@@ -6,6 +6,7 @@ import zeit.care.publish
 import zeit.connector.connector
 import lxml
 import StringIO
+from optparse import OptionParser
 from zeit.connector.resource import Resource
 
 def isofy_main():
@@ -61,4 +62,48 @@ def _xslt_transform(xslt,resource):
     transform = lxml.etree.XSLT(lxml.etree.parse(xslt))
     return transform(lxml.etree.XML(resource.data.read()))
 
+def property_main():
+    usage = "usage: %prog [options] arg"
+    parser = OptionParser(usage)
+    parser.add_option("-f", "--file", dest="file",
+                      help="file, containing a list of resources")
+    parser.add_option("-n", "--propname", dest="collection",
+                      help="file, containing a list of resources")
+    parser.add_option("-N", "--namespace", dest="collection",
+                      help="file, containing a list of resources")
+    parser.add_option("-v", "--propvalue", dest="collection",
+                      help="file, containing a list of resources")
+    parser.add_option("-w", "--webdav", dest="webdav",
+                      help="webdav server uri")
 
+    (options, args) = parser.parse_args()
+
+    if not options.file:
+        parser.error("missing file to read resources from")
+
+    if not options.propname:
+        parser.error("missing propname")
+
+    if not options.namespace:
+        parser.error("missing property namespace")
+
+    if not options.propvalue:
+        parser.error("missing propvalue")
+
+    if not options.webdav:
+        parser.error("missing webdav uri")
+
+    connector = zeit.connector.connector.Connector(roots=dict(
+        default=options.webdav))
+    publish = zeit.care.publish.publish_xmlrpc
+    crawler = zeit.care.crawl.FileProcess(options.file,
+                                          connector,
+                                          property_worker,
+                                          publish=publish,
+                                          propname=options.propname,
+                                          propvalue=options.propvalue,
+                                          namespace=options.namespace)
+    crawler.run()
+
+def property_worker():
+    pass
