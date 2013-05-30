@@ -27,5 +27,6 @@ setup(
         boxinjector = zeit.care.boxinjector:main
         ressortindexwriter = zeit.care.ressortindex:main
         commentthreadworker = zeit.care.commentthread:main
+        propertyworker = zeit.care.worker:property_main
         """
 )
