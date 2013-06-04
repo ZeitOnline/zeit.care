@@ -2,17 +2,14 @@
 import os
 import sys
 import logging
-#import logging.handlers
 import StringIO
 from optparse import OptionParser
 from lxml import etree
 from datetime import datetime
 from zeit.care import add_file_logging
-#import zeit.care.crawl
 import zeit.connector.connector
 from zeit.connector.resource import Resource
 import zeit.connector.interfaces
-#import zope.authentication.interfaces
 import zeit.connector.mock
 import httplib
 import urllib2
@@ -49,7 +46,7 @@ class XmlWorker(object):
                 links.append(lnk.replace(string, 'http://xml.zeit.de'))
         lines.close()
         return links
-    
+   
     def _get_article(self, uri):
         try:
             res = urllib2.urlopen(uri)
@@ -57,38 +54,34 @@ class XmlWorker(object):
         except Exception, e:
             return False
         
-
     def _string_to_xml(self, article):
         tree = etree.parse(StringIO.StringIO(article))
         return tree
-    
-    def _xml_to_string(selfself, tree):
+ 
+    def _xml_to_string(self, tree):
         return etree.tostring(tree, encoding="UTF-8", xml_declaration=True)
-    
-    
-
-
+        
     def _find_out_productid(self, tree, uri):  
         copyrights = ''
         if tree.xpath('//attribute[@name="copyrights"]'):
             attr_copyrights = tree.xpath('//attribute[@name="copyrights"]')[0]
             copyrights = attr_copyrights.text
         if tree.xpath('//attribute[@name="volume"]') or tree.xpath('//attribute[@name="page"]') or "DIE ZEIT" in copyrights.upper():
-            logger_info_zei.info("ZEI" + uri)
+            logger_info_zei.info(uri)
             return "ZEI"
         elif "TAGESSPIEGEL" in copyrights.upper():
-            logger_info_tgs.info("TGS " + uri)
+            logger_info_tgs.info(uri)
             return "TGS"
         elif "ZEIT.DE" in copyrights.upper():
-            logger_info_zede.info("ZEDE " + uri)
+            logger_info_zede.info(uri)
             return "ZEDE"
         elif "ZEIT WISSEN" in copyrights.upper():
-            logger_info_ztwi.info("ZTWI " + uri)
+            logger_info_ztwi.info(uri)
             return "ZTWI"
         else:
             match = re.search(r"xml.zeit.de/online/[1-2][0-9][0-9][0-9]/[0-9][0-9]", uri)
             if match:
-                logger_info_zede_by_url.info("ZEDE URL " + uri)
+                logger_info_zede_by_url.info(uri)
                 return "ZEDE" 
             else:
                 return False
@@ -101,7 +94,7 @@ class XmlWorker(object):
         if tree.xpath('//attribute[@name="date-first-release"]'):
             daterel = tree.xpath('//attribute[@name="date-first-release"]')[0]
             self.wrong_date_attr_to_delete = True
-            logger_info_rele.info("REAL " + uri)
+            logger_info_rele.info(uri)
             return daterel.text
 
         if tree.xpath('//attribute[@name="year"]') and tree.xpath('//attribute[@name="volume"]'):
@@ -112,7 +105,7 @@ class XmlWorker(object):
             if attr_year.text is not None and attr_year.text is not '' and attr_volume.text is not None and attr_volume.text is not '':
                 volume = attr_volume.text
                 year = attr_year.text
-                logger_info_year_vol.info("YEAR_VOL " + uri)
+                logger_info_year_vol.info(uri)
 
         elif tree.xpath('//attribute[@name="copyrights"]'):
             attr_copyrights = tree.xpath('//attribute[@name="copyrights"]')[0]
@@ -125,31 +118,29 @@ class XmlWorker(object):
                 dates = dstr.split("/")
                 volume = dates[0]
                 year = dates[1]
-                logger_info_year_vol_copyr.info("YEAR_VOL_COPY" + uri)
-
+                logger_info_year_vol_copyr.info(uri)
             else:
                 match = re.search(r"[0-2][0-9].[0-1][0-9].[1-2][0-9][0-9][0-9]",copyrights)
                 
                 if match:
                     dstr = match.group(0)
                     dates = dstr.split(".")
-                    logger_info_date_copyr.info("DATE_COPY" + uri)
+                    logger_info_date_copyr.info(uri)
                     return "%s-%s-%sT12:00:00Z" % (dates[2], dates[1], dates[0])
         else:
-            return False   
-                
+            return False         
         if year is not None and year is not '' and volume is not None and volume is not '':                    
             path_to_volume = "http://www.zeit.de/" + year + "/" + volume.zfill(2) + "/?re=false"
             res = self._get_article(path_to_volume)
             if res is not False:
-                tree = self._parse_xml(res)
+                tree = self._string_to_xml(res)
                 daterel = False
                 cnt = 0
                 while daterel is False:
                     volume_article_href = tree.xpath('/page/body/cluster[@area="feature"]/region[@area="lead"]/container[@module="archive-print-volume"]/block/@href')[cnt]
                     res = self._get_article(volume_article_href)
                     if res is not False:
-                        tree2 = self._parse_xml(res)
+                        tree2 = self._string_to_xml(res)
                         if tree2.xpath('//attribute[@name="date_first_released"]'):
                             daterel = tree2.xpath('//attribute[@name="date_first_released"]')[0]
                     cnt += 1
@@ -161,10 +152,10 @@ class XmlWorker(object):
 
 
     def _detect_date_last_modified(self, tree):
-        if not tree.xpath('//attribute[@name="date_last_modified"]'):
-            return False
-        else:
+        if tree.xpath('//attribute[@name="date_last_modified"]'):
             return True
+        else:
+            return False
  
         
     def _detect_last_semantic_change(self, tree):
@@ -187,7 +178,6 @@ class XmlWorker(object):
         attr = etree.Element('attribute', name=var, ns="http://namespaces.zeit.de/CMS/workflow")
         attr.text = val
         tree.xpath('//article/head')[0].insert(0,attr)
-        #return etree.tostring(tree, encoding="UTF-8", xml_declaration=True)
         return tree
 
 
@@ -198,14 +188,12 @@ class XmlWorker(object):
             if attributes.has_key('name'):
                 if attributes['name'] == var:
                     headlst.remove(child)
-                    #return etree.tostring(tree, encoding="UTF-8", xml_declaration=True)
                     return tree
 
     
     def _delete_whitespace_author_begin(self, tree):
         attr_author = tree.xpath('//attribute[@name="author"]')[0]
         attr_author.text = attr_author.text[1:-1]
-        #return etree.tostring(tree, encoding="UTF-8", xml_declaration=True)
         return tree
         
         
@@ -217,7 +205,6 @@ class XmlWorker(object):
             attr_author.text = attr_author.text[:-1]
         else:
             return False
-        #return etree.tostring(tree, encoding="UTF-8", xml_declaration=True)
         return tree
             
     def write_file_on_dav(self, uri, xml,connector):
@@ -270,10 +257,9 @@ class XmlWorker(object):
                         newxml = self._insert_attribute(tree, "product-id", productid)
                         if newxml is not False:
                             article = self._xml_to_string(newxml)
-                            #dav = self.write_file_on_dav(uri, article, connector)
-                            #if dav is False:
-                            #    logger.error(uri + "WebDav, file could not be written.")
-                            b = 5
+                            dav = self.write_file_on_dav(uri, article, connector)
+                            if dav is False:
+                                logger.error(uri + "WebDav, file could not be written.")
                         else:
                             logger.error(uri+' Error while inserting productid to article.')
                     else:
@@ -284,43 +270,39 @@ class XmlWorker(object):
                 elif mode == "authorstarts":
                     newxml = self._delete_whitespace_author_begin(tree)
                     article = self._xml_to_string(newxml)
-                    #dav = self.write_file_on_dav(uri, article, connector)
-                    #if dav is False:
-                    #    logger.error(uri + "WebDav, file could not be written.")
+                    dav = self.write_file_on_dav(uri, article, connector)
+                    if dav is False:
+                        logger.error(uri + "WebDav, file could not be written.")
                 
                 # CASE - Delete one or two whitespaces from authors end    
                 elif mode == "authorends":
                     newxml = self._delete_whitespace_author_end(uri, tree)
                     if newxml is not False:
                         article = self._xml_to_string(newxml)
-                        #dav = self.write_file_on_dav(uri, article, connector)
-                        #if dav is False:
-                        #    logger.error(uri + "WebDav, file could not be written.")
-                        b=5
+                        dav = self.write_file_on_dav(uri, article, connector)
+                        if dav is False:
+                            logger.error(uri + "WebDav, file could not be written.")
                     else:
                        logger.error(uri+' Could not delete whitespaces.') 
                         
                 # CASE - Date first released    
                 elif mode == "datefirst":
-
+                    self.wrong_date_attr_to_delete = False
                     datefirstrel = self._create_date_first_released(tree, uri)
                     if datefirstrel is not False:
                         newxml = self._insert_attribute(tree, "date_first_released", datefirstrel)
                         if newxml is not False:
+                            
                             if self.wrong_date_attr_to_delete is True:
                                 newxml = self._delete_attribute(newxml, "date-first-release")
                             if self._detect_date_last_modified(newxml) is False:
-                                #tree = self._parse_xml(newxml)
                                 newxml = self._insert_attribute(newxml, "date_last_modified", datefirstrel)
-                                #tree = self._parse_xml(newxml)
                             if self._detect_last_semantic_change(newxml) is False:
-                                    #tree = self._parse_xml(newxml)
                                 newxml = self._insert_attribute(newxml, "last_semantic_change", datefirstrel)
                             article = self._xml_to_string(newxml)
-                            #dav = self.write_file_on_dav(uri, article, connector)
-                            #if dav is False:
-                            #    logger.error(uri + "WebDav, file could not be written.")
-                            b = 5
+                            dav = self.write_file_on_dav(uri, article, connector)
+                            if dav is False:
+                                logger.error(uri + "WebDav, file could not be written.")
                         else:
                             logger.error(uri+' Error while inserting date_first_released to article.')               
                     else:
@@ -333,10 +315,9 @@ class XmlWorker(object):
                         newxml = self._insert_attribute(tree, "date_last_modified", datefirstrel)
                         if newxml is not False:
                             article = self._xml_to_string(newxml)
-                            #dav = self.write_file_on_dav(uri, newxml, connector)
-                            #if dav is False:
-                            #    logger.error(uri + "WebDav, file could not be written.")
-                            b = 5
+                            dav = self.write_file_on_dav(uri, newxml, connector)
+                            if dav is False:
+                                logger.error(uri + "WebDav, file could not be written.")
                         else:
                             logger.error(uri+' Error while inserting date_last_modified to article.')               
                     else:
@@ -349,10 +330,9 @@ class XmlWorker(object):
                         newxml = self._insert_attribute(tree, "last_semantic_change", datefirstrel)
                         if newxml is not False:
                             article = self._xml_to_string(newxml)
-                            #dav = self.write_file_on_dav(uri, newxml, connector)
-                            #if dav is False:
-                            #    logger.error(uri + "WebDav, file could not be written.")
-                            b = 5
+                            dav = self.write_file_on_dav(uri, newxml, connector)
+                            if dav is False:
+                                logger.error(uri + "WebDav, file could not be written.")
                         else:
                             logger.error(uri+' Error while inserting last_semantic_change to article.')               
                     else:
@@ -367,10 +347,9 @@ class XmlWorker(object):
                             newxml = self._insert_attribute(newxml, "last_semantic_change", datefirstrel)
                             if newxml is not False:
                                 article = self._xml_to_string(newxml)
-                                #dav = self.write_file_on_dav(uri, newxml, connector)
-                                #if dav is False:
-                                #    logger.error(uri + "WebDav, file could not be written.")
-                                b = 5
+                                dav = self.write_file_on_dav(uri, newxml, connector)
+                                if dav is False:
+                                    logger.error(uri + "WebDav, file could not be written.")
                             else:
                                 logger.error(uri+' Error while inserting last_semantic_change to article.')                                
                         else:
@@ -405,10 +384,14 @@ def main():
     
     (options, args) = parser.parse_args()
 
-    pidpath = False
-    athspath = False
-    athepath = False
-    datefrpath = False
+    path_productid = False
+    path_author_starts = False
+    path_author_ends = False
+    path_date_first = False
+    path_date_modified = False
+    path_semantic_change = False
+    path_modified_semantic = False
+    
     message = ""
 
     if os.path.isfile(options.path + "/missing_productid.txt"):
@@ -493,20 +476,20 @@ def main():
         if path_date_modified is not False:
             #logger_error_datefirst = logging.getLogger('error_date-first-released')
             add_file_logging(logger_error_datemodified, os.path.dirname(__file__) + "/../../../" + options.logpath + '/error_date-last-modified.log')
-            datefirst = XmlWorker()
-            datefirst.run(path_date_modified, options.logpath, options.string, connector, 'datemodified', logger_error_datemodified)
+            datemodified = XmlWorker()
+            datemodified.run(path_date_modified, options.logpath, options.string, connector, 'datemodified', logger_error_datemodified)
             
         # Process last_semantic_change.txt
         if path_semantic_change is not False:
             #logger_error_datefirst = logging.getLogger('error_date-first-released')
             add_file_logging(logger_error_semanticchange, os.path.dirname(__file__) + "/../../../" + options.logpath + '/error_last-semantic-change.log')
-            datefirst = XmlWorker()
-            datefirst.run(path_semantic_change, options.logpath, options.string, connector, 'semanticchange', logger_error_semanticchange)
+            semantic = XmlWorker()
+            semantic.run(path_semantic_change, options.logpath, options.string, connector, 'semanticchange', logger_error_semanticchange)
 
         # Process last_modified_semantic_change.txt
         if path_modified_semantic is not False:
             #logger_error_datefirst = logging.getLogger('error_date-first-released')
             add_file_logging(logger_error_modifiedsemantic, os.path.dirname(__file__) + "/../../../" + options.logpath + '/error_last-modified-semantic-change.log')
-            datefirst = XmlWorker()
-            datefirst.run(path_modified_semantic, options.logpath, options.string, connector, 'modifiedsemantic', logger_error_modifiedsemantic)            
+            modifiedsemantic = XmlWorker()
+            modifiedsemantic.run(path_modified_semantic, options.logpath, options.string, connector, 'modifiedsemantic', logger_error_modifiedsemantic)            
        
