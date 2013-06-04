@@ -1,0 +1,811 @@
+The XmlWorker adds, changes or removes elements of the article XML.
+It can do 4 different operations. Each of them require it's article list file
+in the folder, which is passed as option on script startup.
+
+BASIC 1 - Import the XmlWorker Class and os
+
+BASIC 2 - Import the mockconnector module
+
+BASIC 3 - Set logger
+
+CASE 1 - Add missing element <attribute name="product-id"> ZEI for an Zeit-Print article
+File   - missing_productid.txt         
+
+CASE 2 - Insert missing productid ZTWI for an Zeit-Wissen article
+
+CASE 3 - Insert missing productid TGS for an Tagesspiegel article
+
+CASE 4 - Insert missing productid ZEDE for an Zeit-Online article
+         
+CASE 5 - Delete leading whitespaces from element <attribute name="author">
+File   - author_starts.txt
+
+CASE 6 - Delete trailing whitespaces from element <attribute name="author">
+File   - author_ends.txt
+
+CASE 7 - Adds missing element <attribute name="date_first_released"> by volume and year
+		 and deletes unnecessary <attribute name="date-first-release">
+File   - date_first_released.txt
+
+CASE 8 - Add missing element attribute date_first_released by wrong date_first_release
+
+CASE 9 - Add missing element attribute date_first_released by year/volume from copyrights
+
+CASE 10 - Add missing element attribute date_first_released by DD/MM/YYYY from copyrights
+
+CASE 11 - Add missing element attribute date_last_modified
+
+CASE 12 - Add missing element attribute last_semantic_change
+
+CASE 13 - Add missing elements attribute date_last_modified and element attribute last_semantic_change
+
+ADDITIONAL 1 - Process a article with missing date_first_released. Get date by wrong element date-first-release
+               and delete <attribute name="date-first-release"> afterwards
+               
+
+
+BASIC 1 - Import the XmlWorker Class and os
+
+>>> import os
+>>> import logging
+>>> from zeit.care.xmlworker import XmlWorker
+>>> XmlWorker
+<class 'zeit.care.xmlworker.XmlWorker'>
+
+
+
+BASIC 2 - Import the mockconnector module
+
+>>> import zeit.connector.mock
+>>> mockconnector = zeit.connector.mock.Connector()
+>>> mockconnector
+<zeit.connector.mock.Connector object at 0x...>
+
+
+
+CASE 1 - Insert missing productid ZEI for an Zeit-Print article 
+Create a uri-list of all articles in the file missing_productid.txt
+
+>>> links = XmlWorker().get_uris_from_file(os.path.dirname(__file__)+'/xmlworker/missing_productid.txt', 'http://cms-backend.zeit.de:9000/cms/work')
+>>> links
+['http://xml.zeit.de/feuilleton/osbournes', 'http://xml.zeit.de/feuilleton/kunst/bildergalerie-landart', ...
+
+
+Get first document from list 
+
+>>> article = XmlWorker()._get_article(links[0])
+>>> print(article)
+<?xml version="1.0" encoding="iso-8859-1"?>
+...<supertitle>Medien</supertitle><title>Eine schrecklich nette Familie ...
+
+
+Parse xml string to tree
+
+>>> tree = XmlWorker()._string_to_xml(article)
+>>> tree
+<lxml.etree._ElementTree ...
+
+
+Find out correct productid
+
+>>> productid = XmlWorker()._find_out_productid(tree, article)
+>>> print(productid)
+ZEI
+
+
+Insert the correct productid into the xml tree
+
+>>> tree = XmlWorker()._insert_attribute(tree, "product-id", productid)
+>>> print(tree)
+<lxml.etree._ElementTree ...
+
+
+Convert xml tree to string
+>>> newxml = XmlWorker()._xml_to_string(tree)
+>>> print(newxml)
+<?xml version='1.0' encoding='UTF-8'?>
+...<attribute ns="http://namespaces.zeit.de/CMS/workflow" name="product-id">ZEI</attribute>...
+
+
+Test writing with mockconnector
+
+>>> XmlWorker().write_file_on_dav(links[0], newxml, mockconnector)
+<zeit.connector.mock.Connector ...
+
+
+
+CASE 2 - Insert missing productid ZTWI for an Zeit-Wissen article
+Get first document from uri
+ 
+>>> uri2 = 'http://xml.zeit.de/zeit-wissen/2006/05/Titel_Zeitleiste.xml'
+>>> article2 = XmlWorker()._get_article(uri2)
+>>> print(article2)
+<?xml version="1.0" encoding="iso-8859-1"?>
+...<title>Trendkost</title>...
+
+
+Parse xml string to tree
+
+>>> tree2 = XmlWorker()._string_to_xml(article2)
+>>> tree2
+<lxml.etree._ElementTree ...
+
+
+Find out correct productid
+
+>>> productid2 = XmlWorker()._find_out_productid(tree2, uri2)
+>>> print(productid2)
+ZTWI
+
+
+Insert the correct productid into the xml document
+
+>>> tree2 = XmlWorker()._insert_attribute(tree2, "product-id", productid2)
+>>> print(tree2)
+<lxml.etree._ElementTree ...
+
+
+Convert xml tree to string
+>>> newxml2 = XmlWorker()._xml_to_string(tree2)
+>>> print(newxml2)
+<?xml version='1.0' encoding='UTF-8'?>
+...<attribute ns="http://namespaces.zeit.de/CMS/workflow" name="product-id">ZTWI</attribute>...
+
+
+Test writing with mockconnector
+
+>>> XmlWorker().write_file_on_dav(uri2, newxml2, mockconnector)
+<zeit.connector.mock.Connector ...
+
+
+
+CASE 3 - Insert missing productid TGS for an Tagesspiegel article
+Get first document from uri
+ 
+>>> uri3 = 'http://xml.zeit.de/online/2006/48/karstadt-quelle-neckermann'
+>>> article3 = XmlWorker()._get_article(uri3)
+>>> print(article3)
+<?xml version="1.0" encoding="iso-8859-1"?>
+...<supertitle>Karstadt</supertitle><title>Neckermann soll an die B...
+
+
+Parse xml string to tree
+
+>>> tree3 = XmlWorker()._string_to_xml(article3)
+>>> tree3
+<lxml.etree._ElementTree ...
+
+
+Find out correct productid
+
+>>> productid3 = XmlWorker()._find_out_productid(tree3, uri3)
+>>> print(productid3)
+TGS
+
+
+Insert the correct productid into the xml document
+
+>>> tree3 = XmlWorker()._insert_attribute(tree3, "product-id", productid3)
+>>> print(tree3)
+<lxml.etree._ElementTree ...
+
+
+Convert xml tree to string
+>>> newxml3 = XmlWorker()._xml_to_string(tree3)
+>>> print(newxml3)
+<?xml version='1.0' encoding='UTF-8'?>
+...<attribute ns="http://namespaces.zeit.de/CMS/workflow" name="product-id">TGS</attribute>...
+
+
+Test writing with mockconnector
+
+>>> XmlWorker().write_file_on_dav(uri3, newxml3, mockconnector)
+<zeit.connector.mock.Connector ...
+
+
+
+CASE 4 - Insert missing productid ZEDE for an Zeit-Online article
+Get first document from uri
+ 
+>>> uri4 = 'http://xml.zeit.de/online/2007/30/harry-potter-raubkopie'
+>>> article4 = XmlWorker()._get_article(uri4)
+>>> print(article4)
+<?xml version="1.0" encoding="iso-8859-1"?>
+...<title>Alle warten auf Harry Potter- trotz Raubkopie</title>...
+
+
+Parse xml string to tree
+
+>>> tree4 = XmlWorker()._string_to_xml(article4)
+>>> tree4
+<lxml.etree._ElementTree ...
+
+
+Find out correct productid
+
+>>> productid4 = XmlWorker()._find_out_productid(tree4, uri4)
+>>> print(productid4)
+ZEDE
+
+
+Insert the correct productid into the xml document
+
+>>> tree4 = XmlWorker()._insert_attribute(tree4, "product-id", productid4)
+>>> print(tree4)
+<lxml.etree._ElementTree ...
+
+
+Convert xml tree to string
+>>> newxml4 = XmlWorker()._xml_to_string(tree4)
+>>> print(newxml4)
+<?xml version='1.0' encoding='UTF-8'?>
+...<attribute ns="http://namespaces.zeit.de/CMS/workflow" name="product-id">ZEDE</attribute>...
+
+
+Test writing with mockconnector
+
+>>> XmlWorker().write_file_on_dav(uri4, newxml4, mockconnector)
+<zeit.connector.mock.Connector ...
+
+
+
+
+CASE 5 - Author name starts with whitespace
+Create a uri-list of all articles in the file author_starts.txt
+
+>>> links5 = XmlWorker().get_uris_from_file(os.path.dirname(__file__)+'/xmlworker/author_starts.txt', 'http://cms-backend.zeit.de:9000/cms/work')
+>>> links5
+['http://xml.zeit.de/auto/2010-04/china-geely-volvo', 'http://xml.zeit.de/jobletter/html_jl_13_04', ...
+
+
+Get first document from list
+
+>>> article5 = XmlWorker()._get_article(links5[0])
+>>> print(article5)
+<?xml version="1.0" encoding="iso-8859-1"?>
+...<title>Chinesischer Konzern Geely kauft Volvo</title>...
+
+
+Parse xml to tree
+
+>>> tree5 = XmlWorker()._string_to_xml(article5)
+>>> tree5
+<lxml.etree._ElementTree ...
+
+
+Delete whitespace from author attribute
+
+>>> tree5 = XmlWorker()._delete_whitespace_author_begin(tree5)
+>>> print(tree5)
+<lxml.etree._ElementTree ...
+
+
+Convert xml tree to string
+>>> newxml5 = XmlWorker()._xml_to_string(tree5)
+>>> print(newxml5)
+<?xml version='1.0' encoding='UTF-8'?>
+...<attribute ns="http://namespaces.zeit.de/CMS/document" name="author">Finn Mayer-Kucku</attribute>...
+
+
+Test writing with mockconnector
+
+>>> XmlWorker().write_file_on_dav(links5[0], newxml5, mockconnector)
+<zeit.connector.mock.Connector ...
+
+
+
+CASE 6 - Author name ends with whitespace
+Create a uri-list of all articles in the file author_starts.txt
+
+>>> links6 = XmlWorker().get_uris_from_file(os.path.dirname(__file__)+'/xmlworker/author_ends.txt', 'http://cms-backend.zeit.de:9000/cms/work')
+>>> links6
+['http://xml.zeit.de/digital/internet/2010-12/skype-offline-stoerung', 'http://xml.zeit.de/digital/internet/2010-12/hackerangriff-ard-fdp', ...
+
+
+Get first document from list
+
+>>> article6 = XmlWorker()._get_article(links6[0])
+>>> print(article6)
+<?xml version="1.0" encoding="iso-8859-1"?>
+...<title>Facebook, bing und Skype vernetzen sich</title>...
+
+
+Parse xml to tree
+
+>>> tree6 = XmlWorker()._string_to_xml(article6)
+>>> tree6
+<lxml.etree._ElementTree ...
+
+
+Delete whitespace from author attribute
+
+>>> tree6 = XmlWorker()._delete_whitespace_author_end(links6[0], tree6)
+>>> print(tree6)
+<lxml.etree._ElementTree ...
+
+
+Convert xml tree to string
+>>> newxml6 = XmlWorker()._xml_to_string(tree6)
+>>> print(newxml6)
+<?xml version='1.0' encoding='UTF-8'?>
+...<attribute ns="http://namespaces.zeit.de/CMS/document" name="author">dpa</attribute>...
+
+
+Test writing with mockconnector
+
+>>> XmlWorker().write_file_on_dav(links6[0], newxml6, mockconnector)
+<zeit.connector.mock.Connector ...
+
+
+
+CASE 7 - Add missing element attribute date_first_released by volume and year
+Create a uri-list of all articles in the file date_first_released.txt
+
+>>> links7 = XmlWorker().get_uris_from_file(os.path.dirname(__file__)+'/xmlworker/date_first_released.txt', 'http://cms-backend.zeit.de:9000/cms/work')
+>>> links7
+['http://xml.zeit.de/digital/internet/2009-08/internet-knigge', 'http://xml.zeit.de/feuilleton/osbournes', ...
+
+
+Get first document from list by uri
+
+>>> article7 = XmlWorker()._get_article(links7[0])
+>>> print(article7)
+<?xml version="1.0" encoding="iso-8859-1"?>
+...<title>Verbraucherschutz</title>...
+
+
+Parse xml tree
+
+>>> tree7 = XmlWorker()._string_to_xml(article7)
+>>> tree7
+<lxml.etree._ElementTree ...
+
+
+Create date_first_released
+
+
+>>> datefirstrel7 = XmlWorker()._create_date_first_released(tree7, article7)
+>>> print(datefirstrel7)
+2008-06-19T12:00:00Z
+
+
+Insert date_first_released into the xml document
+
+>>> tree7 = XmlWorker()._insert_attribute(tree7, "date_first_released", datefirstrel7)
+>>> print(tree7)
+<lxml.etree._ElementTree ...
+
+
+Convert xml tree to string
+>>> newxml7 = XmlWorker()._xml_to_string(tree7)
+>>> print(newxml7)
+<?xml version='1.0' encoding='UTF-8'?>
+...<attribute ns="http://namespaces.zeit.de/CMS/workflow" name="date_first_released">2008-06-19T12:00:00Z</attribute>...
+
+
+Test writing with mockconnector
+
+>>> XmlWorker().write_file_on_dav(links7[0], newxml7, mockconnector)
+<zeit.connector.mock.Connector ...
+
+
+
+CASE 8 - Add missing element attribute date_first_released by wrong date_first_release
+Get first document from list by uri
+
+>>> uri8 = 'http://xml.zeit.de/zuender/microsite/meltfestival/melt_2006/tickets'
+>>> article8 = XmlWorker()._get_article(uri8)
+>>> print(article8)
+<?xml version="1.0" encoding="iso-8859-1"?>
+...<title>Hier gibt es Tickets</title>...
+
+
+Parse xml tree
+
+>>> tree8 = XmlWorker()._string_to_xml(article8)
+>>> tree8
+<lxml.etree._ElementTree ...
+
+
+Create date_first_released
+
+
+>>> datefirstrel8 = XmlWorker()._create_date_first_released(tree8, article8)
+>>> print(datefirstrel8)
+2006-04-26T11:41Z
+
+
+Insert date_first_released into the xml document
+
+>>> tree8 = XmlWorker()._insert_attribute(tree8, "date_first_released", datefirstrel8)
+>>> print(tree8)
+<lxml.etree._ElementTree ...
+
+
+Convert xml tree to string
+>>> newxml8 = XmlWorker()._xml_to_string(tree8)
+>>> print(newxml8)
+<?xml version='1.0' encoding='UTF-8'?>
+...<attribute ns="http://namespaces.zeit.de/CMS/workflow" name="date_first_released">2006-04-26T11:41Z</attribute>...
+
+
+Test writing with mockconnector
+
+>>> XmlWorker().write_file_on_dav(uri8, newxml8, mockconnector)
+<zeit.connector.mock.Connector ...
+
+
+
+CASE 9 - Add missing element attribute date_first_released by year/volume from copyrights
+Get first document from list by uri
+
+>>> uri9 = 'http://xml.zeit.de/wirtschaft/davos8'
+>>> article9 = XmlWorker()._get_article(uri9)
+>>> print(article9)
+<?xml version="1.0" encoding="iso-8859-1"?>
+...<title>Weltwirtschaftsforum und Weltsozialforum</title>...
+
+
+Parse xml tree
+
+>>> tree9 = XmlWorker()._string_to_xml(article9)
+>>> tree9
+<lxml.etree._ElementTree ...
+
+
+Create date_first_released
+
+
+>>> datefirstrel9 = XmlWorker()._create_date_first_released(tree9, article9)
+>>> print(datefirstrel9)
+2003-01-30T12:00:00Z
+
+
+Insert date_first_released into the xml document
+
+>>> tree9 = XmlWorker()._insert_attribute(tree9, "date_first_released", datefirstrel9)
+>>> print(tree9)
+<lxml.etree._ElementTree ...
+
+
+Convert xml tree to string
+>>> newxml9 = XmlWorker()._xml_to_string(tree9)
+>>> print(newxml9)
+<?xml version='1.0' encoding='UTF-8'?>
+...<attribute ns="http://namespaces.zeit.de/CMS/workflow" name="date_first_released">2003-01-30T12:00:00Z</attribute>...
+
+
+Test writing with mockconnector
+
+>>> XmlWorker().write_file_on_dav(uri9, newxml9, mockconnector)
+<zeit.connector.mock.Connector ...
+
+
+
+CASE 10 - Add missing element attribute date_first_released by DD/MM/YYYY from copyrights
+Get first document from list by uri
+
+>>> uri10 = 'http://xml.zeit.de/online/2007/02/Israel-Nuklearangriff'
+>>> article10 = XmlWorker()._get_article(uri10)
+>>> print(article10)
+<?xml version="1.0" encoding="iso-8859-1"?>
+...<title>Nuklearangriff auf Iran?</title>...
+
+
+Parse xml tree
+
+>>> tree10 = XmlWorker()._string_to_xml(article10)
+>>> tree10
+<lxml.etree._ElementTree ...
+
+
+Create date_first_released
+
+
+>>> datefirstrel10 = XmlWorker()._create_date_first_released(tree10, article10)
+>>> print(datefirstrel10)
+2007-01-07T12:00:00Z
+
+
+Insert date_first_released into the xml document
+
+>>> tree10 = XmlWorker()._insert_attribute(tree10, "date_first_released", datefirstrel10)
+>>> print(tree10)
+<lxml.etree._ElementTree ...
+
+
+Convert xml tree to string
+>>> newxml10 = XmlWorker()._xml_to_string(tree10)
+>>> print(newxml10)
+<?xml version='1.0' encoding='UTF-8'?>
+...<attribute ns="http://namespaces.zeit.de/CMS/workflow" name="date_first_released">2007-01-07T12:00:00Z</attribute>...
+
+
+Test writing with mockconnector
+
+>>> XmlWorker().write_file_on_dav(uri10, newxml10, mockconnector)
+<zeit.connector.mock.Connector ...
+
+
+
+CASE 11 - Add missing element attribute date_last_modified
+Create a uri-list of all articles in the file date_last_modified.txt
+
+>>> links11 = XmlWorker().get_uris_from_file(os.path.dirname(__file__)+'/xmlworker/date_last_modified.txt', 'http://cms-backend.zeit.de:9000/cms/work')
+>>> links11
+['http://xml.zeit.de/1981/40/den-sozialstaat-durch-die-krise-retten', 'http://xml.zeit.de/1981/10/schattenboxen-mit-roosevelt', ...
+
+
+Get first document from list by uri
+
+>>> article11 = XmlWorker()._get_article(links11[0])
+>>> print(article11)
+<?xml version="1.0" encoding="iso-8859-1"?>
+...<title>Den Sozialstaat durch die Krise retten</title>...
+
+
+Parse xml tree
+
+>>> tree11 = XmlWorker()._string_to_xml(article11)
+>>> tree11
+<lxml.etree._ElementTree ...
+
+
+Create date_first_released
+
+
+>>> datefirstrel11 = XmlWorker()._get_date_first_released(tree11)
+>>> print(datefirstrel11)
+1981-09-25T06:00:00+00:00
+
+
+Insert date_first_released into the xml document
+
+>>> tree11 = XmlWorker()._insert_attribute(tree11, "date_last_modified", datefirstrel11)
+>>> print(tree11)
+<lxml.etree._ElementTree ...
+
+
+Convert xml tree to string
+>>> newxml11 = XmlWorker()._xml_to_string(tree11)
+>>> print(newxml11)
+<?xml version='1.0' encoding='UTF-8'?>
+...<attribute ns="http://namespaces.zeit.de/CMS/workflow" name="date_last_modified">1981-09-25T06:00:00+00:00</attribute>...
+
+
+Test writing with mockconnector
+
+>>> XmlWorker().write_file_on_dav(links11[0], newxml11, mockconnector)
+<zeit.connector.mock.Connector ...
+
+
+
+CASE 12 - Add missing element attribute last_semantic_change
+Create a uri-list of all articles in the file last_semantic_change.txt
+
+>>> links12 = XmlWorker().get_uris_from_file(os.path.dirname(__file__)+'/xmlworker/last_semantic_change.txt', 'http://cms-backend.zeit.de:9000/cms/work')
+>>> links12
+['http://xml.zeit.de/2001/40/200140_bin_laden_hauptt.xml', 'http://xml.zeit.de/2001/47/200147_m-angst.xml', ...
+
+
+Get first document from list by uri
+
+>>> article12 = XmlWorker()._get_article(links12[0])
+>>> print(article12)
+<?xml version="1.0" encoding="iso-8859-1"?>
+...<title>Der General und die Masse</title>...
+
+
+Parse xml tree
+
+>>> tree12 = XmlWorker()._string_to_xml(article12)
+>>> tree12
+<lxml.etree._ElementTree ...
+
+
+Create date_first_released
+
+
+>>> datefirstrel12 = XmlWorker()._get_date_first_released(tree12)
+>>> print(datefirstrel12)
+2001-09-27T12:00:00Z
+
+
+Insert last_semantic_change into the xml document
+
+>>> tree12 = XmlWorker()._insert_attribute(tree12, "last_semantic_change", datefirstrel12)
+>>> print(tree12)
+<lxml.etree._ElementTree ...
+
+
+Convert xml tree to string
+>>> newxml12 = XmlWorker()._xml_to_string(tree12)
+>>> print(newxml12)
+<?xml version='1.0' encoding='UTF-8'?>
+...<attribute ns="http://namespaces.zeit.de/CMS/workflow" name="last_semantic_change">2001-09-27T12:00:00Z</attribute>...
+
+
+Test writing with mockconnector
+
+>>> XmlWorker().write_file_on_dav(links12[0], newxml12, mockconnector)
+<zeit.connector.mock.Connector ...
+
+
+
+CASE 13 - Add missing elements attribute date_last_modified and element attribute last_semantic_change
+Create a uri-list of all articles in the file last_modified_semantic_change.txt
+
+>>> links13 = XmlWorker().get_uris_from_file(os.path.dirname(__file__)+'/xmlworker/last_modified_semantic_change.txt', 'http://cms-backend.zeit.de:9000/cms/work')
+>>> links13
+['http://xml.zeit.de/2001/04/_Opernsaengerin_kann_ich_nicht_mehr_werden_Aber', 'http://xml.zeit.de/2001/29/FRANZ_MUeNTEFERING_Einer_von_uns_sagt_Hier_muss', ...
+
+
+Get first document from list by uri
+
+>>> article13 = XmlWorker()._get_article(links13[0])
+>>> print(article13)
+<?xml version="1.0" encoding="iso-8859-1"?>
+...mein Traum</title><byline>Von Jacqueline...
+
+
+Parse xml tree
+
+>>> tree13 = XmlWorker()._string_to_xml(article13)
+>>> tree13
+<lxml.etree._ElementTree ...
+
+
+Create date_first_released
+
+
+>>> datefirstrel13 = XmlWorker()._get_date_first_released(tree13)
+>>> print(datefirstrel13)
+2001-01-18T12:00:00Z
+
+
+Insert date_last_modified into the xml document
+
+>>> tree13 = XmlWorker()._insert_attribute(tree13, "date_last_modified", datefirstrel13)
+>>> print(tree13)
+<lxml.etree._ElementTree ...
+
+
+Convert xml tree to string
+>>> newxml13 = XmlWorker()._xml_to_string(tree13)
+>>> print(newxml13)
+<?xml version='1.0' encoding='UTF-8'?>
+...<attribute ns="http://namespaces.zeit.de/CMS/workflow" name="date_last_modified">2001-01-18T12:00:00Z</attribute>...
+
+
+Insert last_semantic_change into the xml document
+
+>>> tree13 = XmlWorker()._insert_attribute(tree13, "last_semantic_change", datefirstrel13)
+>>> print(tree13)
+<lxml.etree._ElementTree ...
+
+
+Convert xml tree to string
+>>> newxml13 = XmlWorker()._xml_to_string(tree13)
+>>> print(newxml13)
+<?xml version='1.0' encoding='UTF-8'?>
+...<attribute ns="http://namespaces.zeit.de/CMS/workflow" name="last_semantic_change">2001-01-18T12:00:00Z</attribute><attribute ns="http://namespaces.zeit.de/CMS/workflow" name="date_last_modified">2001-01-18T12:00:00Z</attribute>...
+
+
+Test writing with mockconnector
+
+>>> XmlWorker().write_file_on_dav(links13[0], newxml13, mockconnector)
+<zeit.connector.mock.Connector ...
+
+
+
+ADDITIONAL 1 - Process a article with missing date_first_released and wrong element date-first-release
+Get article from uri
+
+>>> uri = "http://xml.zeit.de/feuilleton/kursbuch_162/3_ladurner"
+>>> article5 = XmlWorker()._get_article(uri)
+>>> print(article5)
+<?xml version="1.0" encoding="iso-8859-1"?>
+...<description>Ritter, Tod und Teufel - Krieg, Terror und Pandemien (Heft 162)</description>...
+
+
+Parse xml tree
+
+>>> tree5 = XmlWorker()._string_to_xml(article5)
+>>> tree5
+<lxml.etree._ElementTree ...
+
+
+Create date first released
+>>> datefirstrel = XmlWorker()._create_date_first_released(tree5, article5)
+>>> print(datefirstrel)
+2008-02-06T11:27Z
+
+
+Insert date_first_released into the xml document
+
+>>> tree5 = XmlWorker()._insert_attribute(tree5, "date_first_released", datefirstrel)
+>>> print(tree5)
+<lxml.etree._ElementTree ...
+
+
+Convert xml tree to string
+>>> newxml5 = XmlWorker()._xml_to_string(tree5)
+>>> print(newxml5)
+<?xml version='1.0' encoding='UTF-8'?>
+...<attribute ns="http://namespaces.zeit.de/CMS/workflow" name="date_first_released">2008-02-06T11:27Z</attribute>...Vaterlands und der Bundeswehr</description></reference></references><attribute ns="http://namespaces.zeit.de/CMS/document" name="date-first-release">2008-02-06T11:27Z</attribute></head><body>...
+
+
+Delete wrong date-first-release attribute into the xml document
+
+>>> tree5 = XmlWorker()._delete_attribute(tree5, "date-first-release")
+>>> print(tree5)
+<lxml.etree._ElementTree ...
+
+
+Convert xml tree to string
+>>> newxml5 = XmlWorker()._xml_to_string(tree5)
+>>> print(newxml5)
+<?xml version='1.0' encoding='UTF-8'?>
+...Vaterlands und der Bundeswehr</description></reference></references></head><body>...
+
+
+
+LOOP 1 - 
+
+>>> from zeit.care import add_file_logging
+
+
+>>> logpath = 'src/zeit/care/xmlworker_log'
+>>> str = 'http://cms-backend.zeit.de:9000/cms/work'
+
+
+>>> logger_error_productid = logging.getLogger('error_productid')
+>>> path_productid = os.path.dirname(__file__)+'/xmlworker/missing_productid.txt'
+>>> add_file_logging(logger_error_productid, os.path.dirname(__file__)+'/xmlworker_log/error_productid.log')
+>>> injectids = XmlWorker()
+>>> injectids.run(path_productid, logpath, str, mockconnector, 'productid', logger_error_productid)
+
+
+>>> logger_error_authorstarts = logging.getLogger('error_authorstarts') 
+>>> path_author_starts = os.path.dirname(__file__)+'/xmlworker/author_starts.txt'
+>>> add_file_logging(logger_error_authorstarts, os.path.dirname(__file__)+'/xmlworker_log/error_authorstarts.log')
+>>> authorstarts = XmlWorker()
+>>> authorstarts.run(path_author_starts, logpath, str, mockconnector, 'authorstarts', logger_error_authorstarts)
+        
+
+>>> logger_error_authorends = logging.getLogger('error_authorends')
+>>> path_author_ends = os.path.dirname(__file__)+'/xmlworker/author_ends.txt'
+>>> add_file_logging(logger_error_authorends, os.path.dirname(__file__) +'/xmlworker_log/error_authorstarts.log')
+>>> authorends = XmlWorker()
+>>> authorends.run(path_author_ends, logpath, str, mockconnector, 'authorends', logger_error_authorends)
+
+
+>>> logger_error_datefirst = logging.getLogger('error_date-first-released')
+>>> path_date_first = os.path.dirname(__file__)+'/xmlworker/date_first_released.txt'
+>>> add_file_logging(logger_error_datefirst, os.path.dirname(__file__) +'/xmlworker_log/error_date-first-released.log')
+>>> datefirst = XmlWorker()
+>>> datefirst.run(path_date_first, logpath, str, mockconnector, 'datefirst', logger_error_datefirst) 
+
+
+>>> logger_error_datemodified = logging.getLogger('error_date-last-modified')
+>>> path_date_modified = os.path.dirname(__file__)+'/xmlworker/date_last_modified.txt'
+>>> add_file_logging(logger_error_datemodified, os.path.dirname(__file__) +'/xmlworker_log/error_date-last-modified.log')
+>>> datemodified = XmlWorker()
+>>> datemodified.run(path_date_modified, logpath, str, mockconnector, 'datemodified', logger_error_datemodified)
+ 
+           
+>>> logger_error_semanticchange = logging.getLogger('error_last-semantic-change')
+>>> path_semantic_change = os.path.dirname(__file__)+'/xmlworker/last_semantic_change.txt'
+>>> add_file_logging(logger_error_semanticchange, os.path.dirname(__file__) +'/xmlworker_log/error_last-semantic-change.log')
+>>> semantic = XmlWorker()
+>>> semantic.run(path_semantic_change, logpath, str, mockconnector, 'semanticchange', logger_error_semanticchange)
+
+
+>>> logger_error_modifiedsemantic = logging.getLogger('error_last-modified-semantic-change')
+>>> path_modified_semantic = os.path.dirname(__file__)+'/xmlworker/last_modified_semantic_change.txt'
+>>> add_file_logging(logger_error_modifiedsemantic, os.path.dirname(__file__) +'/xmlworker_log/error_last-modified-semantic-change.log')
+>>> modifiedsemantic = XmlWorker()
+>>> modifiedsemantic.run(path_modified_semantic, logpath, str, mockconnector, 'modifiedsemantic', logger_error_modifiedsemantic)           
+
+
+

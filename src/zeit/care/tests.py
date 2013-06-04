@@ -9,6 +9,7 @@ def test_suite():
         'divisor.txt',
         'boxinjector.txt',
         'ressortindex.txt',
+        'xmlworker.txt',
         optionflags=doctest.ELLIPSIS
         ))
 
