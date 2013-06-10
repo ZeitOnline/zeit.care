@@ -28,6 +28,6 @@ setup(
         ressortindexwriter = zeit.care.ressortindex:main
         commentthreadworker = zeit.care.commentthread:main
         propertyworker = zeit.care.worker:property_main
-	xmlworker = zeit.care.xmlworker:main
+	    xmlworker = zeit.care.xmlworker:main
         """
 )
