@@ -12,6 +12,7 @@ from zeit.connector.resource import Resource
 import zeit.connector.interfaces
 import zeit.connector.mock
 import httplib
+import urllib
 import urllib2
 import re
 
@@ -208,6 +209,7 @@ class XmlWorker(object):
         return tree
             
     def write_file_on_dav(self, uri, xml,connector):
+        uri = uri.decode('utf-8')
         filename = uri.split('/')[-1]
         res = Resource(uri,
             filename,
