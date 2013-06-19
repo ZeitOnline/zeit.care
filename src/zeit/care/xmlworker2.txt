@@ -1,0 +1,140 @@
+The XmlWorker adds, changes or removes elements of the article XML.
+It can do 4 different operations. Each of them require it's article list file
+in the folder, which is passed as option on script startup.
+
+BASIC 1 - Import the XmlWorker Class and os
+
+BASIC 2 - Import the mockconnector module
+
+BASIC 3 - Set logger
+
+CASE 1 - Add missing element <attribute name="product-id"> ZEI for an Zeit-Print article
+File   - missing_productid.txt         
+
+CASE 2 - Insert missing productid ZTWI for an Zeit-Wissen article
+
+CASE 3 - Insert missing productid TGS for an Tagesspiegel article
+
+CASE 4 - Insert missing productid ZEDE for an Zeit-Online article
+         
+CASE 5 - Delete leading whitespaces from element <attribute name="author">
+File   - author_starts.txt
+
+CASE 6 - Delete trailing whitespaces from element <attribute name="author">
+File   - author_ends.txt
+
+CASE 7 - Adds missing element <attribute name="date_first_released"> by volume and year
+		 and deletes unnecessary <attribute name="date-first-release">
+File   - date_first_released.txt
+
+CASE 8 - Add missing element attribute date_first_released by wrong date_first_release
+
+CASE 9 - Add missing element attribute date_first_released by year/volume from copyrights
+
+CASE 10 - Add missing element attribute date_first_released by DD/MM/YYYY from copyrights
+
+CASE 11 - Add missing element attribute date_last_modified
+
+CASE 12 - Add missing element attribute last_semantic_change
+
+CASE 13 - Add missing elements attribute date_last_modified and element attribute last_semantic_change
+
+ADDITIONAL 1 - Process a article with missing date_first_released. Get date by wrong element date-first-release
+               and delete <attribute name="date-first-release"> afterwards
+               
+
+
+BASIC 1 - Import the XmlWorker Class and os
+
+>>> import os
+>>> import logging
+>>> from zeit.care.xmlworker import XmlWorker
+>>> XmlWorker
+<class 'zeit.care.xmlworker.XmlWorker'>
+
+
+
+BASIC 2 - Import the mockconnector module
+
+>>> import zeit.connector.mock
+>>> mockconnector = zeit.connector.mock.Connector()
+>>> mockconnector
+<zeit.connector.mock.Connector object at 0x...>
+
+
+
+
+
+
+#LOOP 1 -
+
+>>> from zeit.care import add_file_logging
+
+
+>>> logpath = 'src/zeit/care/xmlworker_log'
+>>> str = 'http://cms-backend.zeit.de:9000/cms/work'
+
+
+>>> logger_error_productid = logging.getLogger('error_productid')
+>>> path_productid = os.path.dirname(__file__)+'/xmlworker/missing_productid.txt'
+>>> add_file_logging(logger_error_productid, os.path.dirname(__file__)+'/xmlworker_log/error_productid.log')
+>>> injectids = XmlWorker()
+>>> injectids.run(path_productid, logpath, str, mockconnector, 'productid', logger_error_productid)
+
+
+#>>> logger_error_authorstarts = logging.getLogger('error_authorstarts')
+#>>> path_author_starts = os.path.dirname(__file__)+'/xmlworker/author_starts.txt'
+#>>> add_file_logging(logger_error_authorstarts, os.path.dirname(__file__)+'/xmlworker_log/error_authorstarts.log')
+#>>> authorstarts = XmlWorker()
+#>>> authorstarts.run(path_author_starts, logpath, str, mockconnector, 'authorstarts', logger_error_authorstarts)
+        
+
+#>>> logger_error_authorends = logging.getLogger('error_authorends')
+#>>> path_author_ends = os.path.dirname(__file__)+'/xmlworker/author_ends.txt'
+#>>> add_file_logging(logger_error_authorends, os.path.dirname(__file__) +'/xmlworker_log/error_authorstarts.log')
+#>>> authorends = XmlWorker()
+#>>> authorends.run(path_author_ends, logpath, str, mockconnector, 'authorends', logger_error_authorends)
+
+
+#>>> logger_error_datefirst = logging.getLogger('error_date-first-released')
+#>>> path_date_first = os.path.dirname(__file__)+'/xmlworker/date_first_released.txt'
+#>>> add_file_logging(logger_error_datefirst, os.path.dirname(__file__) +'/xmlworker_log/error_date-first-released.log')
+#>>> datefirst = XmlWorker()
+#>>> datefirst.run(path_date_first, logpath, str, mockconnector, 'datefirst', logger_error_datefirst)
+
+
+#>>> logger_error_datemodified = logging.getLogger('error_date-last-modified')
+#>>> path_date_modified = os.path.dirname(__file__)+'/xmlworker/date_last_modified.txt'
+#>>> add_file_logging(logger_error_datemodified, os.path.dirname(__file__) +'/xmlworker_log/error_date-last-modified.log')
+#>>> datemodified = XmlWorker()
+#>>> datemodified.run(path_date_modified, logpath, str, mockconnector, 'datemodified', logger_error_datemodified)
+ 
+           
+#>>> logger_error_semanticchange = logging.getLogger('error_last-semantic-change')
+#>>> path_semantic_change = os.path.dirname(__file__)+'/xmlworker/last_semantic_change.txt'
+#>>> add_file_logging(logger_error_semanticchange, os.path.dirname(__file__) +'/xmlworker_log/error_last-semantic-change.log')
+#>>> semantic = XmlWorker()
+#>>> semantic.run(path_semantic_change, logpath, str, mockconnector, 'semanticchange', logger_error_semanticchange)
+
+
+#>>> logger_error_modifiedsemantic = logging.getLogger('error_last-modified-semantic-change')
+#>>> path_modified_semantic = os.path.dirname(__file__)+'/xmlworker/last_modified_semantic_change.txt'
+#>>> add_file_logging(logger_error_modifiedsemantic, os.path.dirname(__file__) +'/xmlworker_log/error_last-modified-semantic-change.log')
+#>>> modifiedsemantic = XmlWorker()
+#>>> modifiedsemantic.run(path_modified_semantic, logpath, str, mockconnector, 'modifiedsemantic', logger_error_modifiedsemantic)
+
+
+
+
+
+
+
+#>>> import zeit.care.worker
+#>>> resource = 'http://xml.zeit.de/feuilleton/osbournes'
+#>>> dt = '2010'
+#>>> pid = 'ZEI'
+#>>> proplist = {('date-last-modified','http://namespaces.zeit.de/CMS/document'): dt,('productid','http://namespaces.zeit.de/CMS/document'): pid}
+#>>> addprops = zeit.care.worker.property_worker(resource,mockconnector,properties=proplist)
+
+
+
