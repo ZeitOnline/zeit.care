@@ -10,6 +10,7 @@ def test_suite():
         'boxinjector.txt',
         'ressortindex.txt',
         'xmlworker.txt',
+        'xmlworker2.txt',
         optionflags=doctest.ELLIPSIS
         ))
 

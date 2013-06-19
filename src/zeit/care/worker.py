@@ -105,5 +105,6 @@ def property_main():
                                           namespace=options.namespace)
     crawler.run()
 
-def property_worker():
-    pass
+def property_worker(resource,connector,**kwargs):
+    properties = kwargs.pop('properties')
+    connector.changeProperties(resource, properties)

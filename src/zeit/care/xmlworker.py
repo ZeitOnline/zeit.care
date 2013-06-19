@@ -8,11 +8,13 @@ from lxml import etree
 from datetime import datetime
 from zeit.care import add_file_logging
 import zeit.connector.connector
+import zeit.care.crawl
+import zeit.care.publish
+import zeit.care.worker
 from zeit.connector.resource import Resource
 import zeit.connector.interfaces
 import zeit.connector.mock
 import httplib
-import urllib
 import urllib2
 import re
 
@@ -31,7 +33,9 @@ logger_info_ztwi = logging.getLogger('info_productid_zeit-wissen')
 logger_info_rele = logging.getLogger('info_date-first-released_attr-release')
 logger_info_year_vol = logging.getLogger('info_date-first-released_year-volume')
 logger_info_year_vol_copyr = logging.getLogger('info_date-first-released_year-volume-copyrights')
-logger_info_date_copyr = logging.getLogger('info_date-first-released_date-copyrights')  
+logger_info_date_copyr = logging.getLogger('info_date-first-released_date-copyrights')
+
+publish = zeit.care.publish.publish_xmlrpc
 
 class XmlWorker(object):
 
@@ -174,54 +178,51 @@ class XmlWorker(object):
             return False
 
 
-    def _insert_attribute(self, tree, var, val):
-        headlst = tree.find('head')
-        attr = etree.Element('attribute', name=var, ns="http://namespaces.zeit.de/CMS/workflow")
-        attr.text = val
-        tree.xpath('//article/head')[0].insert(0,attr)
-        return tree
+#    def _insert_attribute(self, tree, var, val):
+#        headlst = tree.find('head')
+#        attr = etree.Element('attribute', name=var, ns="http://namespaces.zeit.de/CMS/workflow")
+#        attr.text = val
+#        tree.xpath('//article/head')[0].insert(0,attr)
+#        return tree
 
 
-    def _delete_attribute(self, tree, var):
-        headlst = tree.find('head')
-        for child in headlst.iter():
-            attributes = child.attrib
-            if attributes.has_key('name'):
-                if attributes['name'] == var:
-                    headlst.remove(child)
-                    return tree
+#    def _delete_attribute(self, tree, var):
+#        headlst = tree.find('head')
+#        for child in headlst.iter():
+#            attributes = child.attrib
+#            if attributes.has_key('name'):
+#                if attributes['name'] == var:
+#                    headlst.remove(child)
+#                    return tree
 
     
     def _delete_whitespace_author_begin(self, tree):
         attr_author = tree.xpath('//attribute[@name="author"]')[0]
-        attr_author.text = attr_author.text[1:-1]
-        return tree
+        return attr_author.text[1:-1]
         
         
-    def _delete_whitespace_author_end(self, uri, tree):
+    def _delete_whitespace_author_end(self, tree):
         attr_author = tree.xpath('//attribute[@name="author"]')[0]
         if attr_author.text[-2:] == "  ":
-            attr_author.text = attr_author.text[:-2]
+            return attr_author.text[:-2]
         elif attr_author.text[-1:] == " ":
-            attr_author.text = attr_author.text[:-1]
+            return attr_author.text[:-1]
         else:
             return False
-        return tree
             
-    def write_file_on_dav(self, uri, xml,connector):
-        uri = uri.decode('utf-8')
-        filename = uri.split('/')[-1]
-        res = Resource(uri,
-            filename,
-            'article',
-            StringIO.StringIO(xml),
-            contentType = 'text/xml')
-        try:
-            connector[uri] = res
-        except httplib.HTTPException:
-            return False
-            
-        return connector
+#    def write_file_on_dav(self, uri, xml,connector):
+#        uri = uri.decode('utf-8')
+#        filename = uri.split('/')[-1]
+#        res = Resource(uri,
+#            filename,
+#            'article',
+#            StringIO.StringIO(xml),
+#            contentType = 'text/xml')
+#        try:
+#            connector[uri] = res
+#        except httplib.HTTPException:
+#            return False 
+#        return connector
 
     def set_logger (self, logger, logfile):
         logger.setLevel(logging.DEBUG)
@@ -256,57 +257,75 @@ class XmlWorker(object):
                 if mode == "productid":
                     productid = self._find_out_productid(tree, uri)
                     if productid is not False:
-                        newxml = self._insert_attribute(tree, "product-id", productid)
-                        if newxml is not False:
-                            article = self._xml_to_string(newxml)
-                            dav = self.write_file_on_dav(uri, article, connector)
-                            if dav is False:
-                                logger.error(uri + "WebDav, file could not be written.")
-                        else:
-                            logger.error(uri+' Error while inserting productid to article.')
+                        properties = {('product-id','http://namespaces.zeit.de/CMS/document'): productid}
+                        try:
+                            crawler = zeit.care.crawl.ResourceProcess(uri,
+                                                                      connector,
+                                                                      zeit.care.worker.property_worker,
+                                                                      properties=properties,
+                                                                      publish=publish)
+                            crawler.run()
+                        except:
+                            logger.error(uri+' Connector error. Perhaps no DB entry for article.')
                     else:
                         logger.error(uri+' Productid impossible to identify.')
-                        
-                
+
                 # CASE - Delete whitespace from authors begin
                 elif mode == "authorstarts":
-                    newxml = self._delete_whitespace_author_begin(tree)
-                    article = self._xml_to_string(newxml)
-                    dav = self.write_file_on_dav(uri, article, connector)
-                    if dav is False:
-                        logger.error(uri + "WebDav, file could not be written.")
-                
+                    author = self._delete_whitespace_author_begin(tree)
+                    if author is not False:
+                        properties = {('product-id','http://namespaces.zeit.de/CMS/document'): author}
+                        try:
+                            crawler = zeit.care.crawl.ResourceProcess(uri,
+                                                                      connector,
+                                                                      zeit.care.worker.property_worker,
+                                                                      properties=properties,
+                                                                      publish=publish)
+                            crawler.run()
+                        except:
+                            logger.error(uri+' Connector error. Perhaps no DB entry for article.')
+                    else:
+                        logger.error(uri+' Error while changing author string.')
+
                 # CASE - Delete one or two whitespaces from authors end    
                 elif mode == "authorends":
-                    newxml = self._delete_whitespace_author_end(uri, tree)
-                    if newxml is not False:
-                        article = self._xml_to_string(newxml)
-                        dav = self.write_file_on_dav(uri, article, connector)
-                        if dav is False:
-                            logger.error(uri + "WebDav, file could not be written.")
+                    author = self._delete_whitespace_author_end(tree)
+                    if author is not False:
+                        properties = {('product-id','http://namespaces.zeit.de/CMS/document'): author}
+                        try:
+                            crawler = zeit.care.crawl.ResourceProcess(uri,
+                                                                      connector,
+                                                                      zeit.care.worker.property_worker,
+                                                                      properties=properties,
+                                                                      publish=publish)
+                            crawler.run()
+                        except:
+                            logger.error(uri+' Connector error. Perhaps no DB entry for article.')
                     else:
-                       logger.error(uri+' Could not delete whitespaces.') 
+                       logger.error(uri+' Error while changing author string.')
                         
                 # CASE - Date first released    
                 elif mode == "datefirst":
                     self.wrong_date_attr_to_delete = False
                     datefirstrel = self._create_date_first_released(tree, uri)
                     if datefirstrel is not False:
-                        newxml = self._insert_attribute(tree, "date_first_released", datefirstrel)
-                        if newxml is not False:
-                            
-                            if self.wrong_date_attr_to_delete is True:
-                                newxml = self._delete_attribute(newxml, "date-first-release")
-                            if self._detect_date_last_modified(newxml) is False:
-                                newxml = self._insert_attribute(newxml, "date_last_modified", datefirstrel)
-                            if self._detect_last_semantic_change(newxml) is False:
-                                newxml = self._insert_attribute(newxml, "last_semantic_change", datefirstrel)
-                            article = self._xml_to_string(newxml)
-                            dav = self.write_file_on_dav(uri, article, connector)
-                            if dav is False:
-                                logger.error(uri + "WebDav, file could not be written.")
-                        else:
-                            logger.error(uri+' Error while inserting date_first_released to article.')               
+                        properties = {('date_first_released','http://namespaces.zeit.de/CMS/document'): datefirstrel}
+                        #if self.wrong_date_attr_to_delete is True:
+                            # Perhaps not necessary
+                        if self._detect_date_last_modified(newxml) is False:
+                            properties.update({('date_last_modified','http://namespaces.zeit.de/CMS/document'): datefirstrel})
+                        if self._detect_last_semantic_change(newxml) is False:
+                            properties.update({('last_semantic_change','http://namespaces.zeit.de/CMS/document'): datefirstrel})
+                        try:
+                            crawler = zeit.care.crawl.ResourceProcess(uri,
+                                                                      connector,
+                                                                      zeit.care.worker.property_worker,
+                                                                      properties=properties,
+                                                                      publish=publish)
+                            crawler.run()
+                        except:
+                            logger.error(uri+' Connector error. Perhaps no DB entry for article.')
+
                     else:
                         logger.error(uri+' Could not create date_first_released.')
  
@@ -314,14 +333,16 @@ class XmlWorker(object):
                 elif mode == "datemodified":
                     datefirstrel = self._get_date_first_released(tree)
                     if datefirstrel is not False:
-                        newxml = self._insert_attribute(tree, "date_last_modified", datefirstrel)
-                        if newxml is not False:
-                            article = self._xml_to_string(newxml)
-                            dav = self.write_file_on_dav(uri, newxml, connector)
-                            if dav is False:
-                                logger.error(uri + "WebDav, file could not be written.")
-                        else:
-                            logger.error(uri+' Error while inserting date_last_modified to article.')               
+                        properties = {('date_last_modified','http://namespaces.zeit.de/CMS/document'): datefirstrel}
+                        try:
+                            crawler = zeit.care.crawl.ResourceProcess(uri,
+                                                                      connector,
+                                                                      zeit.care.worker.property_worker,
+                                                                      properties=properties,
+                                                                      publish=publish)
+                            crawler.run()
+                        except:
+                            logger.error(uri+' Connector error. Perhaps no DB entry for article.')
                     else:
                         logger.error(uri+' Could not get date_first_released.')
                         
@@ -329,14 +350,16 @@ class XmlWorker(object):
                 elif mode == "semanticchange":
                     datefirstrel = self._get_date_first_released(tree)
                     if datefirstrel is not False:
-                        newxml = self._insert_attribute(tree, "last_semantic_change", datefirstrel)
-                        if newxml is not False:
-                            article = self._xml_to_string(newxml)
-                            dav = self.write_file_on_dav(uri, newxml, connector)
-                            if dav is False:
-                                logger.error(uri + "WebDav, file could not be written.")
-                        else:
-                            logger.error(uri+' Error while inserting last_semantic_change to article.')               
+                        properties = {('last_semantic_change','http://namespaces.zeit.de/CMS/document'): datefirstrel}
+                        try:
+                            crawler = zeit.care.crawl.ResourceProcess(uri,
+                                                                      connector,
+                                                                      zeit.care.worker.property_worker,
+                                                                      properties=properties,
+                                                                      publish=publish)
+                            crawler.run()
+                        except:
+                            logger.error(uri+' Connector error. Perhaps no DB entry for article.')
                     else:
                         logger.error(uri+' Could not get date_first_released.')
                                         
@@ -344,31 +367,31 @@ class XmlWorker(object):
                 elif mode == "modifiedsemantic":
                     datefirstrel = self._get_date_first_released(tree)
                     if datefirstrel is not False:
-                        newxml = self._insert_attribute(tree, "date_last_modified", datefirstrel)
-                        if newxml is not False:
-                            newxml = self._insert_attribute(newxml, "last_semantic_change", datefirstrel)
-                            if newxml is not False:
-                                article = self._xml_to_string(newxml)
-                                dav = self.write_file_on_dav(uri, newxml, connector)
-                                if dav is False:
-                                    logger.error(uri + "WebDav, file could not be written.")
-                            else:
-                                logger.error(uri+' Error while inserting last_semantic_change to article.')                                
-                        else:
-                            logger.error(uri+' Error while inserting date_last_modified to article.')               
+                        properties = {('date_last_modified','http://namespaces.zeit.de/CMS/document'): datefirstrel,
+                                      ('last_semantic_change','http://namespaces.zeit.de/CMS/document'): datefirstrel}
+                        try:
+                            crawler = zeit.care.crawl.ResourceProcess(uri,
+                                                                      connector,
+                                                                      zeit.care.worker.property_worker,
+                                                                      properties=properties,
+                                                                      publish=publish)
+                            crawler.run()
+                        except:
+                            logger.error(uri+' Connector error. Perhaps no DB entry for article.')
                     else:
                         logger.error(uri+' Could not get date_first_released.')
-                    
+
             else:
                 logger.error(uri + " Could not get article from uri")                
-                
-                     
+
+         
             #print uri
-            #count += 1
+            count += 1
             #if count % 10000 == 0:
             #    print count
             #if count > 100:
             #    break
+        #return count
 
 def main():
     usage = "usage: %prog [options] arg"

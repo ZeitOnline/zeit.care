@@ -35,3 +35,22 @@ class FileProcess(object):
                                             **self.params)
                     if processed:
                         self.publish(uri)
+
+class ResourceProcess(object):
+    def __publish__ (self):
+        pass
+
+    def __init__(self, uri, connector, worker,**kwargs):
+        self.connector = connector
+        self.uri = uri
+        self.worker = worker
+        self.publish = kwargs.pop('publish',self.__publish__)
+        self.params = kwargs
+
+    def run(self):
+        uri = self.uri.rstrip("\n")
+        processed = self.worker(uri,
+                                self.connector,
+                                **self.params)
+        if processed:
+            self.publish(uri)

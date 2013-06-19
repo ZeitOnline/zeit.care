@@ -116,6 +116,19 @@ Lets see if transformation is working
 '<?xml version="1.0"?>\n<foo>ba</foo>\n'
 
 
+The ResourceProcess is the same as file crawler, but it takes just one webdav-resource.
+As above these resources can be manipulated by a worker.
+There is also an option to define a publisher and pass it as keyword-argument.
+
+>>> import zeit.care.publish
+>>> def worker(resource, connector):
+...     return True
+>>> publish = zeit.care.publish.publish_xmlrpc
+>>> crawler = zeit.care.crawl.ResourceProcess(
+...     'http://xml.zeit.de/feuilleton/osbournes', connector, worker,publish=publish)
+>>> crawler.run()
+cannot publish http://xml.zeit.de/feuilleton/osbournes
+
 
 
 

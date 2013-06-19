@@ -750,7 +750,7 @@ Convert xml tree to string
 
 
 
-LOOP 1 - 
+#LOOP 1 -
 
 >>> from zeit.care import add_file_logging
 
@@ -766,46 +766,59 @@ LOOP 1 -
 >>> injectids.run(path_productid, logpath, str, mockconnector, 'productid', logger_error_productid)
 
 
->>> logger_error_authorstarts = logging.getLogger('error_authorstarts') 
->>> path_author_starts = os.path.dirname(__file__)+'/xmlworker/author_starts.txt'
->>> add_file_logging(logger_error_authorstarts, os.path.dirname(__file__)+'/xmlworker_log/error_authorstarts.log')
->>> authorstarts = XmlWorker()
->>> authorstarts.run(path_author_starts, logpath, str, mockconnector, 'authorstarts', logger_error_authorstarts)
+#>>> logger_error_authorstarts = logging.getLogger('error_authorstarts')
+#>>> path_author_starts = os.path.dirname(__file__)+'/xmlworker/author_starts.txt'
+#>>> add_file_logging(logger_error_authorstarts, os.path.dirname(__file__)+'/xmlworker_log/error_authorstarts.log')
+#>>> authorstarts = XmlWorker()
+#>>> authorstarts.run(path_author_starts, logpath, str, mockconnector, 'authorstarts', logger_error_authorstarts)
         
 
->>> logger_error_authorends = logging.getLogger('error_authorends')
->>> path_author_ends = os.path.dirname(__file__)+'/xmlworker/author_ends.txt'
->>> add_file_logging(logger_error_authorends, os.path.dirname(__file__) +'/xmlworker_log/error_authorstarts.log')
->>> authorends = XmlWorker()
->>> authorends.run(path_author_ends, logpath, str, mockconnector, 'authorends', logger_error_authorends)
+#>>> logger_error_authorends = logging.getLogger('error_authorends')
+#>>> path_author_ends = os.path.dirname(__file__)+'/xmlworker/author_ends.txt'
+#>>> add_file_logging(logger_error_authorends, os.path.dirname(__file__) +'/xmlworker_log/error_authorstarts.log')
+#>>> authorends = XmlWorker()
+#>>> authorends.run(path_author_ends, logpath, str, mockconnector, 'authorends', logger_error_authorends)
 
 
->>> logger_error_datefirst = logging.getLogger('error_date-first-released')
->>> path_date_first = os.path.dirname(__file__)+'/xmlworker/date_first_released.txt'
->>> add_file_logging(logger_error_datefirst, os.path.dirname(__file__) +'/xmlworker_log/error_date-first-released.log')
->>> datefirst = XmlWorker()
->>> datefirst.run(path_date_first, logpath, str, mockconnector, 'datefirst', logger_error_datefirst) 
+#>>> logger_error_datefirst = logging.getLogger('error_date-first-released')
+#>>> path_date_first = os.path.dirname(__file__)+'/xmlworker/date_first_released.txt'
+#>>> add_file_logging(logger_error_datefirst, os.path.dirname(__file__) +'/xmlworker_log/error_date-first-released.log')
+#>>> datefirst = XmlWorker()
+#>>> datefirst.run(path_date_first, logpath, str, mockconnector, 'datefirst', logger_error_datefirst)
 
 
->>> logger_error_datemodified = logging.getLogger('error_date-last-modified')
->>> path_date_modified = os.path.dirname(__file__)+'/xmlworker/date_last_modified.txt'
->>> add_file_logging(logger_error_datemodified, os.path.dirname(__file__) +'/xmlworker_log/error_date-last-modified.log')
->>> datemodified = XmlWorker()
->>> datemodified.run(path_date_modified, logpath, str, mockconnector, 'datemodified', logger_error_datemodified)
+#>>> logger_error_datemodified = logging.getLogger('error_date-last-modified')
+#>>> path_date_modified = os.path.dirname(__file__)+'/xmlworker/date_last_modified.txt'
+#>>> add_file_logging(logger_error_datemodified, os.path.dirname(__file__) +'/xmlworker_log/error_date-last-modified.log')
+#>>> datemodified = XmlWorker()
+#>>> datemodified.run(path_date_modified, logpath, str, mockconnector, 'datemodified', logger_error_datemodified)
  
            
->>> logger_error_semanticchange = logging.getLogger('error_last-semantic-change')
->>> path_semantic_change = os.path.dirname(__file__)+'/xmlworker/last_semantic_change.txt'
->>> add_file_logging(logger_error_semanticchange, os.path.dirname(__file__) +'/xmlworker_log/error_last-semantic-change.log')
->>> semantic = XmlWorker()
->>> semantic.run(path_semantic_change, logpath, str, mockconnector, 'semanticchange', logger_error_semanticchange)
+#>>> logger_error_semanticchange = logging.getLogger('error_last-semantic-change')
+#>>> path_semantic_change = os.path.dirname(__file__)+'/xmlworker/last_semantic_change.txt'
+#>>> add_file_logging(logger_error_semanticchange, os.path.dirname(__file__) +'/xmlworker_log/error_last-semantic-change.log')
+#>>> semantic = XmlWorker()
+#>>> semantic.run(path_semantic_change, logpath, str, mockconnector, 'semanticchange', logger_error_semanticchange)
 
 
->>> logger_error_modifiedsemantic = logging.getLogger('error_last-modified-semantic-change')
->>> path_modified_semantic = os.path.dirname(__file__)+'/xmlworker/last_modified_semantic_change.txt'
->>> add_file_logging(logger_error_modifiedsemantic, os.path.dirname(__file__) +'/xmlworker_log/error_last-modified-semantic-change.log')
->>> modifiedsemantic = XmlWorker()
->>> modifiedsemantic.run(path_modified_semantic, logpath, str, mockconnector, 'modifiedsemantic', logger_error_modifiedsemantic)           
+#>>> logger_error_modifiedsemantic = logging.getLogger('error_last-modified-semantic-change')
+#>>> path_modified_semantic = os.path.dirname(__file__)+'/xmlworker/last_modified_semantic_change.txt'
+#>>> add_file_logging(logger_error_modifiedsemantic, os.path.dirname(__file__) +'/xmlworker_log/error_last-modified-semantic-change.log')
+#>>> modifiedsemantic = XmlWorker()
+#>>> modifiedsemantic.run(path_modified_semantic, logpath, str, mockconnector, 'modifiedsemantic', logger_error_modifiedsemantic)
+
+
+
+
+
+
+
+>>> import zeit.care.worker
+>>> resource = 'http://xml.zeit.de/feuilleton/osbournes'
+>>> dt = '2010'
+>>> pid = 'ZEI'
+>>> proplist = {('date-last-modified','http://namespaces.zeit.de/CMS/document'): dt,('productid','http://namespaces.zeit.de/CMS/document'): pid}
+>>> addprops = zeit.care.worker.property_worker(resource,mockconnector,properties=proplist)
 
 
 
