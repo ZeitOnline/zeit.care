@@ -1,0 +1,383 @@
+<?xml version="1.0"?>
+<ressorts>
+    <ressort name="Politik">
+        <title>Politik</title>
+        <subnavigation name="Ausland">
+            <title>Ausland</title>
+        </subnavigation>
+        <subnavigation name="Deutschland">
+            <title>Deutschland</title>
+        </subnavigation>
+    </ressort>
+
+    <ressort name="Wirtschaft">
+        <title>Wirtschaft</title>
+        <subnavigation name="Unternehmen">
+            <title>Unternehmen</title>
+        </subnavigation>
+        <subnavigation name="Geldanlage">
+            <title>Geldanlage</title>
+        </subnavigation>
+		<subnavigation name="Boerse">
+            <title>Boerse</title>
+        </subnavigation>
+    </ressort>
+    <ressort name="Gesellschaft">
+        <title>Gesellschaft</title>
+        <subnavigation name="Zeitgeschehen">
+            <title>Zeitgeschehen</title>
+        </subnavigation>
+        <subnavigation name="Familie">
+            <title>Familie</title>
+        </subnavigation>
+        <subnavigation name="Schule">
+            <title>Schule</title>
+        </subnavigation>
+    </ressort>
+
+    <ressort name="Kultur">
+        <title>Kultur</title>
+        <subnavigation name="Musik">
+            <title>Musik</title>
+        </subnavigation>
+        <subnavigation name="Literatur">
+            <title>Literatur</title>
+        </subnavigation>
+        <subnavigation name="Film">
+            <title>Film &amp; TV</title>
+        </subnavigation>
+        <subnavigation name="Kunst">
+            <title>Kunst</title>
+        </subnavigation>
+    </ressort>
+
+    <ressort name="Wissen">
+        <title>Wissen</title>
+        <subnavigation name="Gesundheit">
+            <title>Gesundheit</title>
+        </subnavigation>
+
+        <subnavigation name="Umwelt">
+            <title>Umwelt</title>
+        </subnavigation>
+        <subnavigation name="Geschichte">
+            <title>Geschichte</title>
+        </subnavigation>
+    </ressort>
+
+    <ressort name="Digital">
+        <title>Digital</title>
+        <subnavigation name="Internet">
+            <title>Internet</title>
+        </subnavigation>
+        <subnavigation name="Datenschutz">
+            <title>Datenschutz</title>
+        </subnavigation>
+        <subnavigation name="Mobil">
+            <title>Mobil</title>
+        </subnavigation>
+        <subnavigation name="Games">
+            <title>Games</title>
+        </subnavigation>
+    </ressort>
+
+    <ressort name="Studium">
+        <title>Studium</title>
+        <subnavigation name="Uni-Leben">
+            <title>Uni-Leben</title>
+        </subnavigation>
+        <subnavigation name="Hochschule">
+            <title>Hochschule</title>
+        </subnavigation>
+        <subnavigation name="Rankings">
+            <title>Rankings</title>
+        </subnavigation>
+        <subnavigation name="Studiengaenge">
+            <title>Studiengänge</title>
+        </subnavigation>
+    </ressort>
+
+    <ressort name="Karriere">
+        <title>Karriere</title>
+        <subnavigation name="Bewerbung">
+            <title>Bewerbung</title>
+        </subnavigation>
+        <subnavigation name="Beruf">
+            <title>Beruf</title>
+        </subnavigation>
+    </ressort>
+
+    <ressort name="Lebensart">
+        <title>Lebensart</title>
+        <subnavigation name="Mode">
+            <title>Mode</title>
+        </subnavigation>
+        <subnavigation name="essen-trinken">
+            <title>Essen &amp; Trinken</title>
+        </subnavigation>
+        <subnavigation name="Partnerschaft">
+            <title>Partnerschaft</title>
+        </subnavigation>
+    </ressort>
+
+    <ressort name="Reisen">
+        <title>Reisen</title>
+    </ressort>
+
+    <ressort name="Mobilitaet">
+        <title>Mobilität</title>
+    </ressort>
+
+    <ressort name="Sport">
+        <title>Sport</title>
+    </ressort>
+    <ressort name="Spiele">
+        <title>Spiele</title>
+    </ressort>
+
+    <ressort name="Weblogs">
+        <title>Weblogs</title>
+    </ressort>
+
+
+    <ressort name="Video">
+        <title>Video</title>
+    </ressort>
+    
+    <ressort name="Foto">
+        <title>Foto</title>
+    </ressort>
+
+    <ressort name="Administratives">
+        <title>Administratives</title>
+        <subnavigation name="bannertestallgemein">
+            <title>Bannertest-Allgemein</title>
+        </subnavigation>
+        <subnavigation name="bannertestvideo">
+            <title>Bannertest-Video</title>
+        </subnavigation>
+        <subnavigation name="arena">
+            <title>Arena</title>
+        </subnavigation>
+        <subnavigation name="frame">
+            <title>Frame</title>
+        </subnavigation>
+        <subnavigation name="template">
+            <title>Template</title>
+        </subnavigation>
+        <subnavigation name="iframe">
+            <title>Iframe</title>
+        </subnavigation>
+		<subnavigation name="search">
+            <title>Suche</title>
+        </subnavigation>
+		<subnavigation name="archive">
+            <title>Print-Archiv</title>
+        </subnavigation>
+		<subnavigation name="keywords">
+            <title>Schlagworte</title>
+        </subnavigation>
+		<subnavigation name="series">
+            <title>Serien</title>
+        </subnavigation>
+		<subnavigation name="authors">
+            <title>Autorenregister</title>
+		</subnavigation>
+        <subnavigation name="events">
+            <title>Events</title>
+        </subnavigation>
+    </ressort>
+    <ressort name="News">
+       <title>News</title>
+    </ressort>
+    <ressort name="ZEIT-Verlag">
+        <title>ZEIT-Verlag</title>
+    </ressort>
+
+    <ressort name="Angebote">
+        <title>Angebote</title>
+        <subnavigation name="jobs">
+            <title>Jobs</title>
+        </subnavigation>
+        <subnavigation name="demenz">
+            <title>Demenz</title>
+        </subnavigation>
+        <subnavigation name="specials">
+            <title>Specials</title>
+        </subnavigation>
+        <subnavigation name="zfds">
+            <title>Zeit für die Schule</title>
+        </subnavigation>
+        <subnavigation name="audio">
+            <title>Audio</title>
+        </subnavigation>
+        <subnavigation name="anzeige">
+                <title>Anzeige</title>
+        </subnavigation>
+        <subnavigation name="versicherungsvergleich">
+                <title>Versicherungsvergleich</title>
+        </subnavigation>
+        <subnavigation name="philharmonie">
+                <title>Philharmonie</title>
+        </subnavigation>
+        <subnavigation name="zukunftswerkstatt">
+                <title>Zukunftswerkstatt</title>
+        </subnavigation>
+        <subnavigation name="jordanien">
+                <title>Jordanien</title>
+        </subnavigation>
+        <subnavigation name="bahn">
+                <title>Deutsche Bahn</title>
+        </subnavigation>
+		    <subnavigation name="schleswig-holstein">
+                <title>Schleswig-Holstein</title>
+        </subnavigation>
+		    <subnavigation name="honda">
+                <title>Honda</title>
+        </subnavigation>
+        <subnavigation name="krebs">
+                <title>Krebs</title>
+        </subnavigation>
+        <subnavigation name="hochschulprofile">
+                <title>Hochschulprofile</title>
+        </subnavigation>
+        <subnavigation name="dav">
+                <title>DAV</title>
+        </subnavigation>
+        <subnavigation name="cs">
+                <title>Credit Suisse</title>
+        </subnavigation>
+        <subnavigation name="espresso">
+                <title>Espresso</title>
+        </subnavigation>
+        <subnavigation name="bergeundmeer">
+                <title>Berge und Meer</title>
+        </subnavigation>
+        <subnavigation name="beispiel">
+                <title>Beispiel</title>
+        </subnavigation>
+        <subnavigation name="partnersuche">
+                <title>Partnersuche</title>
+        </subnavigation>
+        <subnavigation name="unsere-autos">
+                <title>Unsere Autos</title>
+        </subnavigation>
+        <subnavigation name="microsoft">
+             <title>Microsoft</title>
+        </subnavigation>
+        <subnavigation name="reisetraeume">
+             <title>Reiseträume</title>
+        </subnavigation>
+        <subnavigation name="poetry-slam">
+             <title>Poetry Slam</title>
+        </subnavigation>
+        <subnavigation name="bahngeschichten">
+             <title>Bahngeschichten</title>
+        </subnavigation>
+        <subnavigation name="taiwan">
+             <title>Taiwan</title>
+        </subnavigation>
+        <subnavigation name="penfolds">
+             <title>Penfolds</title>
+        </subnavigation>
+        <subnavigation name="vorweggehen">
+             <title>Vorweggehen</title>
+        </subnavigation>
+        <subnavigation name="kaffeegenuss">
+             <title>Kaffeegenuss</title>
+        </subnavigation>
+        <subnavigation name="buchtipp">
+             <title>Buchtipp</title>
+        </subnavigation>
+        <subnavigation name="joop">
+             <title>Joop</title>
+        </subnavigation>
+        <subnavigation name="malta">
+             <title>Malta</title>
+        </subnavigation> 
+        <subnavigation name="norwegen">
+             <title>Norwegen</title>
+        </subnavigation> 
+        <subnavigation name="nordnorwegen">
+             <title>Nordnorwegen</title>
+        </subnavigation>
+        <subnavigation name="denmark">
+             <title>Denmark</title>
+        </subnavigation>
+        <subnavigation name="australien">
+             <title>Australien</title>
+        </subnavigation>
+        <subnavigation name="schulzeit">
+             <title>Schulzeit</title>
+        </subnavigation>   
+        <subnavigation name="bahn-umweltquiz">
+             <title>Bahn-Umweltquiz</title>
+        </subnavigation>
+        <subnavigation name="suedaustralien-mit-singapore-airlines">
+             <title>Südaustralien</title>
+        </subnavigation>
+        <subnavigation name="dpd">
+             <title>DPD</title>
+        </subnavigation>
+        <subnavigation name="ck-encounter">
+             <title>CK Encounter</title>
+        </subnavigation>
+        <subnavigation name="wie-wird-geforscht-in">
+             <title>wie-wird-geforscht-in</title>
+        </subnavigation>
+        <subnavigation name="weber">
+            <title>Weber</title>
+        </subnavigation>
+        <subnavigation name="tirol">
+            <title>Tirol</title>
+        </subnavigation>
+        <subnavigation name="panasonic">
+            <title>Panasonic</title>
+        </subnavigation>
+        <subnavigation name="erdgas">
+            <title>Erdgas</title>
+        </subnavigation>
+        <subnavigation name="tirol-langlauf">
+            <title>Tirol-Langlauf</title>
+        </subnavigation>
+        <subnavigation name="bildungsideen">
+            <title>Bildungsideen</title>
+        </subnavigation>
+        <subnavigation name="dorint-hotels">
+            <title>Dorint-Hotels</title>
+        </subnavigation>
+        <subnavigation name="wissenschaftsregion-nrw">
+            <title>Wissenschaftsregion-NRW</title>
+        </subnavigation>
+        <subnavigation name="laureus">
+            <title>Laureus</title>
+        </subnavigation>
+        <subnavigation name="olympus">
+            <title>Olympus</title>
+        </subnavigation>
+        <subnavigation name="newzealand-singaporeairlines">
+            <title>Newzealand-Singaporeairlines</title>
+        </subnavigation>
+        <subnavigation name="draegerwerk">
+            <title>Draegerwerk</title>
+        </subnavigation>
+        <subnavigation name="wissenschaftsregion-bw">
+            <title>Wissenschaftsregion-BW</title>
+        </subnavigation>
+        <subnavigation name="hausarbeiten">
+            <title>Hausarbeiten</title>
+        </subnavigation>
+        <subnavigation name="almodovar">
+            <title>Almodovar</title>
+        </subnavigation>
+    </ressort>
+    
+    <ressort name="Meinung">
+        <title>Meinung</title>
+    </ressort>
+
+  <ressort name="Premium">
+        <title>Premium</title>
+    </ressort>
+
+</ressorts>

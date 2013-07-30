@@ -374,7 +374,10 @@ class XmlWorker(object):
                 daterel = False
                 cnt = 0
                 while daterel is False:
-                    volume_article_href = tree.xpath('/page/body/cluster[@area="feature"]/region[@area="lead"]/container[@module="archive-print-volume"]/block/@href')[cnt]
+                    if tree.xpath('/page/body/cluster[@area="feature"]/region[@area="lead"]/container[@module="archive-print-volume"]/block/@href'):
+                        volume_article_href = tree.xpath('/page/body/cluster[@area="feature"]/region[@area="lead"]/container[@module="archive-print-volume"]/block/@href')[cnt]
+                    else:
+                        return False
                     res = self._get_article(volume_article_href)
                     if res is not False:
                         try:
