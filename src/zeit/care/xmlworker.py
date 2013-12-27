@@ -17,6 +17,8 @@ import zeit.connector.mock
 import httplib
 import urllib2
 import re
+import time
+from dt8601 import IsoDate
 
 # Error logger, one for each case
 logger_error_productid = logging.getLogger('error_productid')
@@ -39,6 +41,7 @@ logger_info_zmlb = logging.getLogger('info_productid_zeit-magazin')
 logger_info_unknown = logging.getLogger('info_productid_unknown')
 
 # Info-logger for date_first_released
+logger_info_lastsem = logging.getLogger('info_date-first-released_attr-last-semantic-change')
 logger_info_rele = logging.getLogger('info_date-first-released_attr-release')
 logger_info_year_vol = logging.getLogger('info_date-first-released_year-volume')
 logger_info_just_year = logging.getLogger('info_date-first-released_just-year')
@@ -148,12 +151,14 @@ class XmlWorker(object):
                 global not_checkable
                 not_checkable += 1
                 properties = {('urgent','http://namespaces.zeit.de/CMS/workflow'): 'yes'}
+                properties.update({('published','http://namespaces.zeit.de/CMS/workflow'): 'yes'})
                 crawler = zeit.care.crawl.ResourceProcess(uri,
                                                           connector,
                                                           zeit.care.worker.property_worker,
                                                           properties=properties,
                                                           publish=publish)
                 crawler.run()
+                time.sleep(9)
             return True
 
         except Exception as e:
@@ -181,8 +186,8 @@ class XmlWorker(object):
                 if match:
                     year = match.group(0)
                     return year
-            if tree.xpath('//attribute[@name="last_semantic_change"]'):
-                attr_last_semantic_change = tree.xpath('//attribute[@name="last_semantic_change"]')[0]
+            if tree.xpath('//attribute[@name="last-semantic-change"]'):
+                attr_last_semantic_change = tree.xpath('//attribute[@name="last-semantic-change"]')[0]
                 last_semantic_change = attr_last_semantic_change.text
                 match = re.search(r"[1-2][0,9][0-9][0-9]", last_semantic_change)
                 if match:
@@ -211,6 +216,18 @@ class XmlWorker(object):
         try:
             uri = unicode(uri.decode("utf8"))
             type = zeit.care.worker.get_property(connector[uri],'type','http://namespaces.zeit.de/CMS/meta')
+            dailynl = zeit.care.worker.get_property(connector[uri],'DailyNL','http://namespaces.zeit.de/CMS/document')
+            artbox_thema = zeit.care.worker.get_property(connector[uri],'artbox_thema','http://namespaces.zeit.de/CMS/document')
+            banner = zeit.care.worker.get_property(connector[uri],'banner','http://namespaces.zeit.de/CMS/document')
+            breaking_news = zeit.care.worker.get_property(connector[uri],'breaking_news','http://namespaces.zeit.de/CMS/document')
+            comments = zeit.care.worker.get_property(connector[uri],'comments','http://namespaces.zeit.de/CMS/document')
+            countings = zeit.care.worker.get_property(connector[uri],'countings','http://namespaces.zeit.de/CMS/document')
+            foldable = zeit.care.worker.get_property(connector[uri],'foldable','http://namespaces.zeit.de/CMS/document')
+            has_recensions = zeit.care.worker.get_property(connector[uri],'has_recensions','http://namespaces.zeit.de/CMS/document')
+            in_rankings = zeit.care.worker.get_property(connector[uri],'in_rankings','http://namespaces.zeit.de/CMS/document')
+            is_content = zeit.care.worker.get_property(connector[uri],'is_content','http://namespaces.zeit.de/CMS/document')
+            minimal_header = zeit.care.worker.get_property(connector[uri],'minimal_header','http://namespaces.zeit.de/CMS/document')
+            show_commentthread = zeit.care.worker.get_property(connector[uri],'show_commentthread','http://namespaces.zeit.de/CMS/document')
             ressort = zeit.care.worker.get_property(connector[uri],'ressort','http://namespaces.zeit.de/CMS/document')
             sub_ressort = zeit.care.worker.get_property(connector[uri],'sub_ressort','http://namespaces.zeit.de/CMS/document')
             print_ressort = zeit.care.worker.get_property(connector[uri],'ressort','http://namespaces.zeit.de/CMS/print')
@@ -218,16 +235,53 @@ class XmlWorker(object):
             properties = {}
             if type:
                 if type not in 'article':
-                    properties.update({('type','http://namespaces.zeit.de/CMS/workflow'): "yes"})
+                    properties.update({('type','http://namespaces.zeit.de/CMS/meta'): "article"})
                     global wrong_type
                     if uri not in wrong_type:
                         wrong_type.append(uri)
                         logger_wrong_type.info(uri)
             else:
+                properties.update({('type','http://namespaces.zeit.de/CMS/meta'): "article"})
                 global no_type
                 if uri not in no_type:
                     no_type.append(uri)
                     logger_no_type.info(uri)
+
+            if not dailynl:
+                properties.update({('DailyNL','http://namespaces.zeit.de/CMS/document'): "no"})
+
+            if not artbox_thema:
+                properties.update({('artbox_thema','http://namespaces.zeit.de/CMS/document'): "no"})
+
+            if not banner:
+                properties.update({('banner','http://namespaces.zeit.de/CMS/document'): "yes"})
+
+            if not breaking_news:
+                properties.update({('breaking_news','http://namespaces.zeit.de/CMS/document'): "no"})
+
+            if not comments:
+                properties.update({('comments','http://namespaces.zeit.de/CMS/document'): "no"})
+
+            if not countings:
+                properties.update({('comments','http://namespaces.zeit.de/CMS/document'): "no"})
+
+            if not foldable:
+                properties.update({('foldable','http://namespaces.zeit.de/CMS/document'): "no"})
+
+            if not has_recensions:
+                properties.update({('has_recensions','http://namespaces.zeit.de/CMS/document'): "no"})
+
+            if not in_rankings:
+                properties.update({('in_rankings','http://namespaces.zeit.de/CMS/document'): "yes"})
+
+            if not is_content:
+                properties.update({('is_content','http://namespaces.zeit.de/CMS/document'): "yes"})
+
+            if not minimal_header:
+                properties.update({('minimal_header','http://namespaces.zeit.de/CMS/document'): "no"})
+
+            if not show_commentthread and comments and comments not in 'yes':
+                properties.update({('show_commentthread','http://namespaces.zeit.de/CMS/document'): "no"})
 
             if tree.xpath('//teaser/title'):
                 teaser_title = tree.xpath('//teaser/title')[0]
@@ -340,12 +394,14 @@ class XmlWorker(object):
                     logger_no_year.info(uri)
 
             if properties:
+                properties.update({('published','http://namespaces.zeit.de/CMS/workflow'): 'yes'})
                 crawler = zeit.care.crawl.ResourceProcess(uri,
                                                           connector,
                                                           zeit.care.worker.property_worker,
                                                           properties=properties,
                                                           publish=publish)
                 crawler.run()
+                time.sleep(9)
 
             if ressort:
                 if ressorts.xpath('//ressort[@name="'+ressort+'"]'):
@@ -382,10 +438,7 @@ class XmlWorker(object):
             elif tree.xpath('//attribute[@name="copyrights"]'):
                 attr_copyrights = tree.xpath('//attribute[@name="copyrights"]')[0]
                 copyrights = attr_copyrights.text
-                if copyrights and "DIE ZEIT" in copyrights.upper():
-                    logger_info_zei.info(uri)
-                    return "ZEI"
-                elif copyrights and "TAGESSPIEGEL" in copyrights.upper():
+                if copyrights and "TAGESSPIEGEL" in copyrights.upper():
                     logger_info_tgs.info(uri)
                     return "TGS"
                 elif copyrights and "ZEIT WISSEN" in copyrights.upper():
@@ -403,9 +456,15 @@ class XmlWorker(object):
                 elif tree.xpath('//attribute[@name="volume"]') or tree.xpath('//attribute[@name="page"]'):
                     logger_info_zei.info(uri)
                     return "ZEI"
+                elif copyrights and  "ZEIT ONLINE" in copyrights.upper():
+                    logger_info_zede.info(uri)
+                    return "ZEDE"
                 elif copyrights and  "ZEIT.DE" in copyrights.upper():
                     logger_info_zede.info(uri)
                     return "ZEDE"
+                elif copyrights and "DIE ZEIT" in copyrights.upper():
+                    logger_info_zei.info(uri)
+                    return "ZEI"
                 else:
                     logger_info_unknown.info(uri)
                     return "Unknown"
@@ -422,9 +481,29 @@ class XmlWorker(object):
 
     def _create_date_first_released(self, connector, uri, tree, logger):
         try:
+            if tree.xpath('//attribute[@name="last-semantic-change"]'):
+                daterel = tree.xpath('//attribute[@name="last-semantic-change"]')[0]
+                if not self._check_date_iso8601(daterel.text):
+                    pass
+                logger_info_lastsem.info(uri)
+                return daterel.text
+
+            if tree.xpath('//attribute[@name="date"]'):
+                daterel = tree.xpath('//attribute[@name="date"]')[0]
+                match = re.search(r"[0-2][0-9].[0-1][0-9].[1-2][0-9][0-9][0-9]",daterel.text)
+                if match:
+                        dstr = match.group(0)
+                        dates = dstr.split(".")
+                        logger_info_date_copyr.info(uri)
+                        return "%s-%s-%sT12:00:00Z" % (dates[2], dates[1], dates[0])
+                else:
+                    pass
+
             if tree.xpath('//attribute[@name="date-first-release"]'):
                 daterel = tree.xpath('//attribute[@name="date-first-release"]')[0]
                 self.wrong_date_attr_to_delete = True
+                if not self._check_date_iso8601(daterel.text):
+                    return False
                 logger_info_rele.info(uri)
                 return daterel.text
 
@@ -503,7 +582,7 @@ class XmlWorker(object):
             return False
 
     def _detect_last_semantic_change(self, tree):
-        if not tree.xpath('//attribute[@name="last_semantic_change"]'):
+        if not tree.xpath('//attribute[@name="last-semantic-change"]'):
             return False
         else:
             return True
@@ -547,7 +626,7 @@ class XmlWorker(object):
 #                    headlst.remove(child)
 #                    return tree
 
-    def _delete_whitespace_author_begin(self, tree, logger):
+    def _delete_whitespace_author_begin(self, tree, logger, uri):
         try:
             attr_author = tree.xpath('//attribute[@name="author"]')[0]
             author = attr_author.text
@@ -557,7 +636,7 @@ class XmlWorker(object):
             logger.error("Exception _delete_whitespace_author_begin " + uri + " " + str(e))
             return False
 
-    def _delete_whitespace_author_end(self, tree, logger):
+    def _delete_whitespace_author_end(self, tree, logger, uri):
         try:
             attr_author = tree.xpath('//attribute[@name="author"]')[0]
             author = attr_author.text
@@ -567,6 +646,12 @@ class XmlWorker(object):
             logger.error("Exception _delete_whitespace_author_end " + uri + " " + str(e))
             return False
 
+    def _check_date_iso8601(self, date):
+        try:
+            result = IsoDate.from_iso_string(date)
+            return True
+        except Exception as e:
+            return False
 #    def write_file_on_dav(self, uri, xml,connector):
 #        uri = uri.decode('utf-8')
 #        filename = uri.split('/')[-1]
@@ -636,6 +721,7 @@ class XmlWorker(object):
             self.set_logger(logger_info_unknown, os.path.dirname(__file__) + "/../../../" + logpath + '/info_productid_unknown.log')
 
         elif mode == "datefirst":
+            self.set_logger(logger_info_lastsem, os.path.dirname(__file__) + "/../../../" + logpath + '/info_date-first-released_attr-last-semantic-change.log')
             self.set_logger(logger_info_rele, os.path.dirname(__file__) + "/../../../" + logpath + '/info_date-first-released_attr-release.log')
             self.set_logger(logger_info_year_vol, os.path.dirname(__file__) + "/../../../" + logpath + '/info_date-first-released_year-volume.log')
             self.set_logger(logger_info_just_year, os.path.dirname(__file__) + "/../../../" + logpath + '/info_date-first-released_just-year.log')
@@ -651,6 +737,7 @@ class XmlWorker(object):
                     if mode == "productid":
                         productid = self._find_out_productid(connector, uri, tree, logger)
                         if productid:
+                            print productid
                             #http://namespaces.zeit.de/CMS/workflow urgent = yes
                             #make_checkable = self.make_checkable(uri, connector, logger)
                             get_properties = self.get_properties(uri, tree, ressorts, connector, logger)
@@ -658,7 +745,8 @@ class XmlWorker(object):
                             if not get_properties:
                                 logger.error(uri+' Properties preparation error')
                             properties = {('product-id','http://namespaces.zeit.de/CMS/workflow'): productid}
-                            properties.update({('urgent','http://namespaces.zeit.de/CMS/workflow'): "yes"})
+                            properties.update({('DailyNL','http://namespaces.zeit.de/CMS/document'): "no"})
+                            #properties.update({('urgent','http://namespaces.zeit.de/CMS/workflow'): "yes"})
                             try:
                                 crawler = zeit.care.crawl.ResourceProcess(uri,
                                                                           connector,
@@ -666,6 +754,7 @@ class XmlWorker(object):
                                                                           properties=properties,
                                                                           publish=publish)
                                 crawler.run()
+                                time.sleep(9)
                             except:
                                 logger.error(uri+' Connector error')
                         else:
@@ -673,15 +762,16 @@ class XmlWorker(object):
 
                     # CASE - Delete whitespace from authors begin
                     elif mode == "authorstarts":
-                        author = self._delete_whitespace_author_begin(tree, logger)
+                        author = self._delete_whitespace_author_begin(tree, logger, uri)
                         if author:
                             #make_checkable = self.make_checkable(uri, connector, logger)
                             get_properties = self.get_properties(uri, tree, ressorts, connector, logger)
                             #if not make_checkable or not get_properties:
                             if not get_properties:
                                 logger.error(uri+' Properties preparation error') 
-                            properties = {('product-id','http://namespaces.zeit.de/CMS/document'): author}
-                            properties.update({('urgent','http://namespaces.zeit.de/CMS/workflow'): "yes"})
+                            properties = {('author','http://namespaces.zeit.de/CMS/document'): author}
+                            properties.update({('DailyNL','http://namespaces.zeit.de/CMS/document'): "no"})
+                            #properties.update({('urgent','http://namespaces.zeit.de/CMS/workflow'): "yes"})
                             try:
                                 crawler = zeit.care.crawl.ResourceProcess(uri,
                                                                           connector,
@@ -689,6 +779,7 @@ class XmlWorker(object):
                                                                           properties=properties,
                                                                           publish=publish)
                                 crawler.run()
+                                time.sleep(9)
                             except:
                                 logger.error(uri+' Connector error')
                         else:
@@ -696,15 +787,16 @@ class XmlWorker(object):
 
                     # CASE - Delete whitespaces from authors end    
                     elif mode == "authorends":
-                        author = self._delete_whitespace_author_end(tree, logger)
+                        author = self._delete_whitespace_author_end(tree, logger, uri)
                         if author:
                             #make_checkable = self.make_checkable(uri, connector, logger)
                             get_properties = self.get_properties(uri, tree, ressorts, connector, logger)
                             #if not make_checkable or not get_properties:
                             if not get_properties:
                                 logger.error(uri+' Properties preparation error') 
-                            properties = {('product-id','http://namespaces.zeit.de/CMS/document'): author}
-                            properties.update({('urgent','http://namespaces.zeit.de/CMS/workflow'): "yes"})
+                            properties = {('author','http://namespaces.zeit.de/CMS/document'): author}
+                            properties.update({('DailyNL','http://namespaces.zeit.de/CMS/document'): "no"})
+                            #properties.update({('urgent','http://namespaces.zeit.de/CMS/workflow'): "yes"})
                             try:
                                 crawler = zeit.care.crawl.ResourceProcess(uri,
                                                                           connector,
@@ -712,6 +804,7 @@ class XmlWorker(object):
                                                                           properties=properties,
                                                                           publish=publish)
                                 crawler.run()
+                                time.sleep(9)
                             except:
                                 logger.error(uri+' Connector error')
                         else:
@@ -728,7 +821,10 @@ class XmlWorker(object):
                             if not get_properties:
                                 logger.error(uri+' Properties preparation error')
                             properties = {('date_first_released','http://namespaces.zeit.de/CMS/document'): datefirstrel}
-                            properties.update({('urgent','http://namespaces.zeit.de/CMS/workflow'): "yes"})
+                            properties.update({('DailyNL','http://namespaces.zeit.de/CMS/document'): "no"})
+                            properties.update({('date_last_published_semantic','http://namespaces.zeit.de/CMS/workflow'): datefirstrel})
+                            properties.update({('published','http://namespaces.zeit.de/CMS/workflow'): 'yes'})
+                            #properties.update({('urgent','http://namespaces.zeit.de/CMS/workflow'): "yes"})
                             #if self.wrong_date_attr_to_delete is True:
                                 # Perhaps not necessary
                             #if self._detect_date_last_modified(tree) is False:
@@ -736,7 +832,8 @@ class XmlWorker(object):
                                 properties.update({('date_last_modified','http://namespaces.zeit.de/CMS/document'): datefirstrel})
                             if not self._get_property(connector, uri, 'last-semantic-change', 'http://namespaces.zeit.de/CMS/document', logger):
                             #if self._detect_last_semantic_change(tree) is False:
-                                properties.update({('last_semantic_change','http://namespaces.zeit.de/CMS/document'): datefirstrel})
+                                properties.update({('last-semantic-change','http://namespaces.zeit.de/CMS/document'): datefirstrel})
+
                             try:
                                 crawler = zeit.care.crawl.ResourceProcess(uri,
                                                                           connector,
@@ -744,6 +841,7 @@ class XmlWorker(object):
                                                                           properties=properties,
                                                                           publish=publish)
                                 crawler.run()
+                                time.sleep(9)
                             except:
                                 logger.error(uri+' Connector error')
 
@@ -760,7 +858,8 @@ class XmlWorker(object):
                             if not get_properties:
                                 logger.error(uri+' Properties preparation error') 
                             properties = {('date-last-modified','http://namespaces.zeit.de/CMS/document'): datefirstrel}
-                            properties.update({('urgent','http://namespaces.zeit.de/CMS/workflow'): "yes"})
+                            properties.update({('DailyNL','http://namespaces.zeit.de/CMS/document'): "no"})
+                            #properties.update({('urgent','http://namespaces.zeit.de/CMS/workflow'): "yes"})
                             try:
                                 crawler = zeit.care.crawl.ResourceProcess(uri,
                                                                           connector,
@@ -768,6 +867,7 @@ class XmlWorker(object):
                                                                           properties=properties,
                                                                           publish=publish)
                                 crawler.run()
+                                time.sleep(9)
                             except:
                                 logger.error(uri+' Connector error')
                         else:
@@ -782,8 +882,9 @@ class XmlWorker(object):
                             #if not make_checkable or not get_properties:
                             if not get_properties:
                                 logger.error(uri+' Properties preparation error') 
-                            properties = {('last_semantic_change','http://namespaces.zeit.de/CMS/document'): datefirstrel}
-                            properties.update({('urgent','http://namespaces.zeit.de/CMS/workflow'): "yes"})
+                            properties = {('last-semantic-change','http://namespaces.zeit.de/CMS/document'): datefirstrel}
+                            properties.update({('DailyNL','http://namespaces.zeit.de/CMS/document'): "no"})
+                            #properties.update({('urgent','http://namespaces.zeit.de/CMS/workflow'): "yes"})
                             try:
                                 crawler = zeit.care.crawl.ResourceProcess(uri,
                                                                           connector,
@@ -791,6 +892,7 @@ class XmlWorker(object):
                                                                           properties=properties,
                                                                           publish=publish)
                                 crawler.run()
+                                time.sleep(9)
                             except:
                                 logger.error(uri+' Connector error')
                         else:
@@ -806,8 +908,9 @@ class XmlWorker(object):
                             if not get_properties:
                                 logger.error(uri+' Properties preparation error')
                             properties = {('date-last-modified','http://namespaces.zeit.de/CMS/document'): datefirstrel,
-                                          ('last_semantic_change','http://namespaces.zeit.de/CMS/document'): datefirstrel}
-                            properties.update({('urgent','http://namespaces.zeit.de/CMS/workflow'): "yes"})
+                                          ('last-semantic-change','http://namespaces.zeit.de/CMS/document'): datefirstrel}
+                            properties.update({('DailyNL','http://namespaces.zeit.de/CMS/document'): "no"})
+                            #properties.update({('urgent','http://namespaces.zeit.de/CMS/workflow'): "yes"})
                             try:
                                 crawler = zeit.care.crawl.ResourceProcess(uri,
                                                                           connector,
@@ -815,6 +918,7 @@ class XmlWorker(object):
                                                                           properties=properties,
                                                                           publish=publish)
                                 crawler.run()
+                                time.sleep(9)
                             except:
                                 logger.error(uri+' Connector error')
                         else:
@@ -828,7 +932,7 @@ class XmlWorker(object):
 
             #print uri
             count += 1
-            #if count > 20:
+            #if count > 9:
             #   break
         '''print "Ressorts:"
         print wrong_ressort
@@ -943,7 +1047,7 @@ def main():
         path_date_modified = options.path + "/date_last_modified.txt" 
 
     if os.path.isfile(options.path + "/last_semantic_change.txt"):
-        message += '\nlast_sematic_change.txt - Will add missing attribute last_semantic_change'
+        message += '\nlast_sematic_change.txt - Will add missing attribute last-semantic-change'
         path_semantic_change = options.path + "/last_semantic_change.txt"
 
     if os.path.isfile(options.path + "/last_modified_semantic_change.txt"):
