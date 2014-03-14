@@ -11,7 +11,7 @@ class FileProcess(object):
 
     def run(self):
         with open(self.file, 'r') as f:
-            for uri in f
+            for uri in f:
                 if self.connector[uri].type != "collection" and \
                     self.connector[container].type != "imagegroup":
                     processed = self.worker(self.connector[uri], self.connector)
