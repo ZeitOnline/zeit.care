@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
-import os
-import sys
-import logging 
-import StringIO
-from optparse import OptionParser
-from lxml import etree
 from datetime import datetime
+from lxml import etree
+from optparse import OptionParser
 from zeit.care import add_file_logging
+from zeit.connector.resource import Resource
+import StringIO
+import logging
+import sys
 import zeit.care.crawl
 import zeit.connector.connector
-from zeit.connector.resource import Resource
 import zeit.connector.interfaces
-import zope.authentication.interfaces
+
 
 logger = logging.getLogger(__name__)
+
 
 _NS_DOC = 'http://namespaces.zeit.de/CMS/document'
 _PROP_RELEASED = ('date_first_released', _NS_DOC)
@@ -21,6 +21,7 @@ _PROP_GALLERY = ('artbox_gallery', _NS_DOC)
 _PROP_PORTRAIT = ('artbox_portrait', _NS_DOC)
 _PROP_INFO = ('artbox_info', _NS_DOC)
 _PROP_POS = ('artbox_position', _NS_DOC)
+
 
 class BoxInjector(object):
 
@@ -49,16 +50,16 @@ class BoxInjector(object):
             first_released = self._get_doc_date()
             artbox_position = self.resource.properties.get(_PROP_POS)
             if first_released:
-                if first_released > datetime(2009,4,21):
+                if first_released > datetime(2009, 4, 21):
                     position = 5
                 elif artbox_position > 0:
                     position = artbox_position
                 else:
                     position = 3
-            attrib = {'expires':'', 'href':xml_id, 'publication-date':''}
-            self.art_boxes[_PROP_INFO] =    {
+            attrib = {'expires': '', 'href': xml_id, 'publication-date': ''}
+            self.art_boxes[_PROP_INFO] = {
                 'element': etree.Element("infobox", attrib=attrib),
-                'position':position}
+                'position': position}
 
     def _get_artbox_gallery(self):
         '''
@@ -69,12 +70,12 @@ class BoxInjector(object):
             position = 3
             first_released = self._get_doc_date()
             if first_released:
-                if first_released > datetime(2009,4,21):
+                if first_released > datetime(2009, 4, 21):
                     position = 5
-                elif first_released > datetime(2008,9,30):
+                elif first_released > datetime(2008, 9, 30):
                     position = 7
 
-            attrib = {'expires':'', 'href':xml_id, 'publication-date':''}
+            attrib = {'expires': '', 'href': xml_id, 'publication-date': ''}
             self.art_boxes[_PROP_GALLERY] = {
                 'element': etree.Element("gallery", attrib=attrib),
                 'position': position}
@@ -86,13 +87,14 @@ class BoxInjector(object):
         portrait_file = self.resource.properties.get(_PROP_PORTRAIT)
         if portrait_file and portrait_file.startswith('http://xml.zeit.de'):
             first_released = self._get_doc_date()
-            if first_released and first_released > datetime(2009,04,21):
+            if first_released and first_released > datetime(2009, 04, 21):
                 position = 7
             else:
                 position = 5
-            attrib= {'expires':'','href':portrait_file,'publication-date':'','layout':'short'}
+            attrib= {'expires': '', 'href': portrait_file,
+                     'publication-date': '', 'layout': 'short'}
             self.art_boxes[_PROP_PORTRAIT] = {
-                'element': etree.Element("portraitbox",  attrib=attrib),
+                'element': etree.Element("portraitbox", attrib=attrib),
                 'position': position}
 
     def _insert_box(self, box):
@@ -101,8 +103,9 @@ class BoxInjector(object):
         '''
         position = box.get('position')
         in_division = None
-        for i in range(1,4):
-            sum_paras = self.tree.xpath('count(//article/body/division[position()=%d]/p)' % i)
+        for i in range(1, 4):
+            sum_paras = self.tree.xpath(
+                'count(//article/body/division[position()=%d]/p)' % i)
             if position < sum_paras:
                 in_division = i
                 break
@@ -110,13 +113,16 @@ class BoxInjector(object):
                 position = int(position - sum_paras)
 
         if in_division:
-            self.tree.xpath('//article/body/division')[in_division-1].insert(position,box.get('element'))
+            self.tree.xpath(
+                '//article/body/division')[in_division - 1].insert(
+                    position, box.get('element'))
 
     def _remove_xml_attr(self, prop):
         '''
         removes obsolete head/attributes from the xml
         '''
-        xpath_qry = '//article/head/attribute[@ns="%s" and @name="%s"]' % (prop[1], prop[0])
+        xpath_qry = '//article/head/attribute[@ns="%s" and @name="%s"]' % (
+            prop[1], prop[0])
         prop_attr = self.tree.xpath(xpath_qry)
         if prop_attr:
             self.tree.xpath('//article/head')[0].remove(prop_attr[0])
@@ -141,14 +147,16 @@ class BoxInjector(object):
                 self._insert_box(self.art_boxes[prop])
                 self._remove_xml_attr(prop)
 
-            self.new_xml = etree.tostring(self.tree, encoding="UTF-8", xml_declaration=True)
+            self.new_xml = etree.tostring(
+                self.tree, encoding="UTF-8", xml_declaration=True)
 
     def get_new_resource(self):
         '''
         returns a new resource with inline article boxes
         '''
         if self.new_xml:
-            new_resource = Resource(self.resource.id,
+            new_resource = Resource(
+                self.resource.id,
                 self.resource.__name__, self.resource.type,
                 StringIO.StringIO(self.new_xml),
                 contentType=self.resource.contentType)
@@ -156,7 +164,8 @@ class BoxInjector(object):
                 if p not in self.art_boxes:
                     new_resource.properties[p] = (self.resource.properties[p])
                 else:
-                    new_resource.properties[p] = (zeit.connector.interfaces.DeleteProperty)
+                    new_resource.properties[p] = (
+                        zeit.connector.interfaces.DeleteProperty)
             return new_resource
         return None
 
@@ -170,11 +179,12 @@ def crawler_worker(resource, connector):
             if new_resource:
                 connector[resource.id] = new_resource
                 logger.info(resource.id)
-        except KeyboardInterrupt,e:
+        except KeyboardInterrupt:
             logger.info('SCRIPT STOPPED')
             sys.exit()
         except:
             logger.exception(resource.id)
+
 
 def main():
     usage = "usage: %prog [options] arg"
@@ -186,7 +196,7 @@ def main():
     parser.add_option("-l", "--log", dest="logfile",
                       help="logfile for errors")
     parser.add_option("-f", "--force", action="store_true", dest="force",
-                        help="no reinsurance question, for batch mode e.g.")
+                      help="no reinsurance question, for batch mode e.g.")
 
     (options, args) = parser.parse_args()
 
@@ -200,8 +210,9 @@ def main():
         add_file_logging(logger, options.logfile)
 
     if not options.force:
-        user_ok = raw_input('\nConversion will start at %s.\nAre you sure? [y|n]: ' \
-            % options.collection)
+        user_ok = raw_input(
+            '\nConversion will start at %s.\nAre you sure? [y|n]: ' %
+            options.collection)
     else:
         user_ok = "y"
 
@@ -210,5 +221,3 @@ def main():
             default=options.webdav))
         crawler = zeit.care.crawl.Crawler(connector, crawler_worker)
         crawler.run(options.collection)
-
-
