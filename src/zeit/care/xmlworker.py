@@ -159,9 +159,9 @@ class XmlWorker(object):
                 connector[uri],
                 'corrected', 'http://namespaces.zeit.de/CMS/workflow')
 
-            if (urgent and urgent in 'yes'
-                or (edited and edited in 'yes'
-                    and corrected and corrected in 'yes')):
+            if (urgent and urgent in 'yes' or
+                    (edited and edited in 'yes' and
+                     corrected and corrected in 'yes')):
                 global checkable
                 if uri not in checkable:
                     checkable.append(uri)
@@ -409,8 +409,8 @@ class XmlWorker(object):
             if tree.xpath('//attribute[@name="last-semantic-change"]'):
                 last_semantic_change = tree.xpath(
                     '//attribute[@name="last-semantic-change"]')[0]
-                if (last_semantic_change.text
-                        and last_semantic_change.text not in ''):
+                if (last_semantic_change.text and
+                        last_semantic_change.text not in ''):
                     logger_lps_last_semantic_change.info(uri)
                     properties.update({
                         ('date_last_published_semantic',
@@ -419,8 +419,8 @@ class XmlWorker(object):
             elif tree.xpath('//attribute[@name="date-last-modified"]'):
                 date_last_modified = tree.xpath(
                     '//attribute[@name="date-last-modified"]')[0]
-                if (date_last_modified.text
-                        and date_last_modified.text not in ''):
+                if (date_last_modified.text and
+                        date_last_modified.text not in ''):
                     logger_lps_date_last_modified.info(uri)
                     properties.update({
                         ('date_last_published_semantic',
@@ -429,8 +429,8 @@ class XmlWorker(object):
             elif tree.xpath('//attribute[@name="date_first_released"]'):
                 date_first_released = tree.xpath(
                     '//attribute[@name="date_first_released"]')[0]
-                if (date_first_released.text
-                        and date_first_released.text not in ''):
+                if (date_first_released.text and
+                        date_first_released.text not in ''):
                     logger_lps_date_first_released.info(uri)
                     properties.update({
                         ('date_last_published_semantic',
@@ -439,8 +439,8 @@ class XmlWorker(object):
             elif tree.xpath('//attribute[@name="date-first-release"]'):
                 date_first_release = tree.xpath(
                     '//attribute[@name="date-first-release"]')[0]
-                if (date_first_release.text
-                        and date_first_release.text not in ''):
+                if (date_first_release.text and
+                        date_first_release.text not in ''):
                     logger_lps_date_first_release.info(uri)
                     properties.update({
                         ('date_last_published_semantic',
@@ -451,8 +451,8 @@ class XmlWorker(object):
             if tree.xpath('//attribute[@name="date-last-modified"]'):
                 date_last_modified = tree.xpath(
                     '//attribute[@name="date-last-modified"]')[0]
-                if (date_last_modified.text
-                        and date_last_modified.text not in ''):
+                if (date_last_modified.text and
+                        date_last_modified.text not in ''):
                     logger_lp_date_last_modified.info(uri)
                     properties.update({
                         ('date_last_published',
@@ -461,8 +461,8 @@ class XmlWorker(object):
             elif tree.xpath('//attribute[@name="last-semantic-change"]'):
                 last_semantic_change = tree.xpath(
                     '//attribute[@name="last-semantic-change"]')[0]
-                if (last_semantic_change.text
-                        and last_semantic_change.text not in ''):
+                if (last_semantic_change.text and
+                        last_semantic_change.text not in ''):
                     logger_lp_last_semantic_change.info(uri)
                     properties.update({
                         ('date_last_published',
@@ -471,8 +471,8 @@ class XmlWorker(object):
             elif tree.xpath('//attribute[@name="date_first_released"]'):
                 date_first_released = tree.xpath(
                     '//attribute[@name="date_first_released"]')[0]
-                if (date_first_released.text
-                        and date_first_released.text not in ''):
+                if (date_first_released.text and
+                        date_first_released.text not in ''):
                     logger_lp_date_first_released.info(uri)
                     properties.update({
                         ('date_last_published',
@@ -481,8 +481,8 @@ class XmlWorker(object):
             elif tree.xpath('//attribute[@name="date-first-release"]'):
                 date_first_release = tree.xpath(
                     '//attribute[@name="date-first-release"]')[0]
-                if (date_first_release.text
-                        and date_first_release.text not in ''):
+                if (date_first_release.text and
+                        date_first_release.text not in ''):
                     logger_lp_date_first_release.info(uri)
                     properties.update({
                         ('date_last_published',
@@ -496,8 +496,8 @@ class XmlWorker(object):
                 if tree.xpath('//attribute[@name="last-semantic-change"]'):
                     last_semantic_change = tree.xpath(
                         '//attribute[@name="last-semantic-change"]')[0]
-                    if (last_semantic_change.text
-                            and last_semantic_change.text not in ''):
+                    if (last_semantic_change.text and
+                            last_semantic_change.text not in ''):
                         logger_lm_last_semantic_change.info(uri)
                         properties.update({
                             ('date-last-modified',
@@ -506,8 +506,8 @@ class XmlWorker(object):
                 elif tree.xpath('//attribute[@name="date_first_released"]'):
                     date_first_released = tree.xpath(
                         '//attribute[@name="date_first_released"]')[0]
-                    if (date_first_released.text
-                            and date_first_released.text not in ''):
+                    if (date_first_released.text and
+                            date_first_released.text not in ''):
                         logger_lm_date_first_released.info(uri)
                         properties.update({
                             ('date-last-modified',
@@ -516,8 +516,8 @@ class XmlWorker(object):
                 elif tree.xpath('//attribute[@name="date-first-release"]'):
                     date_first_release = tree.xpath(
                         '//attribute[@name="date-first-release"]')[0]
-                    if (date_first_release.text
-                            and date_first_release.text not in ''):
+                    if (date_first_release.text and
+                            date_first_release.text not in ''):
                         logger_lm_date_first_release.info(uri)
                         properties.update({
                             ('date-last-modified',
@@ -567,8 +567,8 @@ class XmlWorker(object):
 
             if sub_ressort:
                 if ressorts.xpath(
-                        '//ressort[@name="' + ressort
-                        + '"]/subnavigation[@name="' + sub_ressort + '"]'):
+                        '//ressort[@name="' + ressort +
+                        '"]/subnavigation[@name="' + sub_ressort + '"]'):
                     pass
                 else:
                     global wrong_subressort
@@ -608,8 +608,8 @@ class XmlWorker(object):
                 elif copyrights and "ZEITMAGAZIN" in copyrights.upper():
                     logger_info_zmlb.info(uri)
                     return "ZMLB"
-                elif (tree.xpath('//attribute[@name="volume"]')
-                      or tree.xpath('//attribute[@name="page"]')):
+                elif (tree.xpath('//attribute[@name="volume"]') or
+                      tree.xpath('//attribute[@name="page"]')):
                     logger_info_zei.info(uri)
                     return "ZEI"
                 elif copyrights and "ZEIT ONLINE" in copyrights.upper():
@@ -625,8 +625,8 @@ class XmlWorker(object):
                     logger_info_unknown.info(uri)
                     return "Unknown"
             else:
-                if (tree.xpath('//attribute[@name="volume"]')
-                        or tree.xpath('//attribute[@name="page"]')):
+                if (tree.xpath('//attribute[@name="volume"]') or
+                        tree.xpath('//attribute[@name="page"]')):
                     logger_info_zei.info(uri)
                     return "ZEI"
                 else:
@@ -670,13 +670,13 @@ class XmlWorker(object):
                 logger_info_rele.info(uri)
                 return daterel.text
 
-            if (tree.xpath('//attribute[@name="year"]')
-                    and tree.xpath('//attribute[@name="volume"]')):
+            if (tree.xpath('//attribute[@name="year"]') and
+                    tree.xpath('//attribute[@name="volume"]')):
                 attr_year = tree.xpath('//attribute[@name="year"]')[0]
                 attr_volume = tree.xpath('//attribute[@name="volume"]')[0]
 
-                if (attr_year.text and attr_year.text not in ''
-                        and attr_volume.text and attr_volume.text not in ''):
+                if (attr_year.text and attr_year.text not in '' and
+                        attr_volume.text and attr_volume.text not in ''):
                     volume = attr_volume.text
                     year = attr_year.text
 
@@ -708,12 +708,11 @@ class XmlWorker(object):
             else:
                 return False
             productid = self._find_out_productid(connector, uri, tree, logger)
-            if (year and year not in ''
-                    and volume and volume not in ''
-                    and productid in 'ZEI'):
+            if (year and year not in '' and
+                    volume and volume not in '' and productid in 'ZEI'):
                 path_to_volume = (
-                    "http://www.zeit.de/" + year + "/"
-                    + volume.zfill(2) + "/?re=false")
+                    "http://www.zeit.de/" + year + "/" +
+                    volume.zfill(2) + "/?re=false")
                 res = self._get_article(path_to_volume, logger)
                 if res is not False:
                     try:
@@ -740,9 +739,11 @@ class XmlWorker(object):
                             try:
                                 tree2 = self._string_to_xml(res, uri, logger)
                                 if tree2.xpath(
-                                    '//attribute[@name="date_first_released"]'):
+                                        '//attribute[@name='
+                                        '"date_first_released"]'):
                                     daterel = tree2.xpath(
-                                        '//attribute[@name="date_first_released"]')[0]
+                                        '//attribute[@name='
+                                        '"date_first_released"]')[0]
                             except:
                                 pass
                         cnt += 1
@@ -821,8 +822,8 @@ class XmlWorker(object):
             return author
         except Exception as e:
             logger.error(
-                "Exception _delete_whitespace_author_begin "
-                + uri + " " + str(e))
+                "Exception _delete_whitespace_author_begin " +
+                uri + " " + str(e))
             return False
 
     def _delete_whitespace_author_end(self, tree, logger, uri):
@@ -833,8 +834,8 @@ class XmlWorker(object):
             return author
         except Exception as e:
             logger.error(
-                "Exception _delete_whitespace_author_end "
-                + uri + " " + str(e))
+                "Exception _delete_whitespace_author_end " +
+                uri + " " + str(e))
             return False
 
     def _check_date_iso8601(self, date):
@@ -865,90 +866,90 @@ class XmlWorker(object):
 
     def set_attribute_validation_logger(self, logpath):
         self.set_logger(
-            logger_wrong_ressort, os.path.dirname(__file__) + "/../../../"
-            + logpath + '/attributes_wrong_ressort.log')
+            logger_wrong_ressort, os.path.dirname(__file__) + "/../../../" +
+            logpath + '/attributes_wrong_ressort.log')
         self.set_logger(
-            logger_wrong_subressort, os.path.dirname(__file__) + "/../../../"
-            + logpath + '/attributes_wrong_subressort.log')
+            logger_wrong_subressort, os.path.dirname(__file__) + "/../../../" +
+            logpath + '/attributes_wrong_subressort.log')
         self.set_logger(
-            logger_teaser_title_too, os.path.dirname(__file__) + "/../../../"
-            + logpath + '/attributes_teaser_title.log')
+            logger_teaser_title_too, os.path.dirname(__file__) + "/../../../" +
+            logpath + '/attributes_teaser_title.log')
         self.set_logger(
-            logger_teaser_text_too, os.path.dirname(__file__) + "/../../../"
-            + logpath + '/attributes_teaser_text.log')
+            logger_teaser_text_too, os.path.dirname(__file__) + "/../../../" +
+            logpath + '/attributes_teaser_text.log')
         self.set_logger(
-            logger_teaser_supertitle_too, os.path.dirname(__file__)
-            + "/../../../" + logpath
-            + '/attributes_teaser_supertitle.log')
+            logger_teaser_supertitle_too, os.path.dirname(__file__) +
+            "/../../../" + logpath +
+            '/attributes_teaser_supertitle.log')
         self.set_logger(
-            logger_supertitle_too, os.path.dirname(__file__) + "/../../../"
-            + logpath + '/attributes_supertitle.log')
+            logger_supertitle_too, os.path.dirname(__file__) + "/../../../" +
+            logpath + '/attributes_supertitle.log')
         self.set_logger(
-            logger_wrong_type, os.path.dirname(__file__) + "/../../../"
-            + logpath + '/attributes_wrong_type.log')
+            logger_wrong_type, os.path.dirname(__file__) + "/../../../" +
+            logpath + '/attributes_wrong_type.log')
         self.set_logger(
-            logger_no_type, os.path.dirname(__file__) + "/../../../"
-            + logpath + '/attributes_no_type.log')
+            logger_no_type, os.path.dirname(__file__) + "/../../../" +
+            logpath + '/attributes_no_type.log')
         self.set_logger(
-            logger_checkable, os.path.dirname(__file__) + "/../../../"
-            + logpath + '/attributes_checkable.log')
+            logger_checkable, os.path.dirname(__file__) + "/../../../" +
+            logpath + '/attributes_checkable.log')
         self.set_logger(
-            logger_no_year, os.path.dirname(__file__) + "/../../../"
-            + logpath + '/attributes_no_year.log')
+            logger_no_year, os.path.dirname(__file__) + "/../../../" +
+            logpath + '/attributes_no_year.log')
         self.set_logger(
-            logger_year_impossible, os.path.dirname(__file__) + "/../../../"
-            + logpath + '/attributes_year_impossible.log')
+            logger_year_impossible, os.path.dirname(__file__) + "/../../../" +
+            logpath + '/attributes_year_impossible.log')
 
         self.set_logger(
-            logger_lps_last_semantic_change, os.path.dirname(__file__)
-            + "/../../../" + logpath
-            + '/attributes_date_last_published_semantic'
+            logger_lps_last_semantic_change, os.path.dirname(__file__) +
+            "/../../../" + logpath +
+            '/attributes_date_last_published_semantic'
             '-by-last_semantic_change.log')
         self.set_logger(
-            logger_lps_date_last_modified, os.path.dirname(__file__)
-            + "/../../../" + logpath
-            + '/attributes_date_last_published_semantic'
+            logger_lps_date_last_modified, os.path.dirname(__file__) +
+            "/../../../" + logpath +
+            '/attributes_date_last_published_semantic'
             '-by-date_last_modified.log')
         self.set_logger(
-            logger_lps_date_first_released, os.path.dirname(__file__)
-            + "/../../../" + logpath
-            + '/attributes_date_last_published_semantic'
+            logger_lps_date_first_released, os.path.dirname(__file__) +
+            "/../../../" + logpath +
+            '/attributes_date_last_published_semantic'
             '-by-date_first_released.log')
         self.set_logger(
-            logger_lps_date_first_release, os.path.dirname(__file__)
-            + "/../../../" + logpath
-            + '/attributes_date_last_published_semantic'
+            logger_lps_date_first_release, os.path.dirname(__file__) +
+            "/../../../" + logpath +
+            '/attributes_date_last_published_semantic'
             '-by-date_first_release.log')
 
         self.set_logger(
-            logger_lp_date_last_modified, os.path.dirname(__file__)
-            + "/../../../" + logpath
-            + '/attributes_date_last_published-by-date_last_modified.log')
+            logger_lp_date_last_modified, os.path.dirname(__file__) +
+            "/../../../" + logpath +
+            '/attributes_date_last_published-by-date_last_modified.log')
         self.set_logger(
-            logger_lp_last_semantic_change, os.path.dirname(__file__)
-            + "/../../../" + logpath
-            + '/attributes_date_last_published-by-last_semantic_change.log')
+            logger_lp_last_semantic_change, os.path.dirname(__file__) +
+            "/../../../" + logpath +
+            '/attributes_date_last_published-by-last_semantic_change.log')
         self.set_logger(
-            logger_lp_date_first_released, os.path.dirname(__file__)
-            + "/../../../" + logpath
-            + '/attributes_date_last_published-by-date_first_released.log')
+            logger_lp_date_first_released, os.path.dirname(__file__) +
+            "/../../../" + logpath +
+            '/attributes_date_last_published-by-date_first_released.log')
         self.set_logger(
-            logger_lp_date_first_release, os.path.dirname(__file__)
-            + "/../../../" + logpath
-            + '/attributes_date_last_published-by-date_first_release.log')
+            logger_lp_date_first_release, os.path.dirname(__file__) +
+            "/../../../" + logpath +
+            '/attributes_date_last_published-by-date_first_release.log')
 
         self.set_logger(
-            logger_lm_last_semantic_change, os.path.dirname(__file__)
-            + "/../../../" + logpath
-            + '/attributes_date_last_modified-by-last_semantic_change.log')
+            logger_lm_last_semantic_change, os.path.dirname(__file__) +
+            "/../../../" + logpath +
+            '/attributes_date_last_modified-by-last_semantic_change.log')
         self.set_logger(
-            logger_lm_date_first_released, os.path.dirname(__file__)
-            + "/../../../" + logpath
-            + '/attributes_date_last_modified-by-date_first_released.log')
+            logger_lm_date_first_released, os.path.dirname(__file__) +
+            "/../../../" + logpath +
+            '/attributes_date_last_modified-by-date_first_released.log')
         self.set_logger(
-            logger_lm_date_first_release, os.path.dirname(__file__)
-            + "/../../../" + logpath
-            + '/attributes_date_last_modified-by-date_first_release.log')
+            logger_lm_date_first_release, os.path.dirname(__file__) +
+            "/../../../" + logpath +
+            '/attributes_date_last_modified-by-date_first_release.log')
 
     def run(self, path, logpath, string, connector, mode, logger):
         articles = self.get_uris_from_file(path, string)
@@ -962,56 +963,58 @@ class XmlWorker(object):
 
         if mode == "productid":
             self.set_logger(
-                logger_info_zei, os.path.dirname(__file__) + "/../../../"
-                + logpath + '/info_productid_zeit-print.log')
+                logger_info_zei, os.path.dirname(__file__) + "/../../../" +
+                logpath + '/info_productid_zeit-print.log')
             self.set_logger(
-                logger_info_zede, os.path.dirname(__file__) + "/../../../"
-                + logpath + '/info_productid_zeit-online.log')
+                logger_info_zede, os.path.dirname(__file__) + "/../../../" +
+                logpath + '/info_productid_zeit-online.log')
             self.set_logger(
-                logger_info_zede_by_url, os.path.dirname(__file__)
-                + "/../../../" + logpath
-                + '/info_productid_zeit-online-per-url.log')
+                logger_info_zede_by_url, os.path.dirname(__file__) +
+                "/../../../" + logpath +
+                '/info_productid_zeit-online-per-url.log')
             self.set_logger(
-                logger_info_tgs, os.path.dirname(__file__) + "/../../../"
-                + logpath + '/info_productid_tagesspiegel.log')
+                logger_info_tgs, os.path.dirname(__file__) + "/../../../" +
+                logpath + '/info_productid_tagesspiegel.log')
             self.set_logger(
-                logger_info_ztwi, os.path.dirname(__file__) + "/../../../"
-                + logpath + '/info_productid_zeit-wissen.log')
+                logger_info_ztwi, os.path.dirname(__file__) + "/../../../" +
+                logpath + '/info_productid_zeit-wissen.log')
             self.set_logger(
-                logger_info_ztgs, os.path.dirname(__file__) + "/../../../"
-                + logpath + '/info_productid_zeit-geschichte.log')
+                logger_info_ztgs, os.path.dirname(__file__) + "/../../../" +
+                logpath + '/info_productid_zeit-geschichte.log')
             self.set_logger(
-                logger_info_ztcs, os.path.dirname(__file__) + "/../../../"
-                + logpath + '/info_productid_zeit-campus.log')
+                logger_info_ztcs, os.path.dirname(__file__) + "/../../../" +
+                logpath + '/info_productid_zeit-campus.log')
             self.set_logger(
-                logger_info_zmlb, os.path.dirname(__file__) + "/../../../"
-                + logpath + '/info_productid_zeit-magazin.log')
+                logger_info_zmlb, os.path.dirname(__file__) + "/../../../" +
+                logpath + '/info_productid_zeit-magazin.log')
             self.set_logger(
-                logger_info_unknown, os.path.dirname(__file__) + "/../../../"
-                + logpath + '/info_productid_unknown.log')
+                logger_info_unknown, os.path.dirname(__file__) + "/../../../" +
+                logpath + '/info_productid_unknown.log')
 
         elif mode == "datefirst":
             self.set_logger(
-                logger_info_lastsem, os.path.dirname(__file__) + "/../../../"
-                + logpath
-                + '/info_date-first-released_attr-last-semantic-change.log')
+                logger_info_lastsem, os.path.dirname(__file__) + "/../../../" +
+                logpath +
+                '/info_date-first-released_attr-last-semantic-change.log')
             self.set_logger(
-                logger_info_rele, os.path.dirname(__file__) + "/../../../"
-                + logpath + '/info_date-first-released_attr-release.log')
+                logger_info_rele, os.path.dirname(__file__) + "/../../../" +
+                logpath + '/info_date-first-released_attr-release.log')
             self.set_logger(
-                logger_info_year_vol, os.path.dirname(__file__) + "/../../../"
-                + logpath + '/info_date-first-released_year-volume.log')
+                logger_info_year_vol, os.path.dirname(__file__) +
+                "/../../../" + logpath +
+                '/info_date-first-released_year-volume.log')
             self.set_logger(
-                logger_info_just_year, os.path.dirname(__file__) + "/../../../"
-                + logpath + '/info_date-first-released_just-year.log')
+                logger_info_just_year, os.path.dirname(__file__) +
+                "/../../../" + logpath +
+                '/info_date-first-released_just-year.log')
             self.set_logger(
-                logger_info_year_vol_copyr, os.path.dirname(__file__)
-                + "/../../../" + logpath
-                + '/info_date-first-released_year-volume-copyrights.log')
+                logger_info_year_vol_copyr, os.path.dirname(__file__) +
+                "/../../../" + logpath +
+                '/info_date-first-released_year-volume-copyrights.log')
             self.set_logger(
-                logger_info_date_copyr, os.path.dirname(__file__)
-                + "/../../../" + logpath
-                + '/info_date-first-released_date-copyrights.log')
+                logger_info_date_copyr, os.path.dirname(__file__) +
+                "/../../../" + logpath +
+                '/info_date-first-released_date-copyrights.log')
 
         for uri in articles:
             article = self._get_article(uri, logger)
@@ -1397,7 +1400,7 @@ class XmlWorker(object):
         print not_checkable
         print "\n"'''
 
-        print str(mode) +' ArtikelInsgesamt: ' + str(count)
+        print str(mode) + ' ArtikelInsgesamt: ' + str(count)
 
     def list_copyrights(self, path, logpath, string, logger):
         articles = self.get_uris_from_file(path, string)
@@ -1514,8 +1517,8 @@ def main():
             # logger_error_authorstarts = logging.getLogger(
             #   'error_authorstarts')
             add_file_logging(
-                logger_error_authorstarts, os.path.dirname(__file__)
-                + "/../../../" + options.logpath + '/error_authorstarts.log')
+                logger_error_authorstarts, os.path.dirname(__file__) +
+                "/../../../" + options.logpath + '/error_authorstarts.log')
             authorstarts = XmlWorker()
             authorstarts.run(
                 path_author_starts, options.logpath, options.string, connector,
@@ -1526,8 +1529,8 @@ def main():
             # logger_error_authorends = logging.getLogger(
             #   'error_authorends')
             add_file_logging(
-                logger_error_authorends, os.path.dirname(__file__)
-                + "/../../../" + options.logpath + '/error_authorends.log')
+                logger_error_authorends, os.path.dirname(__file__) +
+                "/../../../" + options.logpath + '/error_authorends.log')
             authorends = XmlWorker()
             authorends.run(
                 path_author_ends, options.logpath, options.string, connector,
@@ -1538,9 +1541,9 @@ def main():
             # logger_error_datefirst = logging.getLogger(
             #   'error_date-first-released')
             add_file_logging(
-                logger_error_datefirst, os.path.dirname(__file__)
-                + "/../../../" + options.logpath
-                + '/error_date-first-released.log')
+                logger_error_datefirst, os.path.dirname(__file__) +
+                "/../../../" + options.logpath +
+                '/error_date-first-released.log')
             datefirst = XmlWorker()
             datefirst.run(
                 path_date_first, options.logpath, options.string, connector,
@@ -1551,9 +1554,9 @@ def main():
             # logger_error_datefirst = logging.getLogger(
             #   'error_date-first-released')
             add_file_logging(
-                logger_error_datemodified, os.path.dirname(__file__)
-                + "/../../../" + options.logpath
-                + '/error_date-last-modified.log')
+                logger_error_datemodified, os.path.dirname(__file__) +
+                "/../../../" + options.logpath +
+                '/error_date-last-modified.log')
             datemodified = XmlWorker()
             datemodified.run(
                 path_date_modified, options.logpath, options.string, connector,
@@ -1564,9 +1567,9 @@ def main():
             # logger_error_datefirst = logging.getLogger(
             #   'error_date-first-released')
             add_file_logging(
-                logger_error_semanticchange, os.path.dirname(__file__)
-                + "/../../../" + options.logpath
-                + '/error_last-semantic-change.log')
+                logger_error_semanticchange, os.path.dirname(__file__) +
+                "/../../../" + options.logpath +
+                '/error_last-semantic-change.log')
             semantic = XmlWorker()
             semantic.run(
                 path_semantic_change, options.logpath, options.string,
@@ -1577,9 +1580,9 @@ def main():
             # logger_error_datefirst = logging.getLogger(
             # 'error_date-first-released')
             add_file_logging(
-                logger_error_modifiedsemantic, os.path.dirname(__file__)
-                + "/../../../" + options.logpath
-                + '/error_last-modified-semantic-change.log')
+                logger_error_modifiedsemantic, os.path.dirname(__file__) +
+                "/../../../" + options.logpath +
+                '/error_last-modified-semantic-change.log')
             modifiedsemantic = XmlWorker()
             modifiedsemantic.run(
                 path_modified_semantic, options.logpath, options.string,
@@ -1589,8 +1592,8 @@ def main():
         if path_productid:
             # logger_productid_error = logging.getLogger('error_productid')
             add_file_logging(
-                logger_error_productid, os.path.dirname(__file__)
-                + "/../../../" + options.logpath + '/error_productid.log')
+                logger_error_productid, os.path.dirname(__file__) +
+                "/../../../" + options.logpath + '/error_productid.log')
             injectids = XmlWorker()
             injectids.run(
                 path_productid, options.logpath, options.string, connector,

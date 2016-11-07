@@ -91,8 +91,8 @@ class BoxInjector(object):
                 position = 7
             else:
                 position = 5
-            attrib= {'expires': '', 'href': portrait_file,
-                     'publication-date': '', 'layout': 'short'}
+            attrib = {'expires': '', 'href': portrait_file,
+                      'publication-date': '', 'layout': 'short'}
             self.art_boxes[_PROP_PORTRAIT] = {
                 'element': etree.Element("portraitbox", attrib=attrib),
                 'position': position}

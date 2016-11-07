@@ -31,8 +31,8 @@ class FileProcess(object):
         with open(self.file, 'r') as f:
             for uri in f:
                 uri = uri.rstrip("\n")
-                if (self.connector[uri].type != "collection"
-                        and self.connector[uri].type != "imagegroup"):
+                if (self.connector[uri].type != "collection" and
+                        self.connector[uri].type != "imagegroup"):
                     processed = self.worker(self.connector[uri],
                                             self.connector,
                                             **self.params)

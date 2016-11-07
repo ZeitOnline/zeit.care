@@ -52,12 +52,12 @@ class Ressortindexmanipulator(object):
             for year in range(year, thisyear + 1):
                 year_str = str(year)
                 for month in months:
-                    if year==2009 and not(month in ["09", "10", "11", "12"]):
+                    if year == 2009 and month not in ["09", "10", "11", "12"]:
                         continue
                     infos = []
                     infos.append(
-                        self.start_id + '/' + ressort + '/' + year_str
-                        + '-' + month + '/index')
+                        self.start_id + '/' + ressort + '/' + year_str +
+                        '-' + month + '/index')
                     infos.append(year_str)
                     infos.append(month)
                     infos.append(ressort)
@@ -128,15 +128,15 @@ class Ressortindexmanipulator(object):
             attr_subressort.getparent().remove(attr_subressort)
         attr_year.text = year_string
         bodytitle.text = (
-            "Artikel und Nachrichten im " + month_string + " " + year_string
-            + " aus dem Ressort " + ressort_string + " | ZEIT ONLINE")
+            "Artikel und Nachrichten im " + month_string + " " + year_string +
+            " aus dem Ressort " + ressort_string + " | ZEIT ONLINE")
         teasertitle.text = (
-            "Artikel und Nachrichten im " + month_string + " " + year_string
-            + " aus dem Ressort " + ressort_string + " | ZEIT ONLINE")
+            "Artikel und Nachrichten im " + month_string + " " + year_string +
+            " aus dem Ressort " + ressort_string + " | ZEIT ONLINE")
         teasertext.text = (
-            "Lesen Sie alle Artikel und Nachrichten vom "
-            + month_string + " " + year_string + " aus dem Ressort "
-            + ressort_string + " auf ZEIT ONLINE")
+            "Lesen Sie alle Artikel und Nachrichten vom " +
+            month_string + " " + year_string + " aus dem Ressort " +
+            ressort_string + " auf ZEIT ONLINE")
 
         new_resource = Resource(
             id[0],
